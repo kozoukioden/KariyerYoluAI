@@ -248,23 +248,26 @@ export function RoadmapView({ units, onNodeClick, userProgress }: RoadmapViewPro
               <svg
                 className="absolute top-0 left-0 w-full h-full pointer-events-none"
                 style={{ zIndex: 0 }}
+                viewBox="0 0 100 1000"
+                preserveAspectRatio="none"
               >
                 {unit.nodes.slice(0, -1).map((node, idx) => {
                   const currentX = 50 + (getNodePosition(idx) / 70) * 20;
                   const nextX = 50 + (getNodePosition(idx + 1) / 70) * 20;
-                  const currentY = idx * 120 + 40;
-                  const nextY = (idx + 1) * 120 + 40;
+                  const nodeHeight = 1000 / Math.max(unit.nodes.length, 1);
+                  const currentY = idx * nodeHeight + nodeHeight / 3;
+                  const nextY = (idx + 1) * nodeHeight + nodeHeight / 3;
                   const isCompleted = node.status === 'completed';
 
                   return (
                     <path
                       key={`path-${idx}`}
-                      d={`M ${currentX}% ${currentY} Q ${(currentX + nextX) / 2}% ${(currentY + nextY) / 2} ${nextX}% ${nextY}`}
+                      d={`M ${currentX} ${currentY} Q ${(currentX + nextX) / 2} ${(currentY + nextY) / 2} ${nextX} ${nextY}`}
                       fill="none"
                       stroke={isCompleted ? '#fbbf24' : '#334155'}
-                      strokeWidth="4"
+                      strokeWidth="0.5"
                       strokeLinecap="round"
-                      strokeDasharray={isCompleted ? "0" : "8 8"}
+                      strokeDasharray={isCompleted ? "0" : "2 2"}
                     />
                   );
                 })}
