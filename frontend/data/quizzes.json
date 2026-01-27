@@ -1,0 +1,1648 @@
+{
+  "fe_u1_n5": [
+    {
+      "id": "fe_u1_q1",
+      "question": "DNS'in temel görevi nedir?",
+      "options": [
+        "Domain adını IP adresine çevirmek",
+        "Web sayfalarını şifrelemek",
+        "E-posta göndermek",
+        "Dosya transferi yapmak"
+      ],
+      "correct_answer": "Domain adını IP adresine çevirmek",
+      "explanation": "DNS (Domain Name System), insanların okuyabileceği domain adlarını (örn: google.com) bilgisayarların anlayabileceği IP adreslerine çevirir."
+    },
+    {
+      "id": "fe_u1_q2",
+      "question": "HTTP 404 status kodu ne anlama gelir?",
+      "options": [
+        "İstek başarılı",
+        "Sayfa bulunamadı",
+        "Sunucu hatası",
+        "Yetkilendirme gerekli"
+      ],
+      "correct_answer": "Sayfa bulunamadı",
+      "explanation": "404 Not Found, istenen kaynağın sunucuda bulunamadığını belirtir."
+    },
+    {
+      "id": "fe_u1_q3",
+      "question": "Aşağıdakilerden hangisi semantik bir HTML etiketi DEĞİLDİR?",
+      "options": [
+        "<header>",
+        "<div>",
+        "<article>",
+        "<nav>"
+      ],
+      "correct_answer": "<div>",
+      "explanation": "<div> genel amaçlı bir container'dır ve anlam taşımaz. <header>, <article>, <nav> ise içeriğin anlamını belirten semantik etiketlerdir."
+    },
+    {
+      "id": "fe_u1_q4",
+      "question": "CSS Box Model'de padding neyi temsil eder?",
+      "options": [
+        "İçerik ile border arasındaki boşluk",
+        "Border ile diğer elementler arasındaki boşluk",
+        "Elementin genişliği",
+        "Elementin yüksekliği"
+      ],
+      "correct_answer": "İçerik ile border arasındaki boşluk",
+      "explanation": "Padding, içerik (content) ile kenarlık (border) arasındaki iç boşluktur. Margin ise dış boşluktur."
+    },
+    {
+      "id": "fe_u1_q5",
+      "question": "Flexbox'ta 'justify-content: space-between' ne yapar?",
+      "options": [
+        "Elemanları ortalar",
+        "İlk ve son elemanı kenarlara yaslar, aradakileri eşit dağıtır",
+        "Tüm elemanları sola yaslar",
+        "Elemanlar arasına eşit boşluk koyar (kenarlar dahil)"
+      ],
+      "correct_answer": "İlk ve son elemanı kenarlara yaslar, aradakileri eşit dağıtır",
+      "explanation": "space-between, ilk elemanı başa, son elemanı sona yerleştirir ve aradaki elemanları eşit aralıklarla dağıtır."
+    },
+    {
+      "id": "fe_u1_q6",
+      "question": "Mobile First yaklaşımında CSS nasıl yazılır?",
+      "options": [
+        "Önce desktop stilleri, sonra min-width media query ile mobil",
+        "Önce mobil stilleri, sonra min-width media query ile büyük ekranlar",
+        "Sadece mobil stilleri yazılır",
+        "JavaScript ile ekran boyutu kontrol edilir"
+      ],
+      "correct_answer": "Önce mobil stilleri, sonra min-width media query ile büyük ekranlar",
+      "explanation": "Mobile First'te varsayılan stiller mobil içindir, sonra @media (min-width: ...) ile daha büyük ekranlar için stiller eklenir."
+    },
+    {
+      "id": "fe_u1_q7",
+      "question": "HTTPS'in HTTP'den farkı nedir?",
+      "options": [
+        "Daha hızlıdır",
+        "Veriler SSL/TLS ile şifrelenir",
+        "Sadece resimler için kullanılır",
+        "Port 80 yerine port 8080 kullanır"
+      ],
+      "correct_answer": "Veriler SSL/TLS ile şifrelenir",
+      "explanation": "HTTPS = HTTP + SSL/TLS şifrelemesi. Veriler şifreli olarak gönderilir, üçüncü kişiler okuyamaz."
+    },
+    {
+      "id": "fe_u1_q8",
+      "question": "CSS Grid'de 'grid-template-columns: repeat(3, 1fr)' ne yapar?",
+      "options": [
+        "3 satır oluşturur",
+        "3 eşit genişlikte sütun oluşturur",
+        "Grid'i 3 kez tekrarlar",
+        "1 sütun oluşturur ve 3 birim genişlik verir"
+      ],
+      "correct_answer": "3 eşit genişlikte sütun oluşturur",
+      "explanation": "repeat(3, 1fr) ile 3 adet eşit genişlikte (1fr = 1 fraction) sütun tanımlanır."
+    }
+  ],
+  "fe_u2_n6": [
+    {
+      "id": "fe_u2_q1",
+      "question": "JavaScript'te const ile tanımlanan bir değişken hakkında hangisi doğrudur?",
+      "options": [
+        "Değeri hiçbir zaman değiştirilemez",
+        "Yeniden atama yapılamaz ama obje/array içeriği değiştirilebilir",
+        "Sadece sayılar için kullanılır",
+        "Global scope'ta tanımlanamaz"
+      ],
+      "correct_answer": "Yeniden atama yapılamaz ama obje/array içeriği değiştirilebilir",
+      "explanation": "const ile yeniden atama yapılamaz (const x = 5; x = 6; // HATA), ama obje/array'in içeriği değiştirilebilir (const arr = [1]; arr.push(2); // OK)."
+    },
+    {
+      "id": "fe_u2_q2",
+      "question": "5 === '5' ifadesinin sonucu nedir?",
+      "options": [
+        "true",
+        "false",
+        "undefined",
+        "TypeError"
+      ],
+      "correct_answer": "false",
+      "explanation": "=== (katı eşitlik) hem değeri hem tipi kontrol eder. 5 (number) ve '5' (string) farklı tiplerdir."
+    },
+    {
+      "id": "fe_u2_q3",
+      "question": "Aşağıdaki kodun çıktısı nedir?\nlet x = 10;\nlet y = '5';\nconsole.log(x + y);",
+      "options": [
+        "15",
+        "\"105\"",
+        "NaN",
+        "TypeError"
+      ],
+      "correct_answer": "\"105\"",
+      "explanation": "JavaScript'te number + string yapıldığında string concatenation olur. 10 + '5' = '105' (string)."
+    },
+    {
+      "id": "fe_u2_q4",
+      "question": "Arrow function ile normal function arasındaki temel fark nedir?",
+      "options": [
+        "Arrow function daha hızlı çalışır",
+        "Arrow function'ın kendi 'this' değeri yoktur",
+        "Arrow function parametre alamaz",
+        "Arrow function sadece tek satırda yazılabilir"
+      ],
+      "correct_answer": "Arrow function'ın kendi 'this' değeri yoktur",
+      "explanation": "Arrow function kendi 'this' binding'ini oluşturmaz, üst scope'tan 'this' değerini alır."
+    },
+    {
+      "id": "fe_u2_q5",
+      "question": "Closure nedir?",
+      "options": [
+        "Bir fonksiyonun kendi içinde kendini çağırması",
+        "Bir fonksiyonun tanımlandığı ortamdaki değişkenlere erişebilmesi",
+        "İki fonksiyonun birleşmesi",
+        "Asenkron işlemlerin sırayla çalışması"
+      ],
+      "correct_answer": "Bir fonksiyonun tanımlandığı ortamdaki değişkenlere erişebilmesi",
+      "explanation": "Closure, iç fonksiyonun dış fonksiyonun değişkenlerine erişebilmesini sağlayan yapıdır. Bu sayede private değişkenler oluşturulabilir."
+    },
+    {
+      "id": "fe_u2_q6",
+      "question": "DOM'da element seçmek için hangisi en doğru yöntemdir?",
+      "options": [
+        "document.getElementById('id') - ID ile",
+        "document.querySelector('.class') - CSS selector ile",
+        "Her ikisi de doğru, duruma göre kullanılır",
+        "document.getElement('tag') - Tag ile"
+      ],
+      "correct_answer": "Her ikisi de doğru, duruma göre kullanılır",
+      "explanation": "getElementById ID ile, querySelector ise CSS selector ile element seçer. İkisi de geçerlidir, querySelector daha esnek ve modern bir API sunar."
+    },
+    {
+      "id": "fe_u2_q7",
+      "question": "Event delegation neden kullanılır?",
+      "options": [
+        "Sayfayı hızlandırmak için",
+        "Dinamik eklenen elementlere event listener eklemek için",
+        "CSS stillerini değiştirmek için",
+        "API çağrısı yapmak için"
+      ],
+      "correct_answer": "Dinamik eklenen elementlere event listener eklemek için",
+      "explanation": "Event delegation ile üst elemente tek bir listener eklenir. Dinamik eklenen alt elementlerin event'leri de yakalanır."
+    },
+    {
+      "id": "fe_u2_q8",
+      "question": "async/await ile Promise.then() arasındaki fark nedir?",
+      "options": [
+        "async/await daha yavaş çalışır",
+        "async/await sözdizimsel olarak daha temiz ve okunabilir",
+        "Promise.then() modern, async/await eski",
+        "İkisi tamamen farklı şeyler yapar"
+      ],
+      "correct_answer": "async/await sözdizimsel olarak daha temiz ve okunabilir",
+      "explanation": "Her ikisi de aynı işi yapar (Promise'leri yönetir), ama async/await daha senkron görünümlü, okunabilir kod yazmayı sağlar."
+    },
+    {
+      "id": "fe_u2_q9",
+      "question": "e.preventDefault() ne yapar?",
+      "options": [
+        "Event'in üst elementlere yayılmasını engeller",
+        "Event'in varsayılan davranışını engeller",
+        "Event listener'ı kaldırır",
+        "Sayfayı yeniler"
+      ],
+      "correct_answer": "Event'in varsayılan davranışını engeller",
+      "explanation": "preventDefault() browser'ın varsayılan davranışını engeller. Örneğin form submit'inde sayfa yenilenmesini engeller."
+    },
+    {
+      "id": "fe_u2_q10",
+      "question": "Aşağıdaki array metodlarından hangisi orijinal array'i DEĞİŞTİRMEZ?",
+      "options": [
+        "push()",
+        "splice()",
+        "map()",
+        "sort()"
+      ],
+      "correct_answer": "map()",
+      "explanation": "map() yeni bir array döndürür, orijinali değiştirmez. push(), splice() ve sort() orijinal array'i mutate eder."
+    }
+  ],
+  "fe_u3_n5": [
+    {
+      "id": "fe_u3_q1",
+      "question": "React'te state güncellemesi hakkında hangisi doğrudur?",
+      "options": [
+        "state.count = 5 şeklinde direkt değiştirilebilir",
+        "setState fonksiyonu ile güncellenmeli, direkt değiştirmek re-render tetiklemez",
+        "State sadece sayı tutabilir",
+        "State değiştirilemez"
+      ],
+      "correct_answer": "setState fonksiyonu ile güncellenmeli, direkt değiştirmek re-render tetiklemez",
+      "explanation": "React'te state'i direkt değiştirmek (mutation) re-render tetiklemez. setState veya useState'in setter fonksiyonu kullanılmalıdır."
+    },
+    {
+      "id": "fe_u3_q2",
+      "question": "useEffect'in dependency array'i boş ([]) olursa ne olur?",
+      "options": [
+        "Her render'da çalışır",
+        "Sadece component mount olduğunda çalışır",
+        "Hiç çalışmaz",
+        "Hata verir"
+      ],
+      "correct_answer": "Sadece component mount olduğunda çalışır",
+      "explanation": "Boş dependency array ([]) ile useEffect sadece component ilk render edildiğinde (mount) çalışır, sonraki render'larda çalışmaz."
+    },
+    {
+      "id": "fe_u3_q3",
+      "question": "React'te key prop neden önemlidir?",
+      "options": [
+        "Stillendirme için kullanılır",
+        "React'in hangi elemanların değiştiğini/eklendiğini/silindiğini bilmesi için",
+        "Sadece debugging için",
+        "SEO için gereklidir"
+      ],
+      "correct_answer": "React'in hangi elemanların değiştiğini/eklendiğini/silindiğini bilmesi için",
+      "explanation": "key prop, React'in liste elemanlarını tanımlamasını sağlar. Doğru key kullanımı performansı artırır ve bug'ları önler."
+    },
+    {
+      "id": "fe_u3_q4",
+      "question": "useState hook'u hakkında hangisi YANLIŞTIR?",
+      "options": [
+        "Fonksiyonel component'lerde state tutmayı sağlar",
+        "Koşullu olarak çağrılabilir (if içinde)",
+        "Başlangıç değeri alabilir",
+        "Array döndürür [state, setState]"
+      ],
+      "correct_answer": "Koşullu olarak çağrılabilir (if içinde)",
+      "explanation": "Hooks kuralları gereği, hook'lar koşullu olarak çağrılamaz. Her render'da aynı sırada çağrılmalıdır."
+    },
+    {
+      "id": "fe_u3_q5",
+      "question": "Props hakkında hangisi doğrudur?",
+      "options": [
+        "Props child component tarafından değiştirilebilir",
+        "Props read-only'dir ve child tarafından değiştirilemez",
+        "Props sadece string alabilir",
+        "Props yerine global değişken kullanılmalı"
+      ],
+      "correct_answer": "Props read-only'dir ve child tarafından değiştirilemez",
+      "explanation": "React'te veri akışı tek yönlüdür (top-down). Props parent'tan child'a akar ve child tarafından değiştirilemez."
+    },
+    {
+      "id": "fe_u3_q6",
+      "question": "Context API ne zaman kullanılmalıdır?",
+      "options": [
+        "Her zaman, state yönetimi için",
+        "Prop drilling'den kaçınmak için, global state gerektiğinde",
+        "Sadece form verisi için",
+        "API çağrıları için"
+      ],
+      "correct_answer": "Prop drilling'den kaçınmak için, global state gerektiğinde",
+      "explanation": "Context, birçok component'in ihtiyaç duyduğu veriyi (theme, auth, locale gibi) prop drilling yapmadan paylaşmak için kullanılır."
+    },
+    {
+      "id": "fe_u3_q7",
+      "question": "useRef hook'u ne için kullanılır?",
+      "options": [
+        "Sadece DOM referansı için",
+        "DOM referansı ve render'lar arası değer saklamak için",
+        "State yönetimi için",
+        "API çağrıları için"
+      ],
+      "correct_answer": "DOM referansı ve render'lar arası değer saklamak için",
+      "explanation": "useRef hem DOM elemanlarına referans tutmak hem de re-render tetiklemeden değer saklamak için kullanılır."
+    },
+    {
+      "id": "fe_u3_q8",
+      "question": "Aşağıdaki kodda problem nedir?\nuseEffect(() => {\n  setCount(count + 1);\n}, [count]);",
+      "options": [
+        "Sözdizimi hatası var",
+        "Sonsuz döngü oluşur",
+        "count değişkeni tanımlı değil",
+        "Hiçbir problem yok"
+      ],
+      "correct_answer": "Sonsuz döngü oluşur",
+      "explanation": "count değiştiğinde useEffect çalışır ve count'u günceller, bu da useEffect'i tekrar tetikler. Sonsuz döngü!"
+    }
+  ],
+  "fe_u4_n4": [
+    {
+      "id": "fe_u4_q1",
+      "question": "Git'te 'git checkout -b feature/login' komutu ne yapar?",
+      "options": [
+        "Mevcut branch'i siler",
+        "Yeni bir branch oluşturur ve ona geçer",
+        "Remote'dan branch çeker",
+        "Son commit'i geri alır"
+      ],
+      "correct_answer": "Yeni bir branch oluşturur ve ona geçer",
+      "explanation": "-b flag'i yeni branch oluşturur, checkout ise o branch'e geçiş yapar. Tek komutla ikisi birden yapılır."
+    },
+    {
+      "id": "fe_u4_q2",
+      "question": "Vite'ın Webpack'e göre avantajı nedir?",
+      "options": [
+        "Daha fazla özellik sunar",
+        "ES Modules kullanarak development'ta bundling yapmadan hızlı çalışır",
+        "Sadece React projeleri için çalışır",
+        "Daha eski tarayıcıları destekler"
+      ],
+      "correct_answer": "ES Modules kullanarak development'ta bundling yapmadan hızlı çalışır",
+      "explanation": "Vite development'ta ES Modules kullanır, her dosya değişikliğinde tüm projeyi yeniden bundle etmez. Bu sayede çok hızlıdır."
+    },
+    {
+      "id": "fe_u4_q3",
+      "question": "Git'te merge conflict ne zaman oluşur?",
+      "options": [
+        "Her merge işleminde",
+        "İki branch'te aynı dosyanın aynı satırları farklı değiştirildiğinde",
+        "Yeni branch oluşturulduğunda",
+        "Commit mesajı yazılmadığında"
+      ],
+      "correct_answer": "İki branch'te aynı dosyanın aynı satırları farklı değiştirildiğinde",
+      "explanation": "Conflict, Git'in otomatik olarak birleştiremediği değişiklikler olduğunda oluşur. Aynı satırların farklı değiştirilmesi buna örnektir."
+    },
+    {
+      "id": "fe_u4_q4",
+      "question": "Test yazarken 'describe' ve 'it' blokları ne için kullanılır?",
+      "options": [
+        "describe: test grubu oluşturur, it: tek bir test case tanımlar",
+        "describe: mock oluşturur, it: assertion yapar",
+        "İkisi de aynı işi yapar",
+        "describe: async testler için, it: sync testler için"
+      ],
+      "correct_answer": "describe: test grubu oluşturur, it: tek bir test case tanımlar",
+      "explanation": "describe() ilgili testleri gruplar, it() (veya test()) tek bir test senaryosu tanımlar. Bu yapı testleri organize eder."
+    },
+    {
+      "id": "fe_u4_q5",
+      "question": "React Testing Library'de 'screen.getByText' ne yapar?",
+      "options": [
+        "DOM'da belirli metni içeren elementi bulur",
+        "Ekran boyutunu alır",
+        "Console'a metin yazar",
+        "Element stilini değiştirir"
+      ],
+      "correct_answer": "DOM'da belirli metni içeren elementi bulur",
+      "explanation": "getByText, render edilmiş DOM'da belirtilen metni içeren elementi bulur. Bulamazsa hata fırlatır."
+    },
+    {
+      "id": "fe_u4_q6",
+      "question": ".gitignore dosyası ne için kullanılır?",
+      "options": [
+        "Git komutlarını engellemek için",
+        "Belirli dosya ve klasörlerin Git tarafından izlenmemesi için",
+        "Commit mesajlarını yazmak için",
+        "Branch isimlendirmesi için"
+      ],
+      "correct_answer": "Belirli dosya ve klasörlerin Git tarafından izlenmemesi için",
+      "explanation": ".gitignore'da listelenen dosyalar Git tarafından izlenmez. node_modules, .env gibi dosyalar genellikle buraya eklenir."
+    }
+  ],
+  "fe_u5_n3": [
+    {
+      "id": "fe_u5_q1",
+      "question": "Portfolio web sitesinde olması gereken en önemli bölüm hangisidir?",
+      "options": [
+        "Sosyal medya linkleri",
+        "Projeler - canlı demo ve kaynak kod ile",
+        "Hobi ve ilgi alanları",
+        "Kişisel fotoğraflar"
+      ],
+      "correct_answer": "Projeler - canlı demo ve kaynak kod ile",
+      "explanation": "İşverenler en çok projelerinizi görmek ister. Her projenin canlı demo linki ve GitHub linki olması önemlidir."
+    },
+    {
+      "id": "fe_u5_q2",
+      "question": "Git commit mesajı için önerilen format hangisidir?",
+      "options": [
+        "update code",
+        "feat: add user authentication",
+        "123456",
+        "Bugün yaptıklarım"
+      ],
+      "correct_answer": "feat: add user authentication",
+      "explanation": "Conventional Commits formatı (type: description) okunabilir ve anlaşılır commit geçmişi sağlar."
+    },
+    {
+      "id": "fe_u5_q3",
+      "question": "Teknik mülakatta sıkça sorulan konulardan biri hangisi DEĞİLDİR?",
+      "options": [
+        "JavaScript closure ve hoisting",
+        "CSS Flexbox ve Grid",
+        "Bilgisayar donanım özellikleri",
+        "React hooks ve lifecycle"
+      ],
+      "correct_answer": "Bilgisayar donanım özellikleri",
+      "explanation": "Frontend mülakatlarda JavaScript, CSS ve React gibi konular sorulur. Donanım bilgisi genellikle sorulmaz."
+    },
+    {
+      "id": "fe_u5_q4",
+      "question": "Bir e-ticaret projesinde sepet verisi nerede saklanmalıdır?",
+      "options": [
+        "Sadece backend'de",
+        "Global state (Zustand/Redux) ve localStorage ile kalıcılık",
+        "Her component'te ayrı ayrı",
+        "Sadece URL parametresinde"
+      ],
+      "correct_answer": "Global state (Zustand/Redux) ve localStorage ile kalıcılık",
+      "explanation": "Sepet verisi global state ile yönetilir (tüm component'ler erişebilsin) ve localStorage ile kalıcı hale getirilir (sayfa yenilemede kaybolmasın)."
+    },
+    {
+      "id": "fe_u5_q5",
+      "question": "React projesinde component yapısı için en iyi pratik hangisidir?",
+      "options": [
+        "Tüm kodu tek bir dosyada tutmak",
+        "Küçük, tek sorumluluğu olan, yeniden kullanılabilir component'ler",
+        "Sadece class component kullanmak",
+        "Her sayfada tüm HTML'i yazmak"
+      ],
+      "correct_answer": "Küçük, tek sorumluluğu olan, yeniden kullanılabilir component'ler",
+      "explanation": "Component'ler küçük ve odaklı olmalı. Bu yaklaşım kod bakımını kolaylaştırır ve yeniden kullanılabilirliği artırır."
+    },
+    {
+      "id": "fe_u5_q6",
+      "question": "Vercel'e deploy etmenin avantajı nedir?",
+      "options": [
+        "Sadece backend projeleri için uygun",
+        "Otomatik CI/CD, ücretsiz SSL, global CDN",
+        "Sadece ücretli",
+        "Sadece WordPress için"
+      ],
+      "correct_answer": "Otomatik CI/CD, ücretsiz SSL, global CDN",
+      "explanation": "Vercel, GitHub'a push yapıldığında otomatik deploy eder, ücretsiz SSL sertifikası ve global CDN sunar. Next.js ile özellikle uyumludur."
+    },
+    {
+      "id": "fe_u5_q7",
+      "question": "TypeScript kullanmanın avantajı nedir?",
+      "options": [
+        "Kod daha hızlı çalışır",
+        "Derleme zamanında tip hataları yakalanır, kod daha güvenli olur",
+        "Daha az kod yazılır",
+        "Sadece backend için kullanılır"
+      ],
+      "correct_answer": "Derleme zamanında tip hataları yakalanır, kod daha güvenli olur",
+      "explanation": "TypeScript, JavaScript'e statik tip sistemi ekler. Hatalar runtime yerine derleme zamanında yakalanır, kod daha güvenli ve bakımı kolay olur."
+    },
+    {
+      "id": "fe_u5_q8",
+      "question": "Frontend Developer olarak sürekli gelişim için en önemli alışkanlık hangisidir?",
+      "options": [
+        "Sadece bildiğin teknolojileri kullanmak",
+        "Yeni teknolojileri takip etmek, pratik yapmak ve toplulukla etkileşimde olmak",
+        "Her gün 12 saat çalışmak",
+        "Sadece ücretli kursları takip etmek"
+      ],
+      "correct_answer": "Yeni teknolojileri takip etmek, pratik yapmak ve toplulukla etkileşimde olmak",
+      "explanation": "Teknoloji hızla değişiyor. Blog okumak, side project yapmak ve developer topluluklarıyla etkileşimde olmak çok önemli."
+    }
+  ],
+  "be_u1_n5": [
+    {
+      "id": "be_u1_q1",
+      "question": "Backend ve Frontend arasındaki temel fark nedir?",
+      "options": [
+        "Backend kullanıcının gördüğü, Frontend sunucuda çalışır",
+        "Backend sunucuda çalışır ve veri işler, Frontend kullanıcı arayüzüdür",
+        "İkisi de aynı işi yapar",
+        "Backend sadece veritabanı işlemleri yapar"
+      ],
+      "correct_answer": "Backend sunucuda çalışır ve veri işler, Frontend kullanıcı arayüzüdür",
+      "explanation": "Backend sunucu tarafında iş mantığı, veritabanı işlemleri ve API'ler ile ilgilenir. Frontend ise kullanıcının tarayıcıda gördüğü arayüzdür."
+    },
+    {
+      "id": "be_u1_q2",
+      "question": "HTTP POST metodu ne için kullanılır?",
+      "options": [
+        "Veri okumak için",
+        "Yeni kayıt oluşturmak için",
+        "Kayıt silmek için",
+        "Sunucuyu kapatmak için"
+      ],
+      "correct_answer": "Yeni kayıt oluşturmak için",
+      "explanation": "POST metodu yeni kaynak oluşturmak için kullanılır. GET okumak, PUT güncellemek, DELETE silmek içindir."
+    },
+    {
+      "id": "be_u1_q3",
+      "question": "HTTP 401 status kodu ne anlama gelir?",
+      "options": [
+        "Sayfa bulunamadı",
+        "Sunucu hatası",
+        "Yetkilendirme gerekli (Unauthorized)",
+        "İstek başarılı"
+      ],
+      "correct_answer": "Yetkilendirme gerekli (Unauthorized)",
+      "explanation": "401 Unauthorized, kimlik doğrulama gerektiğini belirtir. 403 Forbidden ise kimlik doğrulandı ama yetki yok demektir."
+    },
+    {
+      "id": "be_u1_q4",
+      "question": "RESTful API'de '/users/123' endpoint'i ne yapar?",
+      "options": [
+        "123 kullanıcı oluşturur",
+        "ID'si 123 olan kullanıcıyı getirir",
+        "123 kullanıcı siler",
+        "Tüm kullanıcıları listeler"
+      ],
+      "correct_answer": "ID'si 123 olan kullanıcıyı getirir",
+      "explanation": "RESTful API'de /resource/{id} formatı tekil kaynak erişimi için kullanılır. GET /users/123 ID'si 123 olan kullanıcıyı getirir."
+    },
+    {
+      "id": "be_u1_q5",
+      "question": "JSON'da aşağıdakilerden hangisi geçerli bir veri tipidir?",
+      "options": [
+        "function",
+        "undefined",
+        "null",
+        "Date"
+      ],
+      "correct_answer": "null",
+      "explanation": "JSON veri tipleri: string, number, boolean, null, array, object. function, undefined ve Date JSON'da doğrudan desteklenmez."
+    },
+    {
+      "id": "be_u1_q6",
+      "question": "REST API tasarımında endpoint isimlendirmesi için doğru yaklaşım hangisidir?",
+      "options": [
+        "GET /getUsers",
+        "GET /users",
+        "POST /createUser",
+        "GET /user_list"
+      ],
+      "correct_answer": "GET /users",
+      "explanation": "RESTful API'de fiil kullanılmaz (method zaten fiildir), isimler çoğul ve küçük harf olmalıdır."
+    },
+    {
+      "id": "be_u1_q7",
+      "question": "HTTPS'in HTTP'den farkı nedir?",
+      "options": [
+        "Daha hızlıdır",
+        "Veri şifreli iletilir",
+        "Sadece GET istekleri destekler",
+        "Ücretsiz değildir"
+      ],
+      "correct_answer": "Veri şifreli iletilir",
+      "explanation": "HTTPS = HTTP + TLS/SSL. Veriler şifrelenerek iletilir, üçüncü kişiler okuyamaz."
+    },
+    {
+      "id": "be_u1_q8",
+      "question": "API'de pagination (sayfalama) için yaygın kullanılan query parametreleri hangileridir?",
+      "options": [
+        "start, end",
+        "page, limit",
+        "from, to",
+        "begin, count"
+      ],
+      "correct_answer": "page, limit",
+      "explanation": "Yaygın pagination parametreleri: page/limit, offset/limit, veya cursor-based. /users?page=2&limit=10 gibi kullanılır."
+    }
+  ],
+  "be_u2_n5": [
+    {
+      "id": "be_u2_q1",
+      "question": "Python'da değişken tanımlarken hangi anahtar kelime sabit (immutable) değer için kullanılır?",
+      "options": [
+        "let",
+        "var",
+        "const",
+        "Python'da const yoktur, convention olarak BÜYÜK_HARF kullanılır"
+      ],
+      "correct_answer": "Python'da const yoktur, convention olarak BÜYÜK_HARF kullanılır",
+      "explanation": "Python'da JavaScript gibi const yoktur. Sabit değerler convention olarak BUYUK_HARF ile yazılır ama teknik olarak değiştirilebilir."
+    },
+    {
+      "id": "be_u2_q2",
+      "question": "FastAPI'de path parametresi nasıl tanımlanır?",
+      "options": [
+        "@app.get('/users?id={id}')",
+        "@app.get('/users/{user_id}')",
+        "@app.get('/users/:user_id')",
+        "@app.get('/users/[id]')"
+      ],
+      "correct_answer": "@app.get('/users/{user_id}')",
+      "explanation": "FastAPI'de path parametreleri süslü parantez içinde tanımlanır: /users/{user_id}. Fonksiyon parametresiyle aynı isimde olmalıdır."
+    },
+    {
+      "id": "be_u2_q3",
+      "question": "Pydantic'in temel amacı nedir?",
+      "options": [
+        "Veritabanı işlemleri",
+        "Veri validasyonu ve serileştirme",
+        "HTTP istekleri göndermek",
+        "Dosya işlemleri"
+      ],
+      "correct_answer": "Veri validasyonu ve serileştirme",
+      "explanation": "Pydantic, Python'da tip güvenli veri modelleri oluşturur. Otomatik validasyon, serileştirme ve dokümantasyon sağlar."
+    },
+    {
+      "id": "be_u2_q4",
+      "question": "async/await ne için kullanılır?",
+      "options": [
+        "Senkron işlemler için",
+        "I/O işlemlerinde bloklama olmadan çalışmak için",
+        "Veritabanı bağlantısı için",
+        "Hata yönetimi için"
+      ],
+      "correct_answer": "I/O işlemlerinde bloklama olmadan çalışmak için",
+      "explanation": "async/await asenkron programlama için kullanılır. I/O işlemleri (network, disk) beklenirken diğer işler yapılabilir."
+    },
+    {
+      "id": "be_u2_q5",
+      "question": "FastAPI'de HTTPException ne için kullanılır?",
+      "options": [
+        "Veritabanı hatası yakalamak için",
+        "Özel HTTP hata yanıtı döndürmek için",
+        "Loglama için",
+        "Email göndermek için"
+      ],
+      "correct_answer": "Özel HTTP hata yanıtı döndürmek için",
+      "explanation": "HTTPException(status_code=404, detail='Not found') gibi kullanılarak özel hata mesajları ve status kodları döndürülür."
+    },
+    {
+      "id": "be_u2_q6",
+      "question": "Dependency Injection'ın faydası nedir?",
+      "options": [
+        "Kod tekrarını azaltır ve test edilebilirliği artırır",
+        "Uygulamayı yavaşlatır",
+        "Sadece büyük projelerde gereklidir",
+        "Güvenliği azaltır"
+      ],
+      "correct_answer": "Kod tekrarını azaltır ve test edilebilirliği artırır",
+      "explanation": "DI, bağımlılıkları merkezi yönetir. Kod tekrarı azalır, mock ile test kolay olur, bakım kolaylaşır."
+    },
+    {
+      "id": "be_u2_q7",
+      "question": "Python'da list comprehension'ın doğru kullanımı hangisidir?",
+      "options": [
+        "[x * 2 for x in range(5)]",
+        "for x in range(5): x * 2",
+        "[for x in range(5) x * 2]",
+        "list(x * 2, range(5))"
+      ],
+      "correct_answer": "[x * 2 for x in range(5)]",
+      "explanation": "List comprehension: [expression for item in iterable if condition]. Sonuç: [0, 2, 4, 6, 8]"
+    },
+    {
+      "id": "be_u2_q8",
+      "question": "FastAPI'de CORS middleware'i ne için kullanılır?",
+      "options": [
+        "Veritabanı bağlantısı için",
+        "Farklı origin'lerden gelen isteklere izin vermek için",
+        "Şifreleme için",
+        "Loglama için"
+      ],
+      "correct_answer": "Farklı origin'lerden gelen isteklere izin vermek için",
+      "explanation": "CORS (Cross-Origin Resource Sharing), farklı domain'lerden API'ye erişime izin verir. Frontend (localhost:3000) Backend'e (localhost:8000) istek atabilir."
+    }
+  ],
+  "be_u3_n5": [
+    {
+      "id": "be_u3_q1",
+      "question": "SQL'de tüm kayıtları getirmek için hangi komut kullanılır?",
+      "options": [
+        "GET * FROM users",
+        "SELECT * FROM users",
+        "FETCH * FROM users",
+        "READ * FROM users"
+      ],
+      "correct_answer": "SELECT * FROM users",
+      "explanation": "SELECT komutu veri okumak için kullanılır. * tüm kolonları, FROM tablo adını belirtir."
+    },
+    {
+      "id": "be_u3_q2",
+      "question": "PRIMARY KEY'in özelliği nedir?",
+      "options": [
+        "Tekrar edebilir",
+        "NULL olabilir",
+        "Benzersiz ve NULL olamaz",
+        "Sadece sayı olabilir"
+      ],
+      "correct_answer": "Benzersiz ve NULL olamaz",
+      "explanation": "PRIMARY KEY her satırı benzersiz tanımlar. UNIQUE + NOT NULL kombinasyonudur."
+    },
+    {
+      "id": "be_u3_q3",
+      "question": "INNER JOIN ne yapar?",
+      "options": [
+        "Sol tablodaki tüm kayıtları getirir",
+        "Sağ tablodaki tüm kayıtları getirir",
+        "Her iki tabloda da eşleşen kayıtları getirir",
+        "Tüm kayıtları birleştirir"
+      ],
+      "correct_answer": "Her iki tabloda da eşleşen kayıtları getirir",
+      "explanation": "INNER JOIN sadece her iki tabloda da eşleşme olan satırları döndürür. LEFT JOIN sol tablonun tamamını getirir."
+    },
+    {
+      "id": "be_u3_q4",
+      "question": "ORM'in açılımı ve amacı nedir?",
+      "options": [
+        "Object Relation Model - Nesne ilişkileri",
+        "Object-Relational Mapping - Veritabanı tablolarını Python sınıflarına bağlar",
+        "Online Resource Manager - Kaynak yönetimi",
+        "Object Request Module - İstek modülü"
+      ],
+      "correct_answer": "Object-Relational Mapping - Veritabanı tablolarını Python sınıflarına bağlar",
+      "explanation": "ORM, veritabanı tablolarını programlama dilindeki nesnelere eşler. SQL yazmadan veritabanı işlemleri yapılabilir."
+    },
+    {
+      "id": "be_u3_q5",
+      "question": "PostgreSQL'de JSONB tipinin JSON'dan farkı nedir?",
+      "options": [
+        "JSONB metin olarak saklar",
+        "JSONB binary format ile saklar ve sorgulama için optimize edilmiştir",
+        "Hiçbir farkı yoktur",
+        "JSONB sadece sayılar için kullanılır"
+      ],
+      "correct_answer": "JSONB binary format ile saklar ve sorgulama için optimize edilmiştir",
+      "explanation": "JSONB, JSON verisini binary formatta saklar. Index oluşturulabilir ve sorgulama çok daha hızlıdır."
+    },
+    {
+      "id": "be_u3_q6",
+      "question": "Database migration'ın amacı nedir?",
+      "options": [
+        "Verileri silmek",
+        "Veritabanı şemasını versiyon kontrolü ile yönetmek",
+        "Veritabanını başka sunucuya taşımak",
+        "Backup almak"
+      ],
+      "correct_answer": "Veritabanı şemasını versiyon kontrolü ile yönetmek",
+      "explanation": "Migration, şema değişikliklerini (tablo ekleme, kolon değiştirme) versiyon kontrolü altında tutar. Takımla senkronizasyon ve rollback sağlar."
+    },
+    {
+      "id": "be_u3_q7",
+      "question": "SQL Injection saldırısını önlemenin en iyi yolu nedir?",
+      "options": [
+        "Kullanıcı inputunu filtrelemek",
+        "Parameterized queries (prepared statements) kullanmak",
+        "HTTPS kullanmak",
+        "Veritabanını gizlemek"
+      ],
+      "correct_answer": "Parameterized queries (prepared statements) kullanmak",
+      "explanation": "Parameterized query'ler SQL ve veriyi ayırır. ORM kullanmak da bu korumayı otomatik sağlar."
+    },
+    {
+      "id": "be_u3_q8",
+      "question": "SQLAlchemy'de 'yield' keyword'ü dependency'de neden kullanılır?",
+      "options": [
+        "Performans için",
+        "Oturum (session) açıp işlem sonrası kapatmak için",
+        "Hata yakalamak için",
+        "Loglama için"
+      ],
+      "correct_answer": "Oturum (session) açıp işlem sonrası kapatmak için",
+      "explanation": "yield ile session oluşturulur, istek işlendikten sonra finally bloğunda session kapatılır. Kaynak yönetimi sağlar."
+    }
+  ],
+  "be_u4_n5": [
+    {
+      "id": "be_u4_q1",
+      "question": "Şifreleri neden hash'leyerek saklamamız gerekir?",
+      "options": [
+        "Daha az yer kaplar",
+        "Veritabanı sızarsa bile şifreler okunamaz",
+        "Daha hızlı login olur",
+        "Şifreler daha güzel görünür"
+      ],
+      "correct_answer": "Veritabanı sızarsa bile şifreler okunamaz",
+      "explanation": "Hash tek yönlüdür, geri döndürülemez. Veritabanı ele geçirilse bile gerçek şifreler görülemez."
+    },
+    {
+      "id": "be_u4_q2",
+      "question": "JWT'nin üç bileşeni nelerdir?",
+      "options": [
+        "Username, Password, Token",
+        "Header, Payload, Signature",
+        "ID, Name, Email",
+        "Public Key, Private Key, Hash"
+      ],
+      "correct_answer": "Header, Payload, Signature",
+      "explanation": "JWT: Header (algoritma), Payload (kullanıcı verisi), Signature (doğrulama imzası). Base64 ile encode edilir."
+    },
+    {
+      "id": "be_u4_q3",
+      "question": "Access Token ve Refresh Token arasındaki fark nedir?",
+      "options": [
+        "İkisi de aynıdır",
+        "Access Token kısa ömürlü API erişimi, Refresh Token uzun ömürlü yeni token almak için",
+        "Refresh Token API erişimi için kullanılır",
+        "Access Token daha güvenlidir"
+      ],
+      "correct_answer": "Access Token kısa ömürlü API erişimi, Refresh Token uzun ömürlü yeni token almak için",
+      "explanation": "Access Token (15-30 dk) API erişimi için, Refresh Token (7+ gün) yeni access token almak için kullanılır. Güvenlik dengesi sağlar."
+    },
+    {
+      "id": "be_u4_q4",
+      "question": "OAuth 2.0'da 'Authorization Code' akışında ilk adım nedir?",
+      "options": [
+        "Kullanıcı bilgilerini al",
+        "Access token oluştur",
+        "Kullanıcıyı OAuth provider'a (Google/GitHub) yönlendir",
+        "Veritabanına kaydet"
+      ],
+      "correct_answer": "Kullanıcıyı OAuth provider'a (Google/GitHub) yönlendir",
+      "explanation": "OAuth akışı: 1) Provider'a yönlendir, 2) Kullanıcı izin verir, 3) Code ile token al, 4) Token ile kullanıcı bilgisi al."
+    },
+    {
+      "id": "be_u4_q5",
+      "question": "Rate Limiting'in amacı nedir?",
+      "options": [
+        "API'yi hızlandırmak",
+        "DDoS ve brute force saldırılarını engellemek",
+        "Veritabanını optimize etmek",
+        "Kullanıcı deneyimini iyileştirmek"
+      ],
+      "correct_answer": "DDoS ve brute force saldırılarını engellemek",
+      "explanation": "Rate limiting, belirli sürede yapılabilecek istek sayısını sınırlar. Örn: 10 istek/dakika. Saldırıları ve kötüye kullanımı engeller."
+    },
+    {
+      "id": "be_u4_q6",
+      "question": "bcrypt'te 'rounds' (salt rounds) ne anlama gelir?",
+      "options": [
+        "Şifre uzunluğu",
+        "Hash işleminin tekrar sayısı (güvenlik seviyesi)",
+        "Kullanıcı sayısı",
+        "Veritabanı bağlantı sayısı"
+      ],
+      "correct_answer": "Hash işleminin tekrar sayısı (güvenlik seviyesi)",
+      "explanation": "Rounds (work factor) hash hesaplama maliyetini belirler. Yüksek değer = daha güvenli ama daha yavaş. Önerilen: 12+"
+    },
+    {
+      "id": "be_u4_q7",
+      "question": "401 Unauthorized ve 403 Forbidden arasındaki fark nedir?",
+      "options": [
+        "İkisi de aynı anlama gelir",
+        "401: Kimlik doğrulama gerekli, 403: Kimlik doğru ama yetki yok",
+        "403: Kimlik doğrulama gerekli, 401: Yetki yok",
+        "401 daha ciddi bir hatadır"
+      ],
+      "correct_answer": "401: Kimlik doğrulama gerekli, 403: Kimlik doğru ama yetki yok",
+      "explanation": "401: Kim olduğunu bilmiyorum, giriş yap. 403: Kim olduğunu biliyorum ama bu işleme yetkin yok."
+    },
+    {
+      "id": "be_u4_q8",
+      "question": "XSS (Cross-Site Scripting) saldırısı nedir?",
+      "options": [
+        "SQL veritabanına saldırı",
+        "Kötü amaçlı script'in web sayfasına enjekte edilmesi",
+        "Sunucuyu çökertme",
+        "Şifre kırma"
+      ],
+      "correct_answer": "Kötü amaçlı script'in web sayfasına enjekte edilmesi",
+      "explanation": "XSS'te saldırgan zararlı JavaScript kodu enjekte eder. Önlem: Input sanitization, Content-Security-Policy header."
+    }
+  ],
+  "be_u5_n4": [
+    {
+      "id": "be_u5_q1",
+      "question": "Docker'da Image ve Container arasındaki fark nedir?",
+      "options": [
+        "İkisi de aynıdır",
+        "Image şablon (read-only), Container çalışan örnek",
+        "Container şablon, Image çalışan örnek",
+        "Image sadece Linux'ta çalışır"
+      ],
+      "correct_answer": "Image şablon (read-only), Container çalışan örnek",
+      "explanation": "Image bir blueprint (tarif), Container ise bu tariften oluşturulan çalışan instance'tır. Bir image'dan birden fazla container oluşturulabilir."
+    },
+    {
+      "id": "be_u5_q2",
+      "question": "Dockerfile'da 'COPY requirements.txt .' neden 'COPY . .' dan önce yazılır?",
+      "options": [
+        "Sıra önemli değil",
+        "Docker layer caching için, bağımlılıklar değişmediyse tekrar indirilmez",
+        "Güvenlik için",
+        "Hata önlemek için"
+      ],
+      "correct_answer": "Docker layer caching için, bağımlılıklar değişmediyse tekrar indirilmez",
+      "explanation": "Docker her satırı layer olarak cache'ler. requirements.txt değişmediyse pip install adımı cache'ten gelir, build hızlanır."
+    },
+    {
+      "id": "be_u5_q3",
+      "question": "Docker Compose ne için kullanılır?",
+      "options": [
+        "Tek container çalıştırmak için",
+        "Birden fazla container'ı birlikte yönetmek için",
+        "Image oluşturmak için",
+        "Container silmek için"
+      ],
+      "correct_answer": "Birden fazla container'ı birlikte yönetmek için",
+      "explanation": "Docker Compose, web + database + redis gibi birden fazla servisi tek komutla (docker-compose up) başlatır ve yönetir."
+    },
+    {
+      "id": "be_u5_q4",
+      "question": "Vercel'in avantajı nedir?",
+      "options": [
+        "Sadece backend için kullanılır",
+        "Otomatik CI/CD, serverless functions, ücretsiz tier",
+        "Sadece ücretli",
+        "Sadece Docker destekler"
+      ],
+      "correct_answer": "Otomatik CI/CD, serverless functions, ücretsiz tier",
+      "explanation": "Vercel: Git push ile otomatik deploy, serverless API routes, edge network, cömert ücretsiz tier. Next.js için optimize."
+    },
+    {
+      "id": "be_u5_q5",
+      "question": "Environment variable'lar neden .env dosyasında tutulur?",
+      "options": [
+        "Daha hızlı çalışır",
+        "Hassas bilgileri (API key, şifre) kod dışında tutmak için",
+        "Daha az yer kaplar",
+        "Zorunludur"
+      ],
+      "correct_answer": "Hassas bilgileri (API key, şifre) kod dışında tutmak için",
+      "explanation": ".env dosyası git'e commit edilmez (.gitignore). Hassas bilgiler kodda hardcode edilmez, ortama göre değişir."
+    },
+    {
+      "id": "be_u5_q6",
+      "question": "CI/CD'nin açılımı ve amacı nedir?",
+      "options": [
+        "Code Integration / Code Delivery",
+        "Continuous Integration / Continuous Deployment - Otomatik test ve deploy",
+        "Container Integration / Container Delivery",
+        "Cloud Integration / Cloud Deployment"
+      ],
+      "correct_answer": "Continuous Integration / Continuous Deployment - Otomatik test ve deploy",
+      "explanation": "CI: Her commit'te otomatik test. CD: Testler geçerse otomatik deploy. GitHub Actions, GitLab CI vb. araçlarla yapılır."
+    },
+    {
+      "id": "be_u5_q7",
+      "question": "Health check endpoint'i (/health) ne için kullanılır?",
+      "options": [
+        "Kullanıcı girişi için",
+        "Uygulamanın çalışır durumda olduğunu kontrol etmek için",
+        "Veritabanı backup'ı için",
+        "Loglama için"
+      ],
+      "correct_answer": "Uygulamanın çalışır durumda olduğunu kontrol etmek için",
+      "explanation": "Load balancer ve monitoring araçları /health endpoint'ini kontrol eder. Uygulama ve bağımlılıkların (DB) durumunu raporlar."
+    },
+    {
+      "id": "be_u5_q8",
+      "question": "Backend API'de loglama neden önemlidir?",
+      "options": [
+        "Performansı artırır",
+        "Hata ayıklama, monitoring ve audit trail için",
+        "Kullanıcı deneyimi için",
+        "Zorunlu değildir"
+      ],
+      "correct_answer": "Hata ayıklama, monitoring ve audit trail için",
+      "explanation": "Loglar üretimde hata bulmak, performans sorunlarını tespit etmek ve güvenlik olaylarını takip etmek için kritiktir."
+    }
+  ],
+  "fs_u1_n4": [
+    {
+      "id": "fs_u1_q1",
+      "question": "MERN stack'te 'M' harfi neyi temsil eder?",
+      "options": ["MySQL", "MongoDB", "MariaDB", "Microsoft SQL"],
+      "correct_answer": "MongoDB",
+      "explanation": "MERN: MongoDB, Express, React, Node.js. MongoDB NoSQL doküman veritabanıdır."
+    },
+    {
+      "id": "fs_u1_q2",
+      "question": "Monolitik mimarinin dezavantajı nedir?",
+      "options": ["Basit deployment", "Kolay başlangıç", "Ölçekleme zorluğu", "Tek veritabanı"],
+      "correct_answer": "Ölçekleme zorluğu",
+      "explanation": "Monolitik yapıda tüm uygulama birlikte ölçeklenir, bağımsız parçaları ayrı ölçekleyemezsin."
+    },
+    {
+      "id": "fs_u1_q3",
+      "question": "GraphQL'in REST'e göre avantajı nedir?",
+      "options": ["Daha basit", "Sadece istediğin veriyi alırsın", "Daha hızlı", "Daha güvenli"],
+      "correct_answer": "Sadece istediğin veriyi alırsın",
+      "explanation": "GraphQL ile client tam olarak hangi field'ları istediğini belirtir, over-fetching olmaz."
+    },
+    {
+      "id": "fs_u1_q4",
+      "question": "Mikroservis mimarisinde servisler arası iletişim nasıl sağlanır?",
+      "options": ["Shared memory", "HTTP/REST veya Message Queue", "Doğrudan fonksiyon çağrısı", "Global değişkenler"],
+      "correct_answer": "HTTP/REST veya Message Queue",
+      "explanation": "Mikroservisler bağımsızdır, HTTP API veya RabbitMQ/Kafka gibi message broker ile iletişir."
+    }
+  ],
+  "fs_u2_n4": [
+    {
+      "id": "fs_u2_q1",
+      "question": "Node.js'te Event Loop ne yapar?",
+      "options": ["Kod derler", "Async işlemleri yönetir", "Bellek temizler", "Network bağlantısı kurar"],
+      "correct_answer": "Async işlemleri yönetir",
+      "explanation": "Event Loop, non-blocking I/O işlemlerini yönetir ve callback'leri çalıştırır."
+    },
+    {
+      "id": "fs_u2_q2",
+      "question": "Express.js'te middleware'in amacı nedir?",
+      "options": ["Veritabanına bağlanmak", "Request/response arasında işlem yapmak", "HTML render etmek", "CSS işlemek"],
+      "correct_answer": "Request/response arasında işlem yapmak",
+      "explanation": "Middleware, her request'te çalışan ara katmandır: loglama, auth, validation vb."
+    },
+    {
+      "id": "fs_u2_q3",
+      "question": "Express'te route parametresi nasıl alınır?",
+      "options": ["req.query.id", "req.params.id", "req.body.id", "req.headers.id"],
+      "correct_answer": "req.params.id",
+      "explanation": "/users/:id route'unda req.params.id ile parametre alınır. query string için req.query kullanılır."
+    },
+    {
+      "id": "fs_u2_q4",
+      "question": "MVC pattern'de Controller ne yapar?",
+      "options": ["Veri saklar", "Görünüm render eder", "İş mantığını yönetir ve Model/View arasında köprü kurar", "Sadece routing yapar"],
+      "correct_answer": "İş mantığını yönetir ve Model/View arasında köprü kurar",
+      "explanation": "Controller request'i alır, Model ile veri işler ve uygun response döner."
+    }
+  ],
+  "fs_u3_n4": [
+    {
+      "id": "fs_u3_q1",
+      "question": "MongoDB'de SQL'deki 'table' karşılığı nedir?",
+      "options": ["Document", "Collection", "Field", "Schema"],
+      "correct_answer": "Collection",
+      "explanation": "SQL: Table → MongoDB: Collection. SQL: Row → MongoDB: Document."
+    },
+    {
+      "id": "fs_u3_q2",
+      "question": "Mongoose'da Schema ne için kullanılır?",
+      "options": ["Bağlantı kurmak", "Veri yapısını ve validasyonunu tanımlamak", "Query çalıştırmak", "Index oluşturmak"],
+      "correct_answer": "Veri yapısını ve validasyonunu tanımlamak",
+      "explanation": "Schema, document yapısını, field tiplerini ve validasyon kurallarını tanımlar."
+    },
+    {
+      "id": "fs_u3_q3",
+      "question": "Mongoose populate() ne yapar?",
+      "options": ["Veri ekler", "Referans edilen dokümanı getirir", "Veri siler", "Index oluşturur"],
+      "correct_answer": "Referans edilen dokümanı getirir",
+      "explanation": "populate() ObjectId referansını gerçek doküman verisiyle değiştirir (SQL JOIN benzeri)."
+    },
+    {
+      "id": "fs_u3_q4",
+      "question": "MongoDB'de embedded vs reference ne zaman tercih edilir?",
+      "options": ["Her zaman embedded", "Her zaman reference", "Az değişen ve birlikte okunan veri için embedded", "Performans için reference"],
+      "correct_answer": "Az değişen ve birlikte okunan veri için embedded",
+      "explanation": "Embedded: 1:few, birlikte okunan. Reference: many:many, bağımsız değişen veriler için."
+    }
+  ],
+  "fs_u4_n4": [
+    {
+      "id": "fs_u4_q1",
+      "question": "React useEffect'te boş dependency array [] ne anlama gelir?",
+      "options": ["Her render'da çalışır", "Sadece mount'ta çalışır", "Hiç çalışmaz", "State değiştiğinde çalışır"],
+      "correct_answer": "Sadece mount'ta çalışır",
+      "explanation": "[] = componentDidMount benzeri, sadece ilk render'da çalışır. Dependency yoksa tekrar çalışmaz."
+    },
+    {
+      "id": "fs_u4_q2",
+      "question": "React Query'nin avantajı nedir?",
+      "options": ["Daha hızlı render", "Otomatik caching, refetching ve error handling", "Daha az kod yazma", "Sadece GraphQL için"],
+      "correct_answer": "Otomatik caching, refetching ve error handling",
+      "explanation": "React Query server state yönetimini kolaylaştırır: cache, background refetch, error retry vb."
+    },
+    {
+      "id": "fs_u4_q3",
+      "question": "Zustand'ın Context API'ye göre avantajı nedir?",
+      "options": ["Daha karmaşık", "Boilerplate az, re-render optimize", "React'a dahil", "Sadece büyük projeler için"],
+      "correct_answer": "Boilerplate az, re-render optimize",
+      "explanation": "Zustand minimal API sunar ve selector ile sadece kullanılan state değiştiğinde re-render olur."
+    },
+    {
+      "id": "fs_u4_q4",
+      "question": "useMutation ne zaman kullanılır?",
+      "options": ["Veri okumak için", "Veri değiştirmek (create/update/delete) için", "State tanımlamak için", "Routing için"],
+      "correct_answer": "Veri değiştirmek (create/update/delete) için",
+      "explanation": "useMutation POST/PUT/DELETE işlemleri için, useQuery ise GET için kullanılır."
+    }
+  ],
+  "fs_u5_n3": [
+    {
+      "id": "fs_u5_q1",
+      "question": "Full Stack uygulamada JWT nerede saklanmalı?",
+      "options": ["URL'de", "localStorage veya httpOnly cookie", "Global değişkende", "README'de"],
+      "correct_answer": "localStorage veya httpOnly cookie",
+      "explanation": "localStorage kolay ama XSS riski var. httpOnly cookie daha güvenli ama CSRF koruması gerekir."
+    },
+    {
+      "id": "fs_u5_q2",
+      "question": "Protected route ne demektir?",
+      "options": ["HTTPS kullanan route", "Sadece giriş yapmış kullanıcıların erişebildiği sayfa", "Admin paneli", "API endpoint"],
+      "correct_answer": "Sadece giriş yapmış kullanıcıların erişebildiği sayfa",
+      "explanation": "Protected route, auth kontrolü yaparak yetkisiz kullanıcıları login sayfasına yönlendirir."
+    },
+    {
+      "id": "fs_u5_q3",
+      "question": "CORS hatası neden oluşur?",
+      "options": ["Server çöktüğünde", "Frontend ve backend farklı origin'de olduğunda", "Database bağlantı hatası", "Syntax error"],
+      "correct_answer": "Frontend ve backend farklı origin'de olduğunda",
+      "explanation": "Tarayıcı güvenliği: localhost:3000'dan localhost:8000'e istek CORS header olmadan engellenir."
+    },
+    {
+      "id": "fs_u5_q4",
+      "question": "Full Stack projede environment variable neden kullanılır?",
+      "options": ["Performans için", "Hassas bilgileri (API key, DB URL) koddan ayırmak için", "Daha az kod yazmak için", "Zorunlu değil"],
+      "correct_answer": "Hassas bilgileri (API key, DB URL) koddan ayırmak için",
+      "explanation": ".env dosyası git'e commit edilmez, production/development için farklı değerler kullanılabilir."
+    }
+  ],
+  "cs_u1_n4": [
+    {
+      "id": "cs_u1_q1",
+      "question": "CIA üçgeninde 'I' neyi temsil eder?",
+      "options": ["Internet", "Integrity (Bütünlük)", "Information", "Input"],
+      "correct_answer": "Integrity (Bütünlük)",
+      "explanation": "CIA: Confidentiality (Gizlilik), Integrity (Bütünlük), Availability (Erişilebilirlik)."
+    },
+    {
+      "id": "cs_u1_q2",
+      "question": "Firewall ne yapar?",
+      "options": ["Virüs temizler", "Ağ trafiğini filtreler", "Şifre kırar", "Veri yedekler"],
+      "correct_answer": "Ağ trafiğini filtreler",
+      "explanation": "Firewall, tanımlanan kurallara göre gelen/giden trafiği allow/deny eder."
+    },
+    {
+      "id": "cs_u1_q3",
+      "question": "Hash fonksiyonunun özelliği nedir?",
+      "options": ["İki yönlü", "Tek yönlü, geri döndürülemez", "Şifreleme yapar", "Sıkıştırma yapar"],
+      "correct_answer": "Tek yönlü, geri döndürülemez",
+      "explanation": "Hash tek yönlüdür. Aynı input her zaman aynı output verir ama output'tan input bulunamaz."
+    },
+    {
+      "id": "cs_u1_q4",
+      "question": "Red Team ne yapar?",
+      "options": ["Sistemi savunur", "Saldırgan rolü ile zafiyet bulur", "Log analizi yapar", "Backup alır"],
+      "correct_answer": "Saldırgan rolü ile zafiyet bulur",
+      "explanation": "Red Team saldırgan perspektifinden test yapar. Blue Team savunma, Purple Team koordinasyondur."
+    }
+  ],
+  "cs_u2_n4": [
+    {
+      "id": "cs_u2_q1",
+      "question": "SQL Injection'ı önlemenin en iyi yolu nedir?",
+      "options": ["Input filtreleme", "Prepared statements / Parameterized queries", "HTTPS", "Firewall"],
+      "correct_answer": "Prepared statements / Parameterized queries",
+      "explanation": "Prepared statement SQL ve veriyi ayırır, kullanıcı inputu kod olarak çalışamaz."
+    },
+    {
+      "id": "cs_u2_q2",
+      "question": "XSS saldırısının amacı nedir?",
+      "options": ["Veritabanına erişmek", "Kullanıcının tarayıcısında kod çalıştırmak", "Sunucuyu çökertmek", "Dosya silmek"],
+      "correct_answer": "Kullanıcının tarayıcısında kod çalıştırmak",
+      "explanation": "XSS ile saldırgan zararlı JavaScript çalıştırır: cookie çalma, keylogger, sahte form vb."
+    },
+    {
+      "id": "cs_u2_q3",
+      "question": "CSRF token ne için kullanılır?",
+      "options": ["Şifreleme için", "Yetkisiz form submission önlemek için", "Loglama için", "Cache için"],
+      "correct_answer": "Yetkisiz form submission önlemek için",
+      "explanation": "CSRF token, isteğin gerçekten uygulamadan geldiğini doğrular, başka siteden gelen sahte istekleri engeller."
+    },
+    {
+      "id": "cs_u2_q4",
+      "question": "OWASP Top 10'da A01 (Broken Access Control) ne demektir?",
+      "options": ["SQL Injection", "Kullanıcının yetkisi olmayan kaynaklara erişebilmesi", "XSS", "CSRF"],
+      "correct_answer": "Kullanıcının yetkisi olmayan kaynaklara erişebilmesi",
+      "explanation": "Örnek: /api/users/123 yerine /api/users/456 yazarak başkasının verisine erişmek (IDOR)."
+    }
+  ],
+  "cs_u3_n4": [
+    {
+      "id": "cs_u3_q1",
+      "question": "Penetrasyon testinde ilk aşama hangisidir?",
+      "options": ["Exploitation", "Scanning", "Reconnaissance", "Reporting"],
+      "correct_answer": "Reconnaissance",
+      "explanation": "Recon: Bilgi toplama. Sonra scanning, exploitation, maintaining, reporting gelir."
+    },
+    {
+      "id": "cs_u3_q2",
+      "question": "Nmap ne için kullanılır?",
+      "options": ["Web proxy", "Port tarama", "Password cracking", "Packet sniffing"],
+      "correct_answer": "Port tarama",
+      "explanation": "Nmap açık portları, servisleri ve versiyonları tespit eden en yaygın port scanner'dır."
+    },
+    {
+      "id": "cs_u3_q3",
+      "question": "Burp Suite ne tür bir araçtır?",
+      "options": ["Antivirus", "Web application security testing proxy", "Firewall", "VPN"],
+      "correct_answer": "Web application security testing proxy",
+      "explanation": "Burp Suite HTTP trafiğini yakalayıp değiştirmeye, web uygulamalarını test etmeye yarar."
+    },
+    {
+      "id": "cs_u3_q4",
+      "question": "CTF'te 'flag' ne demektir?",
+      "options": ["Yarışma kuralı", "Bulunması gereken gizli metin/kod", "Takım adı", "Puan tablosu"],
+      "correct_answer": "Bulunması gereken gizli metin/kod",
+      "explanation": "Flag genellikle flag{...} formatında, challenge çözüldüğünde bulunan gizli metindir."
+    }
+  ],
+  "cs_u4_n4": [
+    {
+      "id": "cs_u4_q1",
+      "question": "Şifre saklamak için hangi yöntem kullanılmalı?",
+      "options": ["Plaintext", "MD5 hash", "Base64 encoding", "bcrypt/argon2 hash + salt"],
+      "correct_answer": "bcrypt/argon2 hash + salt",
+      "explanation": "bcrypt/argon2 yavaş hash algoritmalarıdır, salt ile rainbow table saldırılarına karşı korur."
+    },
+    {
+      "id": "cs_u4_q2",
+      "question": "Input validation'da whitelist yaklaşımı ne demektir?",
+      "options": ["Tüm inputu kabul et", "Sadece izin verilen karakterleri kabul et", "Tüm inputu reddet", "Input uzunluğunu kontrol et"],
+      "correct_answer": "Sadece izin verilen karakterleri kabul et",
+      "explanation": "Whitelist: Sadece izin verilenler geçer. Blacklist'ten daha güvenlidir çünkü bilinmeyenler engellenir."
+    },
+    {
+      "id": "cs_u4_q3",
+      "question": "MFA (Multi-Factor Authentication) neden önemlidir?",
+      "options": ["Daha hızlı giriş", "Şifre ele geçirilse bile ikinci faktör gerekir", "Kullanıcı deneyimi için", "Yasal zorunluluk"],
+      "correct_answer": "Şifre ele geçirilse bile ikinci faktör gerekir",
+      "explanation": "MFA ile saldırgan şifreyi bilse bile telefon/TOTP gibi ikinci faktör olmadan giremez."
+    },
+    {
+      "id": "cs_u4_q4",
+      "question": "Session hijacking'i önlemek için hangi cookie flag'i kullanılmalı?",
+      "options": ["Secure", "HttpOnly", "SameSite", "Hepsi"],
+      "correct_answer": "Hepsi",
+      "explanation": "Secure: HTTPS gerektirir. HttpOnly: JS erişimini engeller. SameSite: CSRF'e karşı korur."
+    }
+  ],
+  "gd_u1_n4": [
+    {
+      "id": "gd_u1_q1",
+      "question": "Unity'de hangi programlama dili kullanılır?",
+      "options": ["Python", "C++", "C#", "Java"],
+      "correct_answer": "C#",
+      "explanation": "Unity'nin ana programlama dili C#'tır. Unreal Engine ise C++ ve Blueprint kullanır."
+    },
+    {
+      "id": "gd_u1_q2",
+      "question": "Game Loop'un üç temel adımı nelerdir?",
+      "options": ["Load, Save, Exit", "Input, Update, Render", "Start, Stop, Pause", "Create, Destroy, Repeat"],
+      "correct_answer": "Input, Update, Render",
+      "explanation": "Her frame: Input al, oyun durumunu güncelle, ekrana çiz."
+    },
+    {
+      "id": "gd_u1_q3",
+      "question": "Unity'de Update() metodu ne zaman çağrılır?",
+      "options": ["Sadece başlangıçta", "Her frame", "Sadece çarpışmada", "Her saniye"],
+      "correct_answer": "Her frame",
+      "explanation": "Update() her frame çağrılır. FixedUpdate() fizik için sabit aralıkla çağrılır."
+    },
+    {
+      "id": "gd_u1_q4",
+      "question": "Prefab ne için kullanılır?",
+      "options": ["Ses dosyası", "Yeniden kullanılabilir nesne şablonu", "Script dosyası", "Sahne dosyası"],
+      "correct_answer": "Yeniden kullanılabilir nesne şablonu",
+      "explanation": "Prefab, önceden yapılandırılmış GameObject şablonudur. Düşman, mermi gibi tekrarlanan nesneler için kullanılır."
+    }
+  ],
+  "gd_u2_n4": [
+    {
+      "id": "gd_u2_q1",
+      "question": "Sprite Renderer'da flipX ne yapar?",
+      "options": ["Sprite'ı döndürür", "Sprite'ı yatay olarak aynalar", "Sprite'ı büyütür", "Sprite'ı siler"],
+      "correct_answer": "Sprite'ı yatay olarak aynalar",
+      "explanation": "flipX=true sprite'ı X ekseninde aynalar. Karakter yön değiştirme için kullanılır."
+    },
+    {
+      "id": "gd_u2_q2",
+      "question": "OnTriggerEnter2D ne zaman çağrılır?",
+      "options": ["Her frame", "Collider'a çarpışma olduğunda (isTrigger=true)", "Oyun başladığında", "Nesne yok edildiğinde"],
+      "correct_answer": "Collider'a çarpışma olduğunda (isTrigger=true)",
+      "explanation": "Trigger collider'lar fiziksel çarpışma yapmaz ama event tetikler. Coin toplama gibi durumlar için."
+    },
+    {
+      "id": "gd_u2_q3",
+      "question": "Rigidbody2D.AddForce() ile ForceMode2D.Impulse arasındaki fark nedir?",
+      "options": ["Fark yok", "Impulse anlık kuvvet, Force sürekli kuvvet", "Impulse 3D için, Force 2D için", "Impulse yavaş, Force hızlı"],
+      "correct_answer": "Impulse anlık kuvvet, Force sürekli kuvvet",
+      "explanation": "Impulse tek seferde tüm kuvveti uygular (zıplama). Force zamanla uygular (itme)."
+    },
+    {
+      "id": "gd_u2_q4",
+      "question": "Tilemap ne için kullanılır?",
+      "options": ["3D modelleme", "2D level tasarımı için tile-based harita oluşturma", "Ses efektleri", "Animasyon"],
+      "correct_answer": "2D level tasarımı için tile-based harita oluşturma",
+      "explanation": "Tilemap ile küçük tile parçalarından büyük haritalar oluşturulur. Platform, zemin, duvar vb."
+    }
+  ],
+  "gd_u3_n4": [
+    {
+      "id": "gd_u3_q1",
+      "question": "Unity'de hangi eksen yukarıyı temsil eder?",
+      "options": ["X", "Y", "Z", "W"],
+      "correct_answer": "Y",
+      "explanation": "Unity'de Y yukarı, X sağa, Z ileri yönü temsil eder."
+    },
+    {
+      "id": "gd_u3_q2",
+      "question": "CharacterController ve Rigidbody arasındaki fark nedir?",
+      "options": ["Fark yok", "CharacterController fizik motoru kullanmaz, daha kontrollü hareket", "Rigidbody daha yavaş", "CharacterController sadece 2D"],
+      "correct_answer": "CharacterController fizik motoru kullanmaz, daha kontrollü hareket",
+      "explanation": "CharacterController manuel hareket kontrolü sağlar. Rigidbody fizik motoruna bağlıdır."
+    },
+    {
+      "id": "gd_u3_q3",
+      "question": "NavMesh ne için kullanılır?",
+      "options": ["Ağ bağlantısı", "AI pathfinding (yol bulma)", "Mesh render", "Collision detection"],
+      "correct_answer": "AI pathfinding (yol bulma)",
+      "explanation": "NavMesh yürünebilir alanları tanımlar, NavMeshAgent bu alan üzerinde otomatik yol bulur."
+    },
+    {
+      "id": "gd_u3_q4",
+      "question": "LateUpdate() ne zaman kullanılır?",
+      "options": ["Fizik hesaplamaları için", "Kamera takibi için (tüm Update'lerden sonra)", "Input için", "UI için"],
+      "correct_answer": "Kamera takibi için (tüm Update'lerden sonra)",
+      "explanation": "LateUpdate() tüm Update()'ler bittikten sonra çalışır. Kamera, karakter hareket ettikten sonra takip eder."
+    }
+  ],
+  "gd_u4_n4": [
+    {
+      "id": "gd_u4_q1",
+      "question": "Unity'de PlayerPrefs ne için kullanılır?",
+      "options": ["Player ayarları editörde", "Basit veri kaydetme (key-value)", "Multiplayer", "Physics ayarları"],
+      "correct_answer": "Basit veri kaydetme (key-value)",
+      "explanation": "PlayerPrefs basit veriler (high score, volume) için. Kompleks veri için JSON/Binary serialization kullan."
+    },
+    {
+      "id": "gd_u4_q2",
+      "question": "Canvas'ın 'Screen Space - Overlay' modu ne demektir?",
+      "options": ["3D dünyada UI", "UI her zaman ekranın üstünde, kameradan bağımsız", "UI kamera efektlerinden etkilenir", "UI sadece editörde görünür"],
+      "correct_answer": "UI her zaman ekranın üstünde, kameradan bağımsız",
+      "explanation": "Overlay: UI her zaman en üstte. Camera: Post-processing etkilenir. World Space: 3D'de UI."
+    },
+    {
+      "id": "gd_u4_q3",
+      "question": "Object Pooling ne için kullanılır?",
+      "options": ["Su efektleri için", "Nesne oluşturma/yok etme yerine yeniden kullanım ile performans optimizasyonu", "Multiplayer sync", "Ses yönetimi"],
+      "correct_answer": "Nesne oluşturma/yok etme yerine yeniden kullanım ile performans optimizasyonu",
+      "explanation": "Instantiate/Destroy pahalıdır. Pool'dan al, işi bitince pool'a geri koy. Mermi, düşman için ideal."
+    },
+    {
+      "id": "gd_u4_q4",
+      "question": "SceneManager.LoadScene() ne yapar?",
+      "options": ["Dosya yükler", "Yeni sahne/level yükler", "Asset import eder", "Prefab oluşturur"],
+      "correct_answer": "Yeni sahne/level yükler",
+      "explanation": "SceneManager ile sahne geçişi yapılır: menü → oyun → game over gibi."
+    }
+  ],
+  "ios_u1_n4": [
+    {
+      "id": "ios_u1_q1",
+      "question": "Swift'te 'let' ile tanımlanan değişken ne anlama gelir?",
+      "options": ["Değiştirilebilir değişken", "Sabit (immutable)", "Nullable değişken", "Global değişken"],
+      "correct_answer": "Sabit (immutable)",
+      "explanation": "let sabit, var değiştirilebilir değişken tanımlar."
+    },
+    {
+      "id": "ios_u1_q2",
+      "question": "Swift'te optional unwrapping için hangisi kullanılır?",
+      "options": ["! veya if let", "& operatörü", "@ işareti", "# pragma"],
+      "correct_answer": "! veya if let",
+      "explanation": "Force unwrap (!) veya optional binding (if let, guard let) kullanılır."
+    },
+    {
+      "id": "ios_u1_q3",
+      "question": "Closure nedir?",
+      "options": ["Sınıf türü", "Anonim fonksiyon bloğu", "Döngü türü", "Hata yakalama"],
+      "correct_answer": "Anonim fonksiyon bloğu",
+      "explanation": "Closure, ismi olmayan ve değişkene atanabilen fonksiyon bloklarıdır."
+    }
+  ],
+  "ios_u2_n4": [
+    {
+      "id": "ios_u2_q1",
+      "question": "SwiftUI'da @State ne için kullanılır?",
+      "options": ["API çağrısı", "View'ın yerel state yönetimi", "Navigation", "Animasyon"],
+      "correct_answer": "View'ın yerel state yönetimi",
+      "explanation": "@State, view'ın sahip olduğu ve değiştiğinde UI'ı güncelleyen state için kullanılır."
+    },
+    {
+      "id": "ios_u2_q2",
+      "question": "VStack ne yapar?",
+      "options": ["Yatay düzen", "Dikey düzen", "Üst üste düzen", "Grid düzen"],
+      "correct_answer": "Dikey düzen",
+      "explanation": "VStack dikey, HStack yatay, ZStack üst üste düzen sağlar."
+    },
+    {
+      "id": "ios_u2_q3",
+      "question": "@Binding ne için kullanılır?",
+      "options": ["Veritabanı bağlantısı", "Child view'dan parent state'e erişim", "API binding", "Animasyon"],
+      "correct_answer": "Child view'dan parent state'e erişim",
+      "explanation": "@Binding, child view'ın parent'ın state'ini okuyup değiştirmesini sağlar."
+    }
+  ],
+  "and_u1_n4": [
+    {
+      "id": "and_u1_q1",
+      "question": "Kotlin'de val ve var arasındaki fark nedir?",
+      "options": ["İkisi de aynı", "val immutable, var mutable", "var immutable, val mutable", "val sadece sayılar için"],
+      "correct_answer": "val immutable, var mutable",
+      "explanation": "val değiştirilemez (read-only), var değiştirilebilir değişken tanımlar."
+    },
+    {
+      "id": "and_u1_q2",
+      "question": "Kotlin'de null safety nasıl sağlanır?",
+      "options": ["try-catch ile", "? ve !! operatörleri ile", "null keyword ile", "void ile"],
+      "correct_answer": "? ve !! operatörleri ile",
+      "explanation": "? nullable tip, ?. safe call, ?: elvis operator, !! force unwrap sağlar."
+    },
+    {
+      "id": "and_u1_q3",
+      "question": "Data class ne sağlar?",
+      "options": ["Sadece veri tutma", "equals, hashCode, toString, copy otomatik üretimi", "Veritabanı bağlantısı", "UI component"],
+      "correct_answer": "equals, hashCode, toString, copy otomatik üretimi",
+      "explanation": "Data class, veri sınıfları için gereken metotları otomatik üretir."
+    }
+  ],
+  "and_u2_n4": [
+    {
+      "id": "and_u2_q1",
+      "question": "Jetpack Compose'da remember ne için kullanılır?",
+      "options": ["Veritabanı işlemleri", "State'i recomposition'lar arasında koruma", "Navigation", "API çağrısı"],
+      "correct_answer": "State'i recomposition'lar arasında koruma",
+      "explanation": "remember, composable yeniden çizildiğinde state'in kaybolmamasını sağlar."
+    },
+    {
+      "id": "and_u2_q2",
+      "question": "Modifier.fillMaxWidth() ne yapar?",
+      "options": ["Yüksekliği doldurur", "Genişliği maksimum yapar", "Padding ekler", "Renk değiştirir"],
+      "correct_answer": "Genişliği maksimum yapar",
+      "explanation": "fillMaxWidth parent'ın genişliğini tamamen doldurur."
+    },
+    {
+      "id": "and_u2_q3",
+      "question": "LazyColumn ne için kullanılır?",
+      "options": ["Statik liste", "Performanslı uzun liste (RecyclerView benzeri)", "Yatay liste", "Grid layout"],
+      "correct_answer": "Performanslı uzun liste (RecyclerView benzeri)",
+      "explanation": "LazyColumn sadece görünen öğeleri render eder, uzun listeler için idealdir."
+    }
+  ],
+  "cp_u1_n4": [
+    {
+      "id": "cp_u1_q1",
+      "question": "React Native'de StyleSheet.create() ne için kullanılır?",
+      "options": ["Component oluşturma", "Stil tanımlama ve optimizasyon", "Navigation", "State yönetimi"],
+      "correct_answer": "Stil tanımlama ve optimizasyon",
+      "explanation": "StyleSheet.create stilleri optimize eder ve performans artırır."
+    },
+    {
+      "id": "cp_u1_q2",
+      "question": "FlatList ile ScrollView arasındaki fark nedir?",
+      "options": ["Aynı şey", "FlatList lazy loading yapar", "ScrollView daha hızlı", "FlatList sadece yatay"],
+      "correct_answer": "FlatList lazy loading yapar",
+      "explanation": "FlatList sadece görünen öğeleri render eder, uzun listeler için daha performanslıdır."
+    },
+    {
+      "id": "cp_u1_q3",
+      "question": "React Navigation'da Stack Navigator ne sağlar?",
+      "options": ["Tab navigation", "Sayfa geçişleri ve geri gitme", "Drawer menu", "Modal"],
+      "correct_answer": "Sayfa geçişleri ve geri gitme",
+      "explanation": "Stack Navigator, sayfalar arası geçiş ve back button yönetimi sağlar."
+    }
+  ],
+  "do_u1_n3": [
+    {
+      "id": "do_u1_q1",
+      "question": "chmod 755 ne anlama gelir?",
+      "options": ["Dosyayı sil", "Owner: rwx, Group: rx, Others: rx", "Dosyayı gizle", "Dosyayı kopyala"],
+      "correct_answer": "Owner: rwx, Group: rx, Others: rx",
+      "explanation": "7=rwx, 5=rx. Owner okuma/yazma/çalıştırma, diğerleri okuma/çalıştırma."
+    },
+    {
+      "id": "do_u1_q2",
+      "question": "grep komutu ne yapar?",
+      "options": ["Dosya kopyalar", "Metin arar", "Dizin oluşturur", "Process sonlandırır"],
+      "correct_answer": "Metin arar",
+      "explanation": "grep, dosyalarda veya çıktılarda belirli desenleri arar."
+    },
+    {
+      "id": "do_u1_q3",
+      "question": "#!/bin/bash satırı ne anlama gelir?",
+      "options": ["Yorum satırı", "Shebang - script'in bash ile çalışacağını belirtir", "Import", "Fonksiyon tanımı"],
+      "correct_answer": "Shebang - script'in bash ile çalışacağını belirtir",
+      "explanation": "Shebang, işletim sistemine script'i hangi interpreter ile çalıştıracağını söyler."
+    }
+  ],
+  "do_u2_n3": [
+    {
+      "id": "do_u2_q1",
+      "question": "docker run -d ne yapar?",
+      "options": ["Debug mode", "Container'ı arka planda çalıştırır (detached)", "Dosya indirir", "Container siler"],
+      "correct_answer": "Container'ı arka planda çalıştırır (detached)",
+      "explanation": "-d flag'i container'ı detached (arka plan) modunda başlatır."
+    },
+    {
+      "id": "do_u2_q2",
+      "question": "Dockerfile'da COPY ve ADD arasındaki fark nedir?",
+      "options": ["Aynı", "ADD URL'den ve tar açabilir, COPY sadece kopyalar", "COPY daha hızlı", "ADD deprecated"],
+      "correct_answer": "ADD URL'den ve tar açabilir, COPY sadece kopyalar",
+      "explanation": "COPY basit kopyalama, ADD ekstra özellikler sunar. Best practice: COPY tercih edin."
+    },
+    {
+      "id": "do_u2_q3",
+      "question": "docker-compose up -d ne yapar?",
+      "options": ["Servisleri siler", "Servisleri arka planda başlatır", "Logları gösterir", "Image'ları çeker"],
+      "correct_answer": "Servisleri arka planda başlatır",
+      "explanation": "up servisleri başlatır, -d detached modda çalıştırır."
+    }
+  ],
+  "ds_u1_n3": [
+    {
+      "id": "ds_u1_q1",
+      "question": "Pandas'da df.dropna() ne yapar?",
+      "options": ["Sütun siler", "NaN içeren satırları kaldırır", "Duplicate siler", "Index sıfırlar"],
+      "correct_answer": "NaN içeren satırları kaldırır",
+      "explanation": "dropna() missing value içeren satırları DataFrame'den kaldırır."
+    },
+    {
+      "id": "ds_u1_q2",
+      "question": "df.groupby('col').mean() ne yapar?",
+      "options": ["Sütun siler", "Gruplara göre ortalama hesaplar", "Satır ekler", "Veri tipi değiştirir"],
+      "correct_answer": "Gruplara göre ortalama hesaplar",
+      "explanation": "groupby ile gruplama, ardından aggregation fonksiyonu uygulanır."
+    },
+    {
+      "id": "ds_u1_q3",
+      "question": "NumPy array'de broadcasting nedir?",
+      "options": ["Veri yayını", "Farklı boyutlu array'leri işlemde otomatik uyumlu hale getirme", "Network işlemi", "Dosya okuma"],
+      "correct_answer": "Farklı boyutlu array'leri işlemde otomatik uyumlu hale getirme",
+      "explanation": "Broadcasting, farklı şekilli array'lerin aritmetik işlemlerde uyumlu çalışmasını sağlar."
+    }
+  ],
+  "ml_u1_n3": [
+    {
+      "id": "ml_u1_q1",
+      "question": "Overfitting nedir?",
+      "options": ["Model eğitim verisini ezberler, genelleme yapamaz", "Model yetersiz öğrenir", "Veri eksikliği", "Hızlı eğitim"],
+      "correct_answer": "Model eğitim verisini ezberler, genelleme yapamaz",
+      "explanation": "Overfitting: train accuracy yüksek, test accuracy düşük. Regularization ile önlenir."
+    },
+    {
+      "id": "ml_u1_q2",
+      "question": "train_test_split ne için kullanılır?",
+      "options": ["Veri temizleme", "Veriyi eğitim ve test setlerine bölme", "Model kaydetme", "Feature engineering"],
+      "correct_answer": "Veriyi eğitim ve test setlerine bölme",
+      "explanation": "Model eğitimi için train, değerlendirme için test seti ayrılır."
+    },
+    {
+      "id": "ml_u1_q3",
+      "question": "Classification'da accuracy dışında hangi metrik önemlidir?",
+      "options": ["MSE", "Precision, Recall, F1-Score", "R-squared", "Standard deviation"],
+      "correct_answer": "Precision, Recall, F1-Score",
+      "explanation": "Dengesiz sınıflarda accuracy yanıltıcı olabilir, precision/recall daha bilgilendiricidir."
+    }
+  ],
+  "db_u1_n3": [
+    {
+      "id": "db_u1_q1",
+      "question": "INNER JOIN ne yapar?",
+      "options": ["Tüm kayıtları getirir", "Her iki tabloda eşleşen kayıtları getirir", "Soldaki tüm kayıtları getirir", "Sağdaki tüm kayıtları getirir"],
+      "correct_answer": "Her iki tabloda eşleşen kayıtları getirir",
+      "explanation": "INNER JOIN sadece her iki tabloda da eşleşme olan kayıtları döndürür."
+    },
+    {
+      "id": "db_u1_q2",
+      "question": "GROUP BY ne için kullanılır?",
+      "options": ["Sıralama", "Aggregation fonksiyonları ile gruplama", "Filtreleme", "Join işlemi"],
+      "correct_answer": "Aggregation fonksiyonları ile gruplama",
+      "explanation": "GROUP BY, SUM, COUNT, AVG gibi fonksiyonlarla birlikte kullanılır."
+    },
+    {
+      "id": "db_u1_q3",
+      "question": "INDEX ne sağlar?",
+      "options": ["Veri güvenliği", "Sorgu performansını artırır", "Veri şifreleme", "Backup"],
+      "correct_answer": "Sorgu performansını artırır",
+      "explanation": "Index, WHERE ve JOIN koşullarında arama hızını artırır."
+    }
+  ],
+  "ux_u1_n3": [
+    {
+      "id": "ux_u1_q1",
+      "question": "Usability Testing'in amacı nedir?",
+      "options": ["Kod test etme", "Kullanıcıların ürünü nasıl kullandığını gözlemleme", "Performance testi", "Security testi"],
+      "correct_answer": "Kullanıcıların ürünü nasıl kullandığını gözlemleme",
+      "explanation": "Usability testing, gerçek kullanıcılarla yapılan görev tabanlı testlerdir."
+    },
+    {
+      "id": "ux_u1_q2",
+      "question": "Persona nedir?",
+      "options": ["Kullanıcı arayüzü", "Hayali ama araştırmaya dayalı kullanıcı profili", "Test senaryosu", "Wireframe"],
+      "correct_answer": "Hayali ama araştırmaya dayalı kullanıcı profili",
+      "explanation": "Persona, hedef kullanıcı grubunu temsil eden kurgusal karakter profilidir."
+    },
+    {
+      "id": "ux_u1_q3",
+      "question": "A/B Testing ne için kullanılır?",
+      "options": ["Kod kalitesi", "İki farklı tasarımı karşılaştırma", "Güvenlik testi", "Veritabanı testi"],
+      "correct_answer": "İki farklı tasarımı karşılaştırma",
+      "explanation": "A/B test, iki varyantı gerçek kullanıcılarla test edip hangisinin daha iyi performans gösterdiğini ölçer."
+    }
+  ],
+  "bc_u1_n4": [
+    {
+      "id": "bc_u1_q1",
+      "question": "Smart Contract nedir?",
+      "options": ["Akıllı telefon uygulaması", "Blockchain üzerinde çalışan otomatik program", "Yasal sözleşme", "Veritabanı"],
+      "correct_answer": "Blockchain üzerinde çalışan otomatik program",
+      "explanation": "Smart contract, belirli koşullar sağlandığında otomatik çalışan blockchain kodudur."
+    },
+    {
+      "id": "bc_u1_q2",
+      "question": "Gas fee nedir?",
+      "options": ["Yakıt masrafı", "Ethereum işlem ücreti", "Token fiyatı", "Mining ödülü"],
+      "correct_answer": "Ethereum işlem ücreti",
+      "explanation": "Gas, Ethereum'da işlem yapma ve smart contract çalıştırma maliyetidir."
+    },
+    {
+      "id": "bc_u1_q3",
+      "question": "Solidity'de 'public' visibility ne anlama gelir?",
+      "options": ["Sadece contract içinden erişilebilir", "Herkes tarafından çağrılabilir", "Sadece owner erişebilir", "Inheritance için"],
+      "correct_answer": "Herkes tarafından çağrılabilir",
+      "explanation": "public fonksiyonlar hem içeriden hem dışarıdan çağrılabilir."
+    }
+  ]
+}
