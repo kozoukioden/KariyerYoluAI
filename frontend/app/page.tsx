@@ -75,12 +75,12 @@ export default function HomePage() {
   }, []);
 
   // Handle onboarding complete
-  const handleOnboardingComplete = async (recommendation: { track_id: string }) => {
-    storage.setRecommendedTrack(recommendation.track_id);
+  const handleOnboardingComplete = async (recommendation: { trackId: string; trackTitle: string; confidence: number; reasons: string[] }) => {
+    storage.setRecommendedTrack(recommendation.trackId);
 
-    const track = (tracksData as any)[recommendation.track_id];
+    const track = (tracksData as any)[recommendation.trackId];
     if (track) {
-      setCurrentTrack({ id: recommendation.track_id, ...track });
+      setCurrentTrack({ id: recommendation.trackId, ...track });
       setView('dashboard');
       refreshUserData();
     }
