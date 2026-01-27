@@ -165,20 +165,18 @@ export async function POST(request: Request) {
     const bestMatch = topRecommendations[0];
 
     return NextResponse.json({
-      track_id: bestMatch?.track_id || 'frontend_developer',
-      title: bestMatch?.title || 'Frontend Developer',
-      description: bestMatch?.description || '',
-      match_percentage: bestMatch?.match_percentage || 50,
+      trackId: bestMatch?.track_id || 'frontend_developer',
+      trackTitle: bestMatch?.title || 'Frontend Developer',
+      confidence: bestMatch?.match_percentage || 50,
       reasons: bestMatch?.reasons || ['Varsayılan öneri'],
       alternatives: topRecommendations.slice(1)
     });
   } catch (error) {
     console.error('Recommend error:', error);
     return NextResponse.json({
-      track_id: 'frontend_developer',
-      title: 'Frontend Developer',
-      description: 'Web arayüzleri geliştir',
-      match_percentage: 50,
+      trackId: 'frontend_developer',
+      trackTitle: 'Frontend Developer',
+      confidence: 50,
       reasons: ['Varsayılan öneri'],
       alternatives: []
     });
