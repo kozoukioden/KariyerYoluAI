@@ -42,7 +42,7 @@ interface LessonData {
   nodeType: 'lesson' | 'quiz' | 'boss';
 }
 
-export default function Home() {
+export default function HomePage() {
   const [view, setView] = useState<View>('onboarding');
   const [userData, setUserData] = useState<UserData | null>(null);
   const [currentTrack, setCurrentTrack] = useState<any>(null);
