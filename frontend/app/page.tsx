@@ -22,7 +22,7 @@ import {
   UserCircle,
   LogOut,
   ChevronLeft,
-  Home,
+  Home as HomeIcon,
   Settings,
   Zap,
   Target,
@@ -391,7 +391,7 @@ export default function Home() {
         {/* Navigation */}
         <nav className="flex-1 p-4 space-y-2">
           <SidebarBtn
-            icon={<Home size={20} />}
+            icon={<HomeIcon size={20} />}
             label="Ana Sayfa"
             active={view === 'dashboard'}
             onClick={() => setView('dashboard')}
@@ -531,7 +531,7 @@ export default function Home() {
       <div className="md:hidden fixed bottom-0 left-0 right-0 bg-slate-900 border-t border-slate-800 safe-area-bottom">
         <div className="flex items-center justify-around py-3">
           <MobileNavBtn
-            icon={<Home size={24} />}
+            icon={<HomeIcon size={24} />}
             label="Ana Sayfa"
             active={view === 'dashboard'}
             onClick={() => setView('dashboard')}
