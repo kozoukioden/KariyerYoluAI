@@ -28,12 +28,13 @@ import {
   Target,
   Award,
   Flame,
-  Star
+  Star,
+  CheckCircle2
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import confetti from 'canvas-confetti';
 
-type View = 'onboarding' | 'dashboard' | 'lesson' | 'quiz' | 'profile';
+type View = 'onboarding' | 'dashboard' | 'lesson' | 'quiz' | 'profile' | 'goals' | 'achievements';
 
 interface LessonData {
   id: string;
@@ -399,15 +400,15 @@ export default function HomePage() {
           <SidebarBtn
             icon={<Target size={20} />}
             label="Hedeflerim"
-            active={false}
-            onClick={() => {}}
+            active={view === 'goals'}
+            onClick={() => setView('goals')}
             badge={userData?.progress.completedNodes.length}
           />
           <SidebarBtn
             icon={<Award size={20} />}
             label="Rozetler"
-            active={false}
-            onClick={() => {}}
+            active={view === 'achievements'}
+            onClick={() => setView('achievements')}
             badge={userData?.achievements.length}
           />
           <SidebarBtn
@@ -496,6 +497,97 @@ export default function HomePage() {
           </div>
         )}
 
+        {/* Goals View */}
+        {view === 'goals' && userData && currentTrack && (
+          <div className="max-w-2xl mx-auto p-6">
+            <h2 className="text-2xl font-bold mb-6">Hedeflerim</h2>
+
+            {/* Progress Overview */}
+            <div className="bg-slate-800 rounded-2xl p-6 mb-6">
+              <h3 className="font-bold mb-4">İlerleme Durumu</h3>
+              <div className="space-y-4">
+                <div>
+                  <div className="flex justify-between text-sm mb-2">
+                    <span className="text-slate-400">Tamamlanan Dersler</span>
+                    <span className="text-green-400">{userData.progress.completedNodes.length}</span>
+                  </div>
+                  <div className="h-2 bg-slate-700 rounded-full overflow-hidden">
+                    <div
+                      className="h-full bg-green-500 rounded-full transition-all"
+                      style={{ width: `${Math.min((userData.progress.completedNodes.length / 20) * 100, 100)}%` }}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Completed Nodes List */}
+            <div className="bg-slate-800 rounded-2xl p-6">
+              <h3 className="font-bold mb-4">Tamamladıklarım</h3>
+              {userData.progress.completedNodes.length > 0 ? (
+                <div className="space-y-3">
+                  {userData.progress.completedNodes.slice(-10).reverse().map((nodeId, idx) => (
+                    <div key={nodeId} className="flex items-center gap-3 p-3 bg-slate-700/50 rounded-xl">
+                      <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                        <CheckCircle2 size={16} className="text-white" />
+                      </div>
+                      <span className="text-sm text-slate-300">{nodeId.replace(/_/g, ' ')}</span>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <p className="text-slate-500 text-sm">Henüz hiçbir ders tamamlanmadı. Hadi başla!</p>
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* Achievements View */}
+        {view === 'achievements' && userData && (
+          <div className="max-w-2xl mx-auto p-6">
+            <h2 className="text-2xl font-bold mb-6">Rozetlerim</h2>
+
+            {/* Earned Achievements */}
+            <div className="bg-slate-800 rounded-2xl p-6 mb-6">
+              <h3 className="font-bold mb-4 text-green-400">Kazanılan Rozetler ({userData.achievements.length})</h3>
+              {userData.achievements.length > 0 ? (
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                  {userData.achievements.map((a) => (
+                    <div key={a.id} className="bg-slate-700/50 rounded-xl p-4 text-center">
+                      <div className="text-4xl mb-2">{a.icon}</div>
+                      <div className="font-bold text-sm text-white">{a.name}</div>
+                      <div className="text-xs text-slate-400 mt-1">{a.description}</div>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <p className="text-slate-500 text-sm">Henüz rozet kazanmadın.</p>
+              )}
+            </div>
+
+            {/* Available Achievements */}
+            <div className="bg-slate-800 rounded-2xl p-6">
+              <h3 className="font-bold mb-4 text-slate-400">Kazanılabilir Rozetler</h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                {[
+                  { icon: '🎯', name: 'İlk Adım', desc: 'İlk dersini tamamla' },
+                  { icon: '🔥', name: 'Tutarlı', desc: '7 gün streak' },
+                  { icon: '💯', name: 'Mükemmeliyetçi', desc: 'Quiz\'de %100 al' },
+                  { icon: '📚', name: 'Kitap Kurdu', desc: '10 ders tamamla' },
+                  { icon: '🏆', name: 'Şampiyon', desc: 'Bir track\'i bitir' },
+                  { icon: '⚡', name: 'Hız Canavarı', desc: '5 dersi bir günde tamamla' },
+                ].filter(badge => !userData.achievements.find(a => a.name === badge.name)).map((badge, idx) => (
+                  <div key={idx} className="bg-slate-700/30 rounded-xl p-4 text-center opacity-50">
+                    <div className="text-4xl mb-2 grayscale">{badge.icon}</div>
+                    <div className="font-bold text-sm text-slate-400">{badge.name}</div>
+                    <div className="text-xs text-slate-500 mt-1">{badge.desc}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Dashboard View */}
         {view === 'dashboard' && currentTrack && (
           <div className="p-4 md:p-8">
@@ -539,8 +631,8 @@ export default function HomePage() {
           <MobileNavBtn
             icon={<Target size={24} />}
             label="Hedefler"
-            active={false}
-            onClick={() => {}}
+            active={view === 'goals'}
+            onClick={() => setView('goals')}
           />
           <MobileNavBtn
             icon={<UserCircle size={24} />}
