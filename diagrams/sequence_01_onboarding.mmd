@@ -1,0 +1,45 @@
+---
+title: "Sequence Diyagramı 1: Onboarding ve Kariyer Önerisi"
+---
+sequenceDiagram
+    actor User as Kullanıcı
+    participant Home as HomePage
+    participant Onboard as OnboardingWizard
+    participant API as RecommendAPI<br/>(/api/recommend)
+    participant DB as tracks.json
+    participant LS as localStorage
+
+    Note over User,LS: Uygulama Başlangıcı
+
+    User->>Home: Uygulamayı Aç
+    Home->>LS: storage.load()
+    LS-->>Home: userData (surveyAnswers = null)
+    Home->>Home: view = 'onboarding'
+    Home->>Onboard: Render OnboardingWizard
+
+    Note over User,Onboard: Anket Süreci (12 Soru)
+
+    loop Her soru için (12 adet)
+        Onboard->>User: Soruyu Göster (4 seçenek)
+        User->>Onboard: Cevap Seç
+        Onboard->>Onboard: answers[questionId] = value<br/>currentStep++
+    end
+
+    Note over Onboard,DB: Kariyer Önerisi Hesaplama
+
+    Onboard->>API: POST /api/recommend {answers}
+    API->>DB: tracks.json oku (15 kariyer yolu)
+    DB-->>API: Tüm track verileri
+    API->>API: scoreTracks(answers)<br/>- platform_preference analizi<br/>- interest_area eşleştirme<br/>- work_style puanlama<br/>- match_percentage hesapla
+    API-->>Onboard: TrackRecommendation<br/>{trackId, trackTitle, confidence, reasons, alternatives[]}
+
+    Onboard->>User: Öneri Ekranı Göster<br/>"Frontend Developer - %85 Uyum"<br/>Sebepler + Alternatifler
+    User->>Onboard: "Yola Başla" tıkla
+    Onboard->>Home: onComplete(recommendation)
+
+    Note over Home,LS: Sonuç Kaydetme
+
+    Home->>LS: storage.saveSurveyAnswers(answers)
+    Home->>LS: storage.setRecommendedTrack(trackId)
+    Home->>Home: view = 'dashboard'
+    Home->>User: Dashboard + Roadmap Göster

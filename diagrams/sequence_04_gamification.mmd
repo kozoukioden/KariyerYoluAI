@@ -1,0 +1,66 @@
+---
+title: "Sequence Diyagramı 4: Oyunlaştırma ve İlerleme Sistemi"
+---
+sequenceDiagram
+    actor User as Kullanıcı
+    participant Home as HomePage
+    participant Gam as Gamification<br/>Components
+    participant Storage as Storage<br/>(lib/storage.ts)
+    participant LS as localStorage
+
+    Note over User,LS: Uygulama Yüklenme
+
+    User->>Home: Uygulamayı aç
+    Home->>Storage: storage.load()
+    Storage->>LS: getItem('kariyeryolu_data')
+    LS-->>Storage: JSON string
+    Storage->>Storage: parse + streak kontrolü
+    Storage-->>Home: UserData {xp:250, level:3, streak:5}
+
+    Home->>Gam: StatsBar, LevelBadge, XPCounter, StreakFlame
+    Gam->>User: ⚡250 XP | 🔥5 Gün | Lvl 3 Kalfa
+
+    Note over User,LS: XP Kazanma
+
+    User->>Home: Ders tamamla
+    Home->>Storage: completeNode('fe_u2_n3', false)
+    Storage->>Storage: 1. completedNodes.push(nodeId)<br/>2. base_xp = 10 (LESSON)<br/>3. streak_bonus = 5 × 5 = 25<br/>4. total = 35 XP<br/>5. xp: 250 → 285<br/>6. streak: 5 → 6<br/>7. Achievement kontrol
+    Storage->>LS: save(userData)
+    Storage-->>Home: {xpGained: 35, newAchievements: []}
+
+    Home->>Gam: XPGain(amount=35)
+    Gam->>User: "+35 XP" yüzen animasyon ⬆️<br/>Bar güncelle: ⚡285 XP | 🔥6 Gün
+
+    Note over User,LS: Seviye Atlama
+
+    User->>Home: Bir ders daha tamamla
+    Home->>Storage: completeNode('fe_u2_n4', false)
+    Storage->>Storage: xp: 285 + 35 = 320<br/>320 >= 300 → Level UP!<br/>level: 3 → 4 (Uzman)
+    Storage-->>Home: {xpGained: 35}
+
+    Home->>Gam: LevelBadge güncelle
+    Gam->>User: Lvl 4 Uzman 🎓
+
+    Note over User,LS: Rozet Kazanma
+
+    User->>Home: Quiz'den %100 al
+    Home->>Storage: completeNode('fe_u2_n5', true, 100)
+    Storage->>Storage: xp += 40 (QUIZ_PERFECT)<br/>+ streak_bonus = 70 XP<br/>Achievement: perfect_quiz → KAZANILDI!
+    Storage->>Storage: achievements.push({<br/>id: 'perfect_quiz',<br/>name: 'Kusursuz',<br/>icon: '💯'})
+    Storage->>LS: save(userData)
+    Storage-->>Home: {xpGained: 70,<br/>newAchievements: ['perfect_quiz']}
+
+    Home->>Gam: XPGain(70)
+    Gam->>User: "+70 XP" animasyonu
+
+    Home->>Gam: AchievementPopup('perfect_quiz')
+    Gam->>User: 🎉 Rozet Kazandınız!<br/>"Kusursuz 💯"
+    User->>Gam: "Harika!" tıkla
+    Gam->>Home: onClose()
+
+    Note over User,LS: Profil Görüntüleme
+
+    User->>Home: Profil menüsüne tıkla
+    Home->>Storage: getStats() + getAchievements()
+    Storage-->>Home: stats + achievements[]
+    Home->>User: Profil Sayfası:<br/>⚡390 XP | 🔥6 Gün | 📚12 Ders | ✅3 Quiz<br/>Rozetler: ✅İlk Adım, ✅Kusursuz<br/>🔒Tutarlı, 🔒Quiz Ustası...

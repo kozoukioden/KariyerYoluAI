@@ -1,0 +1,153 @@
+@startuml Sequence_LessonAndQuiz
+
+title KariyerYolu AI - Sequence Diyagramı 2: Ders Çalışma ve Quiz Akışı
+
+skinparam sequence {
+    ArrowColor #333333
+    LifeLineBorderColor #1565C0
+    LifeLineBackgroundColor #E3F2FD
+    ParticipantBorderColor #1565C0
+    ParticipantBackgroundColor #E3F2FD
+    ActorBorderColor #2E7D32
+    ActorBackgroundColor #E8F5E9
+}
+
+actor "Kullanıcı" as User
+participant "HomePage" as Home
+participant "RoadmapView" as Roadmap
+participant "LearningView" as Learning
+participant "QuizRunner" as Quiz
+participant "QuizAPI\n(/api/quiz)" as QuizAPI
+database "quizzes.json" as QDB
+database "localStorage" as LS
+
+== Roadmap Görüntüleme ==
+
+User -> Home : Dashboard'a git
+activate Home
+
+Home -> Roadmap : Render RoadmapView\n(units, userProgress)
+activate Roadmap
+
+Roadmap -> User : Roadmap Göster\n(ünite bazlı node'lar:\nlesson/quiz/boss)
+
+== Ders (Lesson) Akışı ==
+
+User -> Roadmap : Ders Node'una Tıkla\n(type = 'lesson')
+Roadmap -> Home : onNodeClick(nodeId)
+
+Home -> Home : activeLesson = node.content\nview = 'lesson'
+
+Home -> Learning : Render LearningView\n(title, content)
+activate Learning
+deactivate Roadmap
+
+Learning -> User : Markdown İçeriği Göster\n(Ders metni, kod örnekleri,\naçıklamalar)
+
+User -> Learning : "Dersi Tamamla" butonuna tıkla
+Learning -> Home : onComplete()
+deactivate Learning
+
+Home -> LS : storage.completeNode(nodeId, false)
+activate LS
+LS -> LS : completedNodes.push(nodeId)\nxp += 10 (LESSON_COMPLETE)\nstreak kontrolü ve güncelleme\nachievement kontrolü
+LS --> Home : { xpGained: 15,\nnewAchievements: [] }
+deactivate LS
+
+Home -> Home : showXPGain = 15\nXPGain animasyonu oynat
+Home -> User : "+15 XP" animasyonu\nRoadmap'e geri dön\n(node yeşil/tamamlandı)
+
+== Quiz Akışı ==
+
+Home -> Roadmap : Render RoadmapView (günceli)
+activate Roadmap
+
+User -> Roadmap : Quiz Node'una Tıkla\n(type = 'quiz')
+Roadmap -> Home : onNodeClick(nodeId)
+deactivate Roadmap
+
+Home -> QuizAPI : GET /api/quiz/{nodeId}
+activate QuizAPI
+
+QuizAPI -> QDB : quizzes.json oku
+activate QDB
+QDB --> QuizAPI : Soru listesi
+deactivate QDB
+
+QuizAPI -> QuizAPI : Soruları karıştır (shuffle)
+QuizAPI --> Home : { questions: Question[] }
+deactivate QuizAPI
+
+Home -> Home : view = 'quiz'
+Home -> Quiz : Render QuizRunner\n(questions, quizTitle)
+activate Quiz
+
+== Quiz Çözme Süreci ==
+
+Quiz -> User : İlk soruyu göster\n(4 seçenek, 3 can ♥♥♥)
+
+loop Her soru için
+    User -> Quiz : Cevap seç
+    Quiz -> Quiz : Doğru mu kontrol et
+
+    alt Doğru Cevap
+        Quiz -> Quiz : correctAnswers++
+        Quiz -> User : ✓ Doğru! (yeşil animasyon)
+    else Yanlış Cevap
+        Quiz -> Quiz : hearts--\nwrongAnswers++
+        Quiz -> User : ✗ Yanlış! (kırmızı animasyon)\nDoğru cevabı açıkla
+
+        alt hearts == 0
+            Quiz -> Quiz : Quiz başarısız\nbreak
+        end
+    end
+
+    Quiz -> Quiz : currentQuestion++
+end
+
+== Quiz Sonucu ==
+
+Quiz -> Quiz : QuizResult hesapla\n{totalQuestions, correctAnswers,\nwrongAnswers, passed}
+
+alt Başarılı (>= %70)
+    Quiz -> User : "Tebrikler! Başarılı!"\n🎊 Konfeti animasyonu\nSkor ve XP göster
+else Başarısız (< %70)
+    Quiz -> User : "Tekrar Dene"\nSkor göster
+end
+
+User -> Quiz : "Devam" butonuna tıkla
+Quiz -> Home : onComplete(result)
+deactivate Quiz
+
+alt Quiz Başarılı
+    Home -> LS : storage.completeNode(nodeId, true, score)
+    activate LS
+    LS -> LS : completedNodes.push(nodeId)\nxp += 25 veya 40 (perfect)\nquizAttempt kaydet\ntotalQuizzesPassed++\nachievement kontrolü
+
+    alt Mükemmel Skor (%100)
+        LS -> LS : Rozet kontrol: 'perfect_quiz'
+    end
+    alt 10 Quiz Geçildi
+        LS -> LS : Rozet kontrol: 'quiz_master'
+    end
+
+    LS --> Home : { xpGained: 30,\nnewAchievements: ['perfect_quiz'] }
+    deactivate LS
+
+    Home -> Home : showXPGain = 30
+
+    opt Yeni Rozet Kazanıldı
+        Home -> User : AchievementPopup göster\n"Kusursuz! 💯"
+    end
+else Quiz Başarısız
+    Home -> LS : storage.addQuizAttempt(nodeId, score, false)
+    activate LS
+    LS --> Home : OK
+    deactivate LS
+end
+
+Home -> Home : view = 'dashboard'
+Home -> User : Dashboard'a dön\n(güncel ilerleme ile)
+deactivate Home
+
+@enduml

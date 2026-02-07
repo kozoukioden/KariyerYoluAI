@@ -1,0 +1,313 @@
+---
+title: KariyerYolu AI - Class (Sınıf) Diyagramı
+---
+classDiagram
+    direction TB
+
+    %% ===== VERİ MODELLERİ =====
+    class UserData {
+        -UserProgress progress
+        -UserStats stats
+        -Achievement[] achievements
+        -Record~string,string~ surveyAnswers
+        -string recommendedTrack
+    }
+
+    class UserProgress {
+        -string[] completedNodes
+        -string currentTrackId
+        -Record~string,QuizAttempt[]~ quizAttempts
+    }
+
+    class UserStats {
+        -number xp
+        -number level
+        -number streak
+        -number longestStreak
+        -string lastActivityDate
+        -number totalLessonsCompleted
+        -number totalQuizzesPassed
+    }
+
+    class Achievement {
+        -string id
+        -string name
+        -string description
+        -string icon
+        -string earnedAt
+    }
+
+    class QuizAttempt {
+        -number score
+        -boolean passed
+        -string attemptedAt
+    }
+
+    UserData *-- UserProgress
+    UserData *-- UserStats
+    UserData *-- Achievement
+    UserProgress *-- QuizAttempt
+
+    %% ===== ÖĞRENME İÇERİĞİ =====
+    class Track {
+        -string id
+        -string title
+        -string description
+        -string color
+        -Unit[] units
+    }
+
+    class Unit {
+        -string id
+        -string title
+        -string description
+        -string color
+        -RoadmapNode[] nodes
+    }
+
+    class RoadmapNode {
+        -string id
+        -NodeType type
+        -string title
+        -string description
+        -string difficulty
+        -string estimated_time
+        -string content
+        -NodeStatus status
+    }
+
+    class NodeType {
+        <<enumeration>>
+        lesson
+        quiz
+        boss
+    }
+
+    class NodeStatus {
+        <<enumeration>>
+        locked
+        unlocked
+        completed
+        in_progress
+    }
+
+    class Question {
+        -string id
+        -string question
+        -string[] options
+        -string correct_answer
+        -string explanation
+    }
+
+    Track "1" *-- "1..*" Unit
+    Unit "1" *-- "1..*" RoadmapNode
+    RoadmapNode -- NodeType
+    RoadmapNode -- NodeStatus
+    RoadmapNode "1" o-- "0..*" Question
+
+    %% ===== QUIZ SİSTEMİ =====
+    class QuizResult {
+        -number totalQuestions
+        -number correctAnswers
+        -number wrongAnswers
+        -number xpEarned
+        -boolean passed
+    }
+
+    class QuizGradeResponse {
+        -boolean passed
+        -string score
+        -number scorePercentage
+        -number correct
+        -number total
+        -QuestionDetail[] details
+        -string message
+    }
+
+    class QuestionDetail {
+        -string questionId
+        -boolean correct
+        -string userAnswer
+        -string correctAnswer
+    }
+
+    QuizGradeResponse *-- QuestionDetail
+
+    %% ===== ONBOARDİNG =====
+    class SurveyQuestion {
+        -string id
+        -string text
+        -string type
+        -SurveyOption[] options
+    }
+
+    class SurveyOption {
+        -string value
+        -string label
+        -string icon
+        -string description
+    }
+
+    class TrackRecommendation {
+        -string trackId
+        -string trackTitle
+        -number confidence
+        -string[] reasons
+        -TrackAlternative[] alternatives
+    }
+
+    class TrackAlternative {
+        -string track_id
+        -string title
+        -string description
+        -number score
+        -string[] reasons
+        -number match_percentage
+    }
+
+    SurveyQuestion *-- SurveyOption
+    TrackRecommendation *-- TrackAlternative
+
+    %% ===== CHAT SİSTEMİ =====
+    class ChatMessage {
+        -string role
+        -string content
+        -Date timestamp
+        -string source
+    }
+
+    class ChatResponse {
+        -string reply
+        -string source
+        -ChatContext[] context
+    }
+
+    class ChatContext {
+        -string title
+        -string trackId
+    }
+
+    ChatResponse *-- ChatContext
+
+    %% ===== SERVİS KATMANI =====
+    class Storage {
+        <<service>>
+        +load() UserData
+        +save(data) void
+        +reset() void
+        +completeNode(nodeId, isQuiz, score) CompleteResult
+        +addQuizAttempt(nodeId, score, passed) void
+        +calculateLevel(xp) number
+        +getLevelInfo(level) LevelInfo
+        +unlockAchievement(id) Achievement
+        +saveSurveyAnswers(answers) void
+        +setRecommendedTrack(trackId) void
+        +isNodeCompleted(nodeId) boolean
+        +getStats() UserStats
+        +getAchievements() Achievement[]
+    }
+
+    class XPRewards {
+        <<constants>>
+        +LESSON_COMPLETE = 10
+        +QUIZ_PASS = 25
+        +QUIZ_PERFECT = 40
+        +UNIT_COMPLETE = 50
+        +BOSS_LEVEL = 100
+        +STREAK_BONUS = 5
+    }
+
+    Storage ..> UserData : manages
+    Storage ..> XPRewards : uses
+
+    %% ===== API KATMANI =====
+    class RecommendAPI {
+        <<API Route>>
+        +POST_recommend(answers) TrackRecommendation
+    }
+
+    class ChatAPI {
+        <<API Route>>
+        +POST_chat(message, history) ChatResponse
+    }
+
+    class QuizAPI {
+        <<API Route>>
+        +GET_quiz(nodeId) Question[]
+        +POST_submit(answers) QuizGradeResponse
+    }
+
+    class TracksAPI {
+        <<API Route>>
+        +GET_tracks() Track[]
+        +GET_track(id) Track
+    }
+
+    RecommendAPI ..> TrackRecommendation : returns
+    ChatAPI ..> ChatResponse : returns
+    QuizAPI ..> QuizGradeResponse : returns
+    TracksAPI ..> Track : returns
+
+    %% ===== UI BİLEŞENLERİ =====
+    class HomePage {
+        <<Component>>
+        -ViewType view
+        -UserData userData
+        -Track currentTrack
+        -LessonData activeLesson
+        -Question[] activeQuiz
+        +handleOnboardingComplete(result)
+        +handleNodeClick(nodeId)
+        +handleLessonComplete()
+        +handleQuizComplete(result)
+    }
+
+    class OnboardingWizard {
+        <<Component>>
+        -number currentStep
+        -Record answers
+        -TrackRecommendation recommendation
+        +onComplete(result)
+    }
+
+    class RoadmapView {
+        <<Component>>
+        -Unit[] units
+        -UserProgress userProgress
+        +onNodeClick(nodeId)
+    }
+
+    class QuizRunner {
+        <<Component>>
+        -Question[] questions
+        -number currentQuestion
+        -number hearts
+        +onComplete(result)
+        +onExit()
+    }
+
+    class LearningView {
+        <<Component>>
+        -string title
+        -string content
+        +onStartQuiz()
+        +onClose()
+    }
+
+    class ChatWidget {
+        <<Component>>
+        -ChatMessage[] messages
+        -boolean isOpen
+        +sendMessage(text)
+    }
+
+    HomePage --> OnboardingWizard : renders
+    HomePage --> RoadmapView : renders
+    HomePage --> QuizRunner : renders
+    HomePage --> LearningView : renders
+    HomePage --> ChatWidget : renders
+    HomePage ..> Storage : uses
+    OnboardingWizard ..> RecommendAPI : calls
+    QuizRunner ..> QuizAPI : calls
+    ChatWidget ..> ChatAPI : calls
+    RoadmapView ..> TracksAPI : calls

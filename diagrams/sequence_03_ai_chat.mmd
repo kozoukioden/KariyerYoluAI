@@ -1,0 +1,56 @@
+---
+title: "Sequence Diyagramı 3: AI Mentor Chatbot Akışı"
+---
+sequenceDiagram
+    actor User as Kullanıcı
+    participant Chat as ChatWidget
+    participant API as ChatAPI<br/>(/api/chat)
+    participant DB as tracks.json<br/>(RAG Bilgi Tabanı)
+    participant Groq as Groq API<br/>(Llama 3.3 70B)
+
+    Note over User,Groq: Chat Başlatma
+
+    User->>Chat: Chat ikonuna tıkla
+    Chat->>Chat: isOpen = true
+    Chat->>User: Chat penceresi aç<br/>Hoşgeldin mesajı<br/>Hızlı soru butonları
+
+    Note over User,Groq: Mesaj Gönderme + RAG
+
+    User->>Chat: "React hooks nedir?" yaz
+    Chat->>Chat: messages.push({role: user})<br/>isLoading = true
+    Chat->>User: Yükleniyor animasyonu
+
+    Chat->>API: POST /api/chat<br/>{message, history[], current_track_id}
+    activate API
+
+    API->>DB: tracks.json oku (15 track, 200+ ders)
+    DB-->>API: Tüm ders içerikleri
+
+    API->>API: RAG Arama:<br/>1. Soruyu analiz et<br/>2. Ders içeriklerinde ara<br/>3. current_track'e öncelik ver<br/>4. İlgili context bul
+
+    Note over API: context = [{title: "React Hooks"},<br/>{title: "State Yönetimi"}]
+
+    API->>Groq: POST /openai/v1/chat/completions<br/>{model: "llama-3.3-70b-versatile",<br/>system: "KariyerYolu AI mentor...<br/>RAG context: [ders içerikleri]",<br/>messages: [...history, user_message],<br/>temperature: 0.7}
+    activate Groq
+
+    Groq->>Groq: LLM İşleme<br/>Context + Soru → Cevap
+    Groq-->>API: AI cevabı (markdown formatında)
+    deactivate Groq
+
+    API-->>Chat: {reply: "React Hooks...",<br/>source: "rag",<br/>context: [{title, trackId}]}
+    deactivate API
+
+    Chat->>Chat: isLoading = false<br/>messages.push({role: assistant})
+    Chat->>User: Cevabı göster (markdown)<br/>Kaynak: "📚 RAG"
+
+    Note over User,Groq: Hata Durumları
+
+    alt Groq API Hatası
+        API-->>Chat: {source: "fallback"}
+        Chat->>User: Fallback mesaj göster
+    else RAG sonuç bulunamadı
+        API->>Groq: Context olmadan genel soru
+        Groq-->>API: Genel AI cevabı
+        API-->>Chat: {source: "ai"}
+        Chat->>User: AI cevabı göster
+    end

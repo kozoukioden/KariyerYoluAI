@@ -1,0 +1,142 @@
+@startuml Sequence_Gamification
+
+title KariyerYolu AI - Sequence Diyagramı 4: Oyunlaştırma ve İlerleme Sistemi
+
+skinparam sequence {
+    ArrowColor #333333
+    LifeLineBorderColor #1565C0
+    LifeLineBackgroundColor #E3F2FD
+    ParticipantBorderColor #1565C0
+    ParticipantBackgroundColor #E3F2FD
+    ActorBorderColor #2E7D32
+    ActorBackgroundColor #E8F5E9
+}
+
+actor "Kullanıcı" as User
+participant "HomePage" as Home
+participant "Gamification\nComponents" as Gam
+participant "Storage\n(lib/storage.ts)" as Storage
+database "localStorage" as LS
+
+== Uygulama Yüklenme - Veri Okuma ==
+
+User -> Home : Uygulamayı aç
+activate Home
+
+Home -> Storage : storage.load()
+activate Storage
+Storage -> LS : localStorage.getItem('kariyeryolu_data')
+activate LS
+LS --> Storage : JSON string
+deactivate LS
+Storage -> Storage : JSON.parse(data)\nExpiryDate kontrolü\nStreak sıfırlama kontrolü
+Storage --> Home : UserData\n{xp: 250, level: 3, streak: 5,\nachievements: [...]}
+deactivate Storage
+
+Home -> Gam : Render:\nStatsBar(xp=250, streak=5)\nLevelBadge(xp=250)\nXPCounter(xp=250)\nStreakFlame(streak=5)
+activate Gam
+Gam -> User : Üst bar: ⚡250 XP | 🔥5 Gün | Lvl 3 Kalfa
+deactivate Gam
+
+== Node Tamamlama - XP Kazanma ==
+
+User -> Home : Ders tamamla (node: fe_u2_n3)
+
+Home -> Storage : storage.completeNode('fe_u2_n3', false)
+activate Storage
+
+Storage -> Storage : 1. completedNodes.push('fe_u2_n3')
+Storage -> Storage : 2. XP Hesaplama:\n   base = 10 (LESSON_COMPLETE)\n   streak_bonus = 5 × 5 = 25\n   total = 35 XP
+Storage -> Storage : 3. xp = 250 + 35 = 285
+Storage -> Storage : 4. totalLessonsCompleted++
+
+Storage -> Storage : 5. Streak Kontrolü:\n   lastActivityDate != today?\n   streak++ (5 → 6)\n   lastActivityDate = today
+
+Storage -> Storage : 6. Seviye Kontrolü:\n   285 XP → Level 3 (Kalfa)\n   300 XP'de Level 3 → evet\n   Henüz seviye atlamadı
+
+Storage -> Storage : 7. Achievement Kontrolü:
+note right of Storage
+  first_step: ✓ (zaten kazanılmış)
+  fast_learner: 1 günde 5 ders? → kontrol et
+  night_owl: saat > 00:00? → kontrol et
+  streak_7: streak >= 7? → hayır (6)
+  quiz_master: 10 quiz? → N/A (ders)
+end note
+
+Storage -> LS : localStorage.setItem(\n'kariyeryolu_data', JSON.stringify(userData))
+activate LS
+LS --> Storage : OK
+deactivate LS
+
+Storage --> Home : { xpGained: 35,\nnewAchievements: [] }
+deactivate Storage
+
+Home -> Gam : XPGain(amount=35)
+activate Gam
+Gam -> User : "+35 XP" yüzen animasyon ⬆️
+Gam -> Gam : 2 saniye sonra kaybol
+Gam -> User : StatsBar güncelle:\n⚡285 XP | 🔥6 Gün
+deactivate Gam
+
+== Seviye Atlama Senaryosu ==
+
+User -> Home : Bir ders daha tamamla
+
+Home -> Storage : storage.completeNode('fe_u2_n4', false)
+activate Storage
+Storage -> Storage : xp = 285 + 35 = 320\n320 >= 300 → Level 3 → 4!\ncalculateLevel(320) = 4
+Storage -> Storage : level = 4 (Uzman 🎓)
+Storage --> Home : { xpGained: 35,\nnewAchievements: [] }
+deactivate Storage
+
+Home -> Gam : XPGain(35)\nLevelBadge(xp=320)
+activate Gam
+Gam -> User : "+35 XP" animasyonu\nSeviye güncellendi: Lvl 4 Uzman
+deactivate Gam
+
+== Rozet Kazanma Senaryosu ==
+
+User -> Home : Quiz'den %100 al
+
+Home -> Storage : storage.completeNode('fe_u2_n5', true, 100)
+activate Storage
+Storage -> Storage : xp += 40 (QUIZ_PERFECT)\n+ streak_bonus
+Storage -> Storage : Achievement kontrolü:\nperfect_quiz → %100 skor → KAZANILDI!
+
+Storage -> Storage : unlockAchievement('perfect_quiz')\nachievements.push({\n  id: 'perfect_quiz',\n  name: 'Kusursuz',\n  icon: '💯',\n  earnedAt: now()\n})
+
+Storage --> Home : { xpGained: 70,\nnewAchievements: [\n  {id: 'perfect_quiz',\n   name: 'Kusursuz'}\n]}
+deactivate Storage
+
+Home -> Gam : XPGain(70)
+activate Gam
+Gam -> User : "+70 XP" animasyonu
+deactivate Gam
+
+Home -> Gam : AchievementPopup(\nachievementId='perfect_quiz',\nisOpen=true)
+activate Gam
+Gam -> User : 🎉 Rozet Kazandınız!\n"Kusursuz 💯"\n"Bir quizden tam puan al"
+User -> Gam : "Harika!" butonuna tıkla
+Gam -> Home : onClose()
+deactivate Gam
+
+== Profil Görüntüleme ==
+
+User -> Home : Profil menüsüne tıkla
+Home -> Home : view = 'profile'
+
+Home -> Storage : storage.getStats()
+activate Storage
+Storage --> Home : UserStats\n{xp: 390, level: 4,\nstreak: 6, longestStreak: 6,\ntotalLessonsCompleted: 12,\ntotalQuizzesPassed: 3}
+deactivate Storage
+
+Home -> Storage : storage.getAchievements()
+activate Storage
+Storage --> Home : Achievement[]\n[{id: 'first_step'}, {id: 'perfect_quiz'}]
+deactivate Storage
+
+Home -> User : Profil Sayfası:\n┌─ StatCard: ⚡390 XP\n├─ StatCard: 🔥6 Gün Streak\n├─ StatCard: 📚12 Ders\n├─ StatCard: ✅3 Quiz\n├─ LevelCard: Lvl 4 Uzman\n└─ AchievementsList:\n   ✅ İlk Adım\n   ✅ Kusursuz\n   🔒 Tutarlı (7 gün streak)\n   🔒 Quiz Ustası (10 quiz)\n   ...
+
+deactivate Home
+
+@enduml

@@ -1,0 +1,94 @@
+@startuml KariyerYoluAI_UseCaseDiagram
+
+title KariyerYolu AI - Use Case Diyagramı
+
+left to right direction
+skinparam packageStyle rectangle
+skinparam actorStyle awesome
+skinparam usecase {
+    BackgroundColor #E3F2FD
+    BorderColor #1565C0
+    ArrowColor #333333
+}
+skinparam actor {
+    BackgroundColor #E8F5E9
+    BorderColor #2E7D32
+}
+
+actor "Kullanıcı" as User
+actor "Groq AI API\n(Llama 3.3 70B)" as GroqAI
+actor "localStorage\n(Veri Deposu)" as Storage
+
+rectangle "KariyerYolu AI Sistemi" {
+
+    package "Onboarding / Kariyer Yönlendirme" {
+        usecase "Kariyer Anketini\nDoldur" as UC1
+        usecase "Kariyer Yolu\nÖnerisi Al" as UC2
+        usecase "Alternatif Yolları\nGörüntüle" as UC3
+    }
+
+    package "Öğrenme Sistemi" {
+        usecase "Roadmap\nGörüntüle" as UC4
+        usecase "Ders Çalış" as UC5
+        usecase "Quiz Çöz" as UC6
+        usecase "Boss Sınavına\nGir" as UC7
+        usecase "Ders İçeriğini\nOku (Markdown)" as UC8
+    }
+
+    package "Oyunlaştırma Sistemi" {
+        usecase "XP Kazan" as UC9
+        usecase "Seviye Atla" as UC10
+        usecase "Streak Sürdür" as UC11
+        usecase "Rozet Kazan" as UC12
+    }
+
+    package "AI Mentor Chatbot" {
+        usecase "AI Chatbot ile\nSohbet Et" as UC13
+        usecase "Konu Bazlı\nSoru Sor (RAG)" as UC14
+    }
+
+    package "Profil ve Takip" {
+        usecase "Profil Görüntüle" as UC15
+        usecase "Hedefleri\nGörüntüle" as UC16
+        usecase "Rozetleri\nGörüntüle" as UC17
+        usecase "İlerleme Takibi\nYap" as UC18
+    }
+}
+
+' ===== Kullanıcı Bağlantıları =====
+User --> UC1
+User --> UC4
+User --> UC5
+User --> UC6
+User --> UC7
+User --> UC13
+User --> UC15
+User --> UC16
+User --> UC17
+
+' ===== Include İlişkileri =====
+UC1 ..> UC2 : <<include>>
+UC2 ..> UC3 : <<include>>
+UC5 ..> UC8 : <<include>>
+UC5 ..> UC9 : <<include>>
+UC6 ..> UC9 : <<include>>
+UC7 ..> UC9 : <<include>>
+UC9 ..> UC11 : <<include>>
+UC15 ..> UC18 : <<include>>
+
+' ===== Extend İlişkileri =====
+UC10 ..> UC9 : <<extend>>
+UC12 ..> UC9 : <<extend>>
+UC14 ..> UC13 : <<extend>>
+
+' ===== Dış Sistem Bağlantıları =====
+UC2 --> GroqAI
+UC13 --> GroqAI
+UC14 --> GroqAI
+
+UC9 --> Storage
+UC11 --> Storage
+UC12 --> Storage
+UC18 --> Storage
+
+@enduml

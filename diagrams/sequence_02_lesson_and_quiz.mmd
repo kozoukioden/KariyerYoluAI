@@ -1,0 +1,75 @@
+---
+title: "Sequence Diyagramı 2: Ders Çalışma ve Quiz Akışı"
+---
+sequenceDiagram
+    actor User as Kullanıcı
+    participant Home as HomePage
+    participant Roadmap as RoadmapView
+    participant Learning as LearningView
+    participant Quiz as QuizRunner
+    participant API as QuizAPI<br/>(/api/quiz)
+    participant DB as quizzes.json
+    participant LS as localStorage
+
+    Note over User,LS: Ders (Lesson) Akışı
+
+    User->>Roadmap: Ders node'una tıkla (type=lesson)
+    Roadmap->>Home: onNodeClick(nodeId)
+    Home->>Home: activeLesson = node.content<br/>view = 'lesson'
+    Home->>Learning: Render LearningView(title, content)
+    Learning->>User: Markdown içeriği göster<br/>(metin, kod örnekleri, açıklamalar)
+
+    User->>Learning: "Dersi Tamamla" butonuna tıkla
+    Learning->>Home: onComplete()
+
+    Home->>LS: storage.completeNode(nodeId, false)
+    LS->>LS: completedNodes.push(nodeId)<br/>xp += 10 + streak_bonus<br/>streak güncelle
+    LS-->>Home: {xpGained: 15, newAchievements: []}
+
+    Home->>User: "+15 XP" animasyonu<br/>Node tamamlandı ✓
+
+    Note over User,LS: Quiz Akışı
+
+    User->>Roadmap: Quiz node'una tıkla (type=quiz)
+    Roadmap->>Home: onNodeClick(nodeId)
+    Home->>API: GET /api/quiz/{nodeId}
+    API->>DB: quizzes.json oku
+    DB-->>API: Soru listesi
+    API->>API: Soruları karıştır (shuffle)
+    API-->>Home: {questions: Question[]}
+
+    Home->>Quiz: Render QuizRunner(questions)
+    Quiz->>User: İlk soru + 3 can ♥♥♥
+
+    loop Her soru için
+        User->>Quiz: Cevap seç
+        alt Doğru Cevap
+            Quiz->>User: ✓ Doğru! (yeşil animasyon)
+        else Yanlış Cevap
+            Quiz->>Quiz: hearts--
+            Quiz->>User: ✗ Yanlış! Açıklama göster
+            alt hearts == 0
+                Quiz->>Quiz: Quiz başarısız - break
+            end
+        end
+    end
+
+    Quiz->>Quiz: QuizResult hesapla
+
+    alt Başarılı (>=%70)
+        Quiz->>User: "Tebrikler!" 🎊 Konfeti
+        User->>Quiz: "Devam" tıkla
+        Quiz->>Home: onComplete(result)
+        Home->>LS: storage.completeNode(nodeId, true, score)
+        LS->>LS: xp += 25 (veya 40 perfect)<br/>quizAttempt kaydet<br/>achievement kontrol
+        LS-->>Home: {xpGained: 30, newAchievements}
+        Home->>User: "+30 XP" animasyonu
+    else Başarısız (<%70)
+        Quiz->>User: "Tekrar Dene" göster
+        User->>Quiz: "Devam" tıkla
+        Quiz->>Home: onComplete(result)
+        Home->>LS: storage.addQuizAttempt(nodeId, score, false)
+    end
+
+    Home->>Home: view = 'dashboard'
+    Home->>User: Dashboard'a dön

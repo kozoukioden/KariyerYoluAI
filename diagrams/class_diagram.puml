@@ -1,0 +1,415 @@
+@startuml KariyerYoluAI_ClassDiagram
+
+title KariyerYolu AI - Class (Sınıf) Diyagramı
+
+skinparam class {
+    BackgroundColor #E3F2FD
+    BorderColor #1565C0
+    ArrowColor #333333
+    FontSize 12
+}
+skinparam package {
+    BackgroundColor #F5F5F5
+    BorderColor #9E9E9E
+}
+
+' ===== VERİ MODELLERİ =====
+package "Veri Modelleri (Data Models)" {
+
+    class UserData {
+        - progress: UserProgress
+        - stats: UserStats
+        - achievements: Achievement[]
+        - surveyAnswers: Record<string, string>
+        - recommendedTrack: string
+    }
+
+    class UserProgress {
+        - completedNodes: string[]
+        - currentTrackId: string
+        - quizAttempts: Record<string, QuizAttempt[]>
+    }
+
+    class UserStats {
+        - xp: number
+        - level: number
+        - streak: number
+        - longestStreak: number
+        - lastActivityDate: string
+        - totalLessonsCompleted: number
+        - totalQuizzesPassed: number
+    }
+
+    class Achievement {
+        - id: string
+        - name: string
+        - description: string
+        - icon: string
+        - earnedAt: string
+    }
+
+    class QuizAttempt {
+        - score: number
+        - passed: boolean
+        - attemptedAt: string
+    }
+
+    UserData "1" *-- "1" UserProgress : contains
+    UserData "1" *-- "1" UserStats : contains
+    UserData "1" *-- "0..*" Achievement : contains
+    UserProgress "1" *-- "0..*" QuizAttempt : contains
+}
+
+' ===== ÖĞRENME İÇERİĞİ =====
+package "Öğrenme İçeriği (Learning Content)" {
+
+    class Track {
+        - id: string
+        - title: string
+        - description: string
+        - color: string
+        - units: Unit[]
+    }
+
+    class Unit {
+        - id: string
+        - title: string
+        - description: string
+        - color: string
+        - nodes: RoadmapNode[]
+    }
+
+    class RoadmapNode {
+        - id: string
+        - type: NodeType
+        - title: string
+        - description: string
+        - difficulty: string
+        - estimated_time: string
+        - content: string
+        - status: NodeStatus
+    }
+
+    enum NodeType {
+        lesson
+        quiz
+        boss
+    }
+
+    enum NodeStatus {
+        locked
+        unlocked
+        completed
+        in_progress
+    }
+
+    class Question {
+        - id: string
+        - question: string
+        - options: string[]
+        - correct_answer: string
+        - explanation: string
+    }
+
+    Track "1" *-- "1..*" Unit : contains
+    Unit "1" *-- "1..*" RoadmapNode : contains
+    RoadmapNode -- NodeType : has
+    RoadmapNode -- NodeStatus : has
+    RoadmapNode "1" o-- "0..*" Question : quiz has
+}
+
+' ===== QUIZ SİSTEMİ =====
+package "Quiz Sistemi" {
+
+    class QuizResult {
+        - totalQuestions: number
+        - correctAnswers: number
+        - wrongAnswers: number
+        - xpEarned: number
+        - passed: boolean
+    }
+
+    class QuizSubmission {
+        - node_id: string
+        - answers: Record<string, string>
+    }
+
+    class QuizGradeResponse {
+        - passed: boolean
+        - score: string
+        - scorePercentage: number
+        - correct: number
+        - total: number
+        - details: QuestionDetail[]
+        - message: string
+    }
+
+    class QuestionDetail {
+        - questionId: string
+        - correct: boolean
+        - userAnswer: string
+        - correctAnswer: string
+    }
+
+    QuizSubmission ..> QuizGradeResponse : produces
+    QuizGradeResponse "1" *-- "1..*" QuestionDetail
+}
+
+' ===== ONBOARDİNG / ÖNERİ =====
+package "Onboarding / Öneri Sistemi" {
+
+    class SurveyQuestion {
+        - id: string
+        - text: string
+        - type: QuestionType
+        - options: SurveyOption[]
+    }
+
+    enum QuestionType {
+        choice
+        multi
+    }
+
+    class SurveyOption {
+        - value: string
+        - label: string
+        - icon: string
+        - description: string
+    }
+
+    class TrackRecommendation {
+        - trackId: string
+        - trackTitle: string
+        - confidence: number
+        - reasons: string[]
+        - alternatives: TrackAlternative[]
+    }
+
+    class TrackAlternative {
+        - track_id: string
+        - title: string
+        - description: string
+        - score: number
+        - reasons: string[]
+        - match_percentage: number
+    }
+
+    SurveyQuestion "1" *-- "2..*" SurveyOption
+    SurveyQuestion -- QuestionType
+    TrackRecommendation "1" *-- "0..*" TrackAlternative
+}
+
+' ===== CHAT SİSTEMİ =====
+package "AI Chat Sistemi" {
+
+    class ChatMessage {
+        - role: MessageRole
+        - content: string
+        - timestamp: Date
+        - source: MessageSource
+    }
+
+    enum MessageRole {
+        user
+        assistant
+    }
+
+    enum MessageSource {
+        ai
+        rag
+        fallback
+        error
+    }
+
+    class ChatRequest {
+        - message: string
+        - history: ChatMessage[]
+        - current_track_id: string
+    }
+
+    class ChatResponse {
+        - reply: string
+        - source: MessageSource
+        - context: ChatContext[]
+    }
+
+    class ChatContext {
+        - title: string
+        - trackId: string
+    }
+
+    ChatMessage -- MessageRole
+    ChatMessage -- MessageSource
+    ChatRequest "1" o-- "0..*" ChatMessage : history
+    ChatResponse "1" *-- "0..*" ChatContext
+}
+
+' ===== SERVİS KATMANI =====
+package "Servis Katmanı (Services)" {
+
+    class Storage <<service>> {
+        + load(): UserData
+        + save(data: UserData): void
+        + reset(): void
+        + completeNode(nodeId, isQuiz, score): CompleteResult
+        + addQuizAttempt(nodeId, score, passed): void
+        + getQuizHistory(nodeId): QuizAttempt[]
+        + calculateLevel(xp): number
+        + getLevelInfo(level): LevelInfo
+        + getXPForNextLevel(xp): XPProgress
+        + unlockAchievement(id): Achievement
+        + saveSurveyAnswers(answers): void
+        + setRecommendedTrack(trackId): void
+        + isNodeCompleted(nodeId): boolean
+        + getCompletedNodes(): string[]
+        + getStats(): UserStats
+        + getAchievements(): Achievement[]
+        + hasActivityToday(): boolean
+    }
+
+    class CompleteResult {
+        - xpGained: number
+        - newAchievements: Achievement[]
+    }
+
+    class XPRewards <<constants>> {
+        + LESSON_COMPLETE: 10
+        + QUIZ_PASS: 25
+        + QUIZ_PERFECT: 40
+        + UNIT_COMPLETE: 50
+        + BOSS_LEVEL: 100
+        + STREAK_BONUS: 5
+    }
+
+    class LevelInfo {
+        - level: number
+        - minXP: number
+        - title: string
+    }
+
+    class XPProgress {
+        - current: number
+        - needed: number
+        - progress: number
+    }
+
+    Storage ..> UserData : manages
+    Storage ..> CompleteResult : returns
+    Storage ..> XPRewards : uses
+    Storage ..> LevelInfo : returns
+    Storage ..> XPProgress : returns
+}
+
+' ===== API ROUTES =====
+package "API Katmanı (Next.js API Routes)" {
+
+    class RecommendAPI <<API Route>> {
+        + POST /api/recommend
+        - scoreTracks(answers): TrackScore[]
+        - findBestMatch(scores): Track
+    }
+
+    class ChatAPI <<API Route>> {
+        + POST /api/chat
+        - searchRAG(query, tracks): ChatContext[]
+        - callGroqAPI(message, history, context): string
+    }
+
+    class QuizAPI <<API Route>> {
+        + GET /api/quiz/{nodeId}
+        + POST /api/quiz/submit
+        - gradeAnswers(answers, questions): QuizGradeResponse
+    }
+
+    class TracksAPI <<API Route>> {
+        + GET /api/tracks
+        + GET /api/tracks/{id}
+    }
+
+    RecommendAPI ..> TrackRecommendation : returns
+    ChatAPI ..> ChatResponse : returns
+    QuizAPI ..> QuizGradeResponse : returns
+    TracksAPI ..> Track : returns
+}
+
+' ===== COMPONENT KATMANI =====
+package "UI Bileşenleri (React Components)" {
+
+    class HomePage <<Component>> {
+        - view: ViewType
+        - userData: UserData
+        - currentTrack: Track
+        - activeLesson: LessonData
+        - activeQuiz: Question[]
+        - showXPGain: number
+        - showAchievement: string
+        + handleOnboardingComplete(result)
+        + handleNodeClick(nodeId)
+        + handleLessonComplete()
+        + handleQuizComplete(result)
+        + handleReset()
+    }
+
+    class OnboardingWizard <<Component>> {
+        - currentStep: number
+        - answers: Record<string, string>
+        - isLoading: boolean
+        - recommendation: TrackRecommendation
+        + onComplete(result: TrackRecommendation)
+    }
+
+    class RoadmapView <<Component>> {
+        - units: Unit[]
+        - userProgress: UserProgress
+        + onNodeClick(nodeId: string)
+    }
+
+    class QuizRunner <<Component>> {
+        - questions: Question[]
+        - currentQuestion: number
+        - hearts: number
+        - score: number
+        - selectedAnswer: string
+        + onComplete(result: QuizResult)
+        + onExit()
+    }
+
+    class LearningView <<Component>> {
+        - title: string
+        - content: string
+        + onStartQuiz()
+        + onClose()
+    }
+
+    class ChatWidget <<Component>> {
+        - messages: ChatMessage[]
+        - isOpen: boolean
+        - isLoading: boolean
+        - currentTrackId: string
+        + sendMessage(text: string)
+    }
+
+    class "Gamification Components" as GamComp <<Component Group>> {
+        UserStats
+        XPCounter
+        LevelBadge
+        StreakFlame
+        AchievementPopup
+        AchievementBadge
+        AchievementsList
+    }
+
+    HomePage --> OnboardingWizard : renders
+    HomePage --> RoadmapView : renders
+    HomePage --> QuizRunner : renders
+    HomePage --> LearningView : renders
+    HomePage --> ChatWidget : renders
+    HomePage --> GamComp : renders
+    HomePage ..> Storage : uses
+    OnboardingWizard ..> RecommendAPI : calls
+    QuizRunner ..> QuizAPI : calls
+    ChatWidget ..> ChatAPI : calls
+    RoadmapView ..> TracksAPI : calls
+}
+
+@enduml

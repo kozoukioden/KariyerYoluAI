@@ -1,0 +1,88 @@
+---
+title: KariyerYolu AI - Use Case Diyagramı
+---
+flowchart TB
+    %% Actors
+    User((("👤 Kullanıcı")))
+    GroqAI((("🤖 Groq AI API")))
+    LocalStorage((("💾 localStorage")))
+
+    %% Use Case Groups
+    subgraph Onboarding["🎯 Onboarding / Kariyer Yönlendirme"]
+        UC1["Kariyer Anketini Doldur"]
+        UC2["Kariyer Yolu Önerisi Al"]
+        UC3["Alternatif Yolları Görüntüle"]
+    end
+
+    subgraph Learning["📚 Öğrenme Sistemi"]
+        UC4["Roadmap Görüntüle"]
+        UC5["Ders Çalış"]
+        UC6["Quiz Çöz"]
+        UC7["Boss Sınavına Gir"]
+        UC8["Ders İçeriğini Oku"]
+    end
+
+    subgraph Gamification["🏆 Oyunlaştırma Sistemi"]
+        UC9["XP Kazan"]
+        UC10["Seviye Atla"]
+        UC11["Streak Sürdür"]
+        UC12["Rozet Kazan"]
+    end
+
+    subgraph AIChat["💬 AI Mentor"]
+        UC13["AI Chatbot ile Sohbet Et"]
+        UC14["Konu Bazlı Soru Sor"]
+    end
+
+    subgraph Profile["👤 Profil ve Takip"]
+        UC15["Profil Görüntüle"]
+        UC16["Hedefleri Görüntüle"]
+        UC17["Rozetleri Görüntüle"]
+        UC18["İlerleme Takibi Yap"]
+    end
+
+    %% User connections
+    User --> UC1
+    User --> UC4
+    User --> UC5
+    User --> UC6
+    User --> UC7
+    User --> UC13
+    User --> UC15
+    User --> UC16
+    User --> UC17
+
+    %% Include relationships
+    UC1 -->|"«include»"| UC2
+    UC2 -->|"«include»"| UC3
+    UC5 -->|"«include»"| UC8
+    UC5 -->|"«include»"| UC9
+    UC6 -->|"«include»"| UC9
+    UC7 -->|"«include»"| UC9
+    UC9 -->|"«include»"| UC11
+    UC15 -->|"«include»"| UC18
+
+    %% Extend relationships
+    UC9 -->|"«extend»"| UC10
+    UC9 -->|"«extend»"| UC12
+    UC13 -->|"«extend»"| UC14
+
+    %% External system connections
+    UC2 --> GroqAI
+    UC13 --> GroqAI
+    UC14 --> GroqAI
+
+    UC9 --> LocalStorage
+    UC11 --> LocalStorage
+    UC12 --> LocalStorage
+    UC18 --> LocalStorage
+
+    %% Styling
+    classDef actor fill:#E8F5E9,stroke:#2E7D32,stroke-width:2px,color:#1B5E20
+    classDef usecase fill:#E3F2FD,stroke:#1565C0,stroke-width:1px,color:#0D47A1
+    classDef external fill:#FFF3E0,stroke:#E65100,stroke-width:2px,color:#BF360C
+    classDef group fill:#F3E5F5,stroke:#7B1FA2,stroke-width:1px
+
+    class User actor
+    class GroqAI,LocalStorage external
+    class UC1,UC2,UC3,UC4,UC5,UC6,UC7,UC8,UC9,UC10,UC11,UC12,UC13,UC14,UC15,UC16,UC17,UC18 usecase

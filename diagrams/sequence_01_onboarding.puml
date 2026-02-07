@@ -1,0 +1,88 @@
+@startuml Sequence_Onboarding
+
+title KariyerYolu AI - Sequence Diyagramı 1: Onboarding ve Kariyer Önerisi Akışı
+
+skinparam sequence {
+    ArrowColor #333333
+    LifeLineBorderColor #1565C0
+    LifeLineBackgroundColor #E3F2FD
+    ParticipantBorderColor #1565C0
+    ParticipantBackgroundColor #E3F2FD
+    ActorBorderColor #2E7D32
+    ActorBackgroundColor #E8F5E9
+}
+
+actor "Kullanıcı" as User
+participant "HomePage" as Home
+participant "OnboardingWizard" as Onboard
+participant "RecommendAPI\n(/api/recommend)" as API
+database "tracks.json\n(Veri Dosyası)" as DB
+database "localStorage" as LS
+
+== Uygulama Başlangıcı ==
+
+User -> Home : Uygulamayı Aç
+activate Home
+
+Home -> LS : storage.load()
+activate LS
+LS --> Home : userData (surveyAnswers = null)
+deactivate LS
+
+Home -> Home : view = 'onboarding'\n(İlk kez giriş)
+
+Home -> Onboard : Render OnboardingWizard
+activate Onboard
+
+== Anket Süreci (12 Soru) ==
+
+loop Her soru için (12 soru)
+    Onboard -> User : Soruyu Göster\n(experience_level, interest_area,\nplatform_preference, work_style, ...)
+    User -> Onboard : Cevap Seç
+    Onboard -> Onboard : answers[questionId] = selectedValue
+    Onboard -> Onboard : currentStep++
+end
+
+== Kariyer Önerisi ==
+
+Onboard -> Onboard : isLoading = true
+Onboard -> API : POST /api/recommend\n{answers}
+activate API
+
+API -> DB : tracks.json oku\n(15 kariyer yolu)
+activate DB
+DB --> API : Tüm track verileri
+deactivate DB
+
+API -> API : scoreTracks(answers)\n- platform_preference analizi\n- interest_area eşleştirme\n- work_style puanlama\n- tech_interest değerlendirme\n- experience_level kontrolü
+API -> API : Tüm trackleri puana göre sırala
+API -> API : En yüksek puanlı track'i seç\n+ match_percentage hesapla
+
+API --> Onboard : TrackRecommendation\n{trackId, trackTitle,\nconfidence, reasons,\nalternatives[]}
+deactivate API
+
+Onboard -> Onboard : recommendation = response
+Onboard -> User : Öneri Ekranını Göster\n"Sana en uygun yol: Frontend Developer"\nGüven: %85\nSebepler listesi\nAlternatif yollar
+
+User -> Onboard : "Yola Başla" butonuna tıkla
+
+Onboard -> Home : onComplete(recommendation)
+deactivate Onboard
+
+== Sonuç Kaydetme ==
+
+Home -> LS : storage.saveSurveyAnswers(answers)
+activate LS
+LS --> Home : OK
+deactivate LS
+
+Home -> LS : storage.setRecommendedTrack(trackId)
+activate LS
+LS --> Home : OK
+deactivate LS
+
+Home -> Home : view = 'dashboard'
+Home -> User : Dashboard Görüntüle\n(Roadmap ile)
+deactivate Home
+
+@enduml

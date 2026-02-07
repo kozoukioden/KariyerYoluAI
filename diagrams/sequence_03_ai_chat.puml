@@ -1,0 +1,91 @@
+@startuml Sequence_AIChat
+
+title KariyerYolu AI - Sequence Diyagramı 3: AI Mentor Chatbot Akışı
+
+skinparam sequence {
+    ArrowColor #333333
+    LifeLineBorderColor #1565C0
+    LifeLineBackgroundColor #E3F2FD
+    ParticipantBorderColor #1565C0
+    ParticipantBackgroundColor #E3F2FD
+    ActorBorderColor #2E7D32
+    ActorBackgroundColor #E8F5E9
+}
+
+actor "Kullanıcı" as User
+participant "ChatWidget" as Chat
+participant "ChatAPI\n(/api/chat)" as API
+database "tracks.json\n(RAG Bilgi Tabanı)" as DB
+participant "Groq API\n(Llama 3.3 70B)" as Groq
+
+== Chat Başlatma ==
+
+User -> Chat : Chat ikonuna tıkla
+activate Chat
+Chat -> Chat : isOpen = true
+Chat -> User : Chat penceresi aç\nHoşgeldin mesajı göster\nHızlı soru butonları göster\n("Bu konuyu açıkla",\n"Nasıl öğrenmeliyim?", ...)
+
+== Mesaj Gönderme ==
+
+User -> Chat : Soru yaz ve gönder\n"React hooks nedir?"
+Chat -> Chat : messages.push({role: 'user',\ncontent: 'React hooks nedir?'})
+Chat -> Chat : isLoading = true
+Chat -> User : Yükleniyor animasyonu
+
+Chat -> API : POST /api/chat\n{message: "React hooks nedir?",\nhistory: [...önceki mesajlar],\ncurrent_track_id: "frontend_developer"}
+activate API
+
+== RAG (Retrieval-Augmented Generation) ==
+
+API -> DB : tracks.json oku
+activate DB
+DB --> API : Tüm track verileri\n(15 track, 200+ ders)
+deactivate DB
+
+API -> API : RAG Arama:\n1. Kullanıcı sorusunu analiz et\n2. Tüm ders içeriklerinde\n   anahtar kelime ara\n3. Eşleşen içerikleri bul\n4. current_track_id'ye\n   öncelik ver
+
+API -> API : context[] = [\n  {title: "React Hooks", trackId: "fe"},\n  {title: "State Yönetimi", trackId: "fe"}\n]
+
+== Groq AI Çağrısı ==
+
+API -> Groq : POST /openai/v1/chat/completions\n{\n  model: "llama-3.3-70b-versatile",\n  messages: [\n    {role: "system", content:\n     "Sen KariyerYolu AI mentorsun.\n      Türkçe cevap ver.\n      İlgili ders içeriği: [RAG context]"},\n    ...history,\n    {role: "user", content: "React hooks nedir?"}\n  ],\n  temperature: 0.7,\n  max_tokens: 1024\n}
+activate Groq
+
+Groq -> Groq : LLM İşleme:\nContext + Soru → Cevap Üretimi
+Groq --> API : {choices: [{message:\n{content: "React Hooks, fonksiyon\ncomponentlerinde state ve\nlifecycle özellikleri...\n\n```jsx\nconst [count, setCount] =\n  useState(0);\n```\n..."}}]}
+deactivate Groq
+
+API --> Chat : ChatResponse\n{reply: "React Hooks, fonksiyon...",\nsource: "rag",\ncontext: [{title: "React Hooks",\ntrackId: "frontend_developer"}]}
+deactivate API
+
+== Cevap Gösterimi ==
+
+Chat -> Chat : isLoading = false\nmessages.push({role: 'assistant',\ncontent: response.reply,\nsource: 'rag'})
+Chat -> User : AI cevabını göster\n(Markdown formatında:\nbaşlıklar, kod blokları,\nlisteler)\nKaynak etiketi: "📚 RAG"
+
+== Hata Durumları ==
+
+alt Groq API Hatası
+    API --> Chat : {reply: "Şu an yanıt veremiyorum...",\nsource: "fallback"}
+    Chat -> User : Fallback mesajı göster\nKaynak: "⚠️ Fallback"
+
+else RAG Sonuç Bulunamadı
+    API -> Groq : Genel soru olarak gönder\n(context olmadan)
+    Groq --> API : Genel AI cevabı
+    API --> Chat : {reply: "...",\nsource: "ai"}
+    Chat -> User : AI cevabını göster\nKaynak: "🤖 AI"
+end
+
+== Devam Eden Sohbet ==
+
+User -> Chat : Takip sorusu:\n"useState ve useEffect farkı?"
+Chat -> API : POST /api/chat\n{message: "...",\nhistory: [önceki 2 mesaj],\ncurrent_track_id: "frontend_developer"}
+activate API
+note right of API: Aynı RAG + Groq akışı\ntekrar çalışır\n(conversation history ile\ncontext korunur)
+API --> Chat : ChatResponse
+deactivate API
+Chat -> User : Cevabı göster
+
+deactivate Chat
+
+@enduml
