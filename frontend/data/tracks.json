@@ -1242,6 +1242,78 @@
             "content": "# iOS App Projesi\n\nTodo List veya Hava Durumu uygulaması geliştir.\n\n## Gereksinimler\n\n### Todo App\n- CRUD işlemleri\n- Core Data ile kayıt\n- SwiftUI List\n- Filtreleme\n- Dark mode desteği\n\n### Hava Durumu\n- API entegrasyonu\n- Konum servisi\n- Güzel UI tasarımı\n- 5 günlük tahmin\n- Widget desteği"
           }
         ]
+      },
+      {
+        "id": "mobile_ios_developer_unit_4",
+        "title": "Bölüm 4: Zirvesi Altyapı",
+        "description": "Bu bölümde iOS Developer alanındaki ileri seviye pratikleri öğreneceğiz.",
+        "color": "purple",
+        "nodes": [
+          {
+            "id": "mobile_ios_developer_unit_4_node_1",
+            "type": "lesson",
+            "title": "İleri İçerik 4.1",
+            "description": "Piyasa standartlarına uygun profesyonel iOS Developer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "mobile_ios_developer_unit_4_node_2",
+            "type": "lesson",
+            "title": "İleri İçerik 4.2",
+            "description": "Piyasa standartlarına uygun profesyonel iOS Developer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "mobile_ios_developer_unit_4_node_3",
+            "type": "quiz",
+            "title": "Bölüm 4 Değerlendirme",
+            "description": "Piyasa standartlarına uygun profesyonel iOS Developer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "mobile_ios_developer_unit_4_node_4",
+            "type": "boss",
+            "title": "Bölüm 4 Sonu Projesi",
+            "description": "Piyasa standartlarına uygun profesyonel iOS Developer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          }
+        ]
+      },
+      {
+        "id": "mobile_ios_developer_unit_5",
+        "title": "Bölüm 5: Uygulamalar Performans",
+        "description": "Bu bölümde iOS Developer alanındaki ileri seviye pratikleri öğreneceğiz.",
+        "color": "purple",
+        "nodes": [
+          {
+            "id": "mobile_ios_developer_unit_5_node_1",
+            "type": "lesson",
+            "title": "İleri İçerik 5.1",
+            "description": "Piyasa standartlarına uygun profesyonel iOS Developer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "mobile_ios_developer_unit_5_node_2",
+            "type": "lesson",
+            "title": "İleri İçerik 5.2",
+            "description": "Piyasa standartlarına uygun profesyonel iOS Developer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "mobile_ios_developer_unit_5_node_3",
+            "type": "quiz",
+            "title": "Bölüm 5 Değerlendirme",
+            "description": "Piyasa standartlarına uygun profesyonel iOS Developer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "mobile_ios_developer_unit_5_node_4",
+            "type": "boss",
+            "title": "Bölüm 5 Sonu Projesi",
+            "description": "Piyasa standartlarına uygun profesyonel iOS Developer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          }
+        ]
       }
     ]
   },
@@ -1382,6 +1454,78 @@
             "content": "# Android App Projesi\n\nNote Taking veya Shopping List uygulaması geliştir.\n\n## Gereksinimler\n\n- Jetpack Compose UI\n- MVVM architecture\n- Room database\n- Coroutines\n- Navigation Compose\n- Material 3 theming"
           }
         ]
+      },
+      {
+        "id": "mobile_android_developer_unit_4",
+        "title": "Bölüm 4: Zirvesi Dağıtım",
+        "description": "Bu bölümde Android Developer alanındaki ileri seviye pratikleri öğreneceğiz.",
+        "color": "purple",
+        "nodes": [
+          {
+            "id": "mobile_android_developer_unit_4_node_1",
+            "type": "lesson",
+            "title": "İleri İçerik 4.1",
+            "description": "Piyasa standartlarına uygun profesyonel Android Developer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "mobile_android_developer_unit_4_node_2",
+            "type": "lesson",
+            "title": "İleri İçerik 4.2",
+            "description": "Piyasa standartlarına uygun profesyonel Android Developer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "mobile_android_developer_unit_4_node_3",
+            "type": "quiz",
+            "title": "Bölüm 4 Değerlendirme",
+            "description": "Piyasa standartlarına uygun profesyonel Android Developer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "mobile_android_developer_unit_4_node_4",
+            "type": "boss",
+            "title": "Bölüm 4 Sonu Projesi",
+            "description": "Piyasa standartlarına uygun profesyonel Android Developer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          }
+        ]
+      },
+      {
+        "id": "mobile_android_developer_unit_5",
+        "title": "Bölüm 5: Uygulamalar Dağıtım",
+        "description": "Bu bölümde Android Developer alanındaki ileri seviye pratikleri öğreneceğiz.",
+        "color": "purple",
+        "nodes": [
+          {
+            "id": "mobile_android_developer_unit_5_node_1",
+            "type": "lesson",
+            "title": "İleri İçerik 5.1",
+            "description": "Piyasa standartlarına uygun profesyonel Android Developer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "mobile_android_developer_unit_5_node_2",
+            "type": "lesson",
+            "title": "İleri İçerik 5.2",
+            "description": "Piyasa standartlarına uygun profesyonel Android Developer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "mobile_android_developer_unit_5_node_3",
+            "type": "quiz",
+            "title": "Bölüm 5 Değerlendirme",
+            "description": "Piyasa standartlarına uygun profesyonel Android Developer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "mobile_android_developer_unit_5_node_4",
+            "type": "boss",
+            "title": "Bölüm 5 Sonu Projesi",
+            "description": "Piyasa standartlarına uygun profesyonel Android Developer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          }
+        ]
       }
     ]
   },
@@ -1476,6 +1620,135 @@
             "difficulty": "Hard",
             "estimated_time": "180 min",
             "content": "# Cross-Platform Projesi\n\nReact Native veya Flutter ile çalışan bir uygulama geliştir.\n\n## Gereksinimler\n\n- iOS ve Android desteği\n- Navigation\n- State management\n- API entegrasyonu\n- Güzel UI tasarımı\n- AsyncStorage/SharedPreferences"
+          }
+        ]
+      },
+      {
+        "id": "mobile_cross_developer_unit_3",
+        "title": "Bölüm 3: Ekosistem Test",
+        "description": "Bu bölümde Cross-Platform Mobile alanındaki ileri seviye pratikleri öğreneceğiz.",
+        "color": "blue",
+        "nodes": [
+          {
+            "id": "mobile_cross_developer_unit_3_node_1",
+            "type": "lesson",
+            "title": "İleri İçerik 3.1",
+            "description": "Piyasa standartlarına uygun profesyonel Cross-Platform Mobile yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "mobile_cross_developer_unit_3_node_2",
+            "type": "lesson",
+            "title": "İleri İçerik 3.2",
+            "description": "Piyasa standartlarına uygun profesyonel Cross-Platform Mobile yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "mobile_cross_developer_unit_3_node_3",
+            "type": "lesson",
+            "title": "İleri İçerik 3.3",
+            "description": "Piyasa standartlarına uygun profesyonel Cross-Platform Mobile yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "mobile_cross_developer_unit_3_node_4",
+            "type": "quiz",
+            "title": "Bölüm 3 Değerlendirme",
+            "description": "Piyasa standartlarına uygun profesyonel Cross-Platform Mobile yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "mobile_cross_developer_unit_3_node_5",
+            "type": "boss",
+            "title": "Bölüm 3 Sonu Projesi",
+            "description": "Piyasa standartlarına uygun profesyonel Cross-Platform Mobile yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          }
+        ]
+      },
+      {
+        "id": "mobile_cross_developer_unit_4",
+        "title": "Bölüm 4: Uygulamalar Ölçeklenebilirlik",
+        "description": "Bu bölümde Cross-Platform Mobile alanındaki ileri seviye pratikleri öğreneceğiz.",
+        "color": "blue",
+        "nodes": [
+          {
+            "id": "mobile_cross_developer_unit_4_node_1",
+            "type": "lesson",
+            "title": "İleri İçerik 4.1",
+            "description": "Piyasa standartlarına uygun profesyonel Cross-Platform Mobile yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "mobile_cross_developer_unit_4_node_2",
+            "type": "lesson",
+            "title": "İleri İçerik 4.2",
+            "description": "Piyasa standartlarına uygun profesyonel Cross-Platform Mobile yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "mobile_cross_developer_unit_4_node_3",
+            "type": "lesson",
+            "title": "İleri İçerik 4.3",
+            "description": "Piyasa standartlarına uygun profesyonel Cross-Platform Mobile yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "mobile_cross_developer_unit_4_node_4",
+            "type": "quiz",
+            "title": "Bölüm 4 Değerlendirme",
+            "description": "Piyasa standartlarına uygun profesyonel Cross-Platform Mobile yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "mobile_cross_developer_unit_4_node_5",
+            "type": "boss",
+            "title": "Bölüm 4 Sonu Projesi",
+            "description": "Piyasa standartlarına uygun profesyonel Cross-Platform Mobile yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          }
+        ]
+      },
+      {
+        "id": "mobile_cross_developer_unit_5",
+        "title": "Bölüm 5: Zirvesi Güvenlik",
+        "description": "Bu bölümde Cross-Platform Mobile alanındaki ileri seviye pratikleri öğreneceğiz.",
+        "color": "blue",
+        "nodes": [
+          {
+            "id": "mobile_cross_developer_unit_5_node_1",
+            "type": "lesson",
+            "title": "İleri İçerik 5.1",
+            "description": "Piyasa standartlarına uygun profesyonel Cross-Platform Mobile yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "mobile_cross_developer_unit_5_node_2",
+            "type": "lesson",
+            "title": "İleri İçerik 5.2",
+            "description": "Piyasa standartlarına uygun profesyonel Cross-Platform Mobile yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "mobile_cross_developer_unit_5_node_3",
+            "type": "lesson",
+            "title": "İleri İçerik 5.3",
+            "description": "Piyasa standartlarına uygun profesyonel Cross-Platform Mobile yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "mobile_cross_developer_unit_5_node_4",
+            "type": "quiz",
+            "title": "Bölüm 5 Değerlendirme",
+            "description": "Piyasa standartlarına uygun profesyonel Cross-Platform Mobile yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "mobile_cross_developer_unit_5_node_5",
+            "type": "boss",
+            "title": "Bölüm 5 Sonu Projesi",
+            "description": "Piyasa standartlarına uygun profesyonel Cross-Platform Mobile yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
           }
         ]
       }
@@ -1591,6 +1864,85 @@
             "content": "# DevOps Projesi\n\nBir uygulama için tam CI/CD pipeline kur.\n\n## Gereksinimler\n\n- Dockerfile\n- docker-compose.yml\n- GitHub Actions workflow\n- Test automation\n- Auto deployment\n- Monitoring setup"
           }
         ]
+      },
+      {
+        "id": "devops_engineer_unit_4",
+        "title": "Bölüm 4: Mimari Performans",
+        "description": "Bu bölümde DevOps Engineer alanındaki ileri seviye pratikleri öğreneceğiz.",
+        "color": "purple",
+        "nodes": [
+          {
+            "id": "devops_engineer_unit_4_node_1",
+            "type": "lesson",
+            "title": "İleri İçerik 4.1",
+            "description": "Piyasa standartlarına uygun profesyonel DevOps Engineer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "devops_engineer_unit_4_node_2",
+            "type": "lesson",
+            "title": "İleri İçerik 4.2",
+            "description": "Piyasa standartlarına uygun profesyonel DevOps Engineer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "devops_engineer_unit_4_node_3",
+            "type": "lesson",
+            "title": "İleri İçerik 4.3",
+            "description": "Piyasa standartlarına uygun profesyonel DevOps Engineer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "devops_engineer_unit_4_node_4",
+            "type": "quiz",
+            "title": "Bölüm 4 Değerlendirme",
+            "description": "Piyasa standartlarına uygun profesyonel DevOps Engineer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "devops_engineer_unit_4_node_5",
+            "type": "boss",
+            "title": "Bölüm 4 Sonu Projesi",
+            "description": "Piyasa standartlarına uygun profesyonel DevOps Engineer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          }
+        ]
+      },
+      {
+        "id": "devops_engineer_unit_5",
+        "title": "Bölüm 5: Zirvesi Dağıtım",
+        "description": "Bu bölümde DevOps Engineer alanındaki ileri seviye pratikleri öğreneceğiz.",
+        "color": "purple",
+        "nodes": [
+          {
+            "id": "devops_engineer_unit_5_node_1",
+            "type": "lesson",
+            "title": "İleri İçerik 5.1",
+            "description": "Piyasa standartlarına uygun profesyonel DevOps Engineer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "devops_engineer_unit_5_node_2",
+            "type": "lesson",
+            "title": "İleri İçerik 5.2",
+            "description": "Piyasa standartlarına uygun profesyonel DevOps Engineer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "devops_engineer_unit_5_node_3",
+            "type": "quiz",
+            "title": "Bölüm 5 Değerlendirme",
+            "description": "Piyasa standartlarına uygun profesyonel DevOps Engineer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "devops_engineer_unit_5_node_4",
+            "type": "boss",
+            "title": "Bölüm 5 Sonu Projesi",
+            "description": "Piyasa standartlarına uygun profesyonel DevOps Engineer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          }
+        ]
       }
     ]
   },
@@ -1658,6 +2010,128 @@
             "difficulty": "Hard",
             "estimated_time": "120 min",
             "content": "# EDA Projesi\n\nBir veri seti üzerinde tam EDA yap.\n\n## Adımlar\n\n1. Veri yükleme\n2. Missing value analizi\n3. İstatistiksel özet\n4. Görselleştirme\n5. Korelasyon analizi"
+          }
+        ]
+      },
+      {
+        "id": "data_scientist_unit_3",
+        "title": "Bölüm 3: Ekosistem Stratejileri",
+        "description": "Bu bölümde Data Scientist alanındaki ileri seviye pratikleri öğreneceğiz.",
+        "color": "pink",
+        "nodes": [
+          {
+            "id": "data_scientist_unit_3_node_1",
+            "type": "lesson",
+            "title": "İleri İçerik 3.1",
+            "description": "Piyasa standartlarına uygun profesyonel Data Scientist yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "data_scientist_unit_3_node_2",
+            "type": "lesson",
+            "title": "İleri İçerik 3.2",
+            "description": "Piyasa standartlarına uygun profesyonel Data Scientist yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "data_scientist_unit_3_node_3",
+            "type": "lesson",
+            "title": "İleri İçerik 3.3",
+            "description": "Piyasa standartlarına uygun profesyonel Data Scientist yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "data_scientist_unit_3_node_4",
+            "type": "quiz",
+            "title": "Bölüm 3 Değerlendirme",
+            "description": "Piyasa standartlarına uygun profesyonel Data Scientist yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "data_scientist_unit_3_node_5",
+            "type": "boss",
+            "title": "Bölüm 3 Sonu Projesi",
+            "description": "Piyasa standartlarına uygun profesyonel Data Scientist yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          }
+        ]
+      },
+      {
+        "id": "data_scientist_unit_4",
+        "title": "Bölüm 4: Ekosistem Analitik",
+        "description": "Bu bölümde Data Scientist alanındaki ileri seviye pratikleri öğreneceğiz.",
+        "color": "pink",
+        "nodes": [
+          {
+            "id": "data_scientist_unit_4_node_1",
+            "type": "lesson",
+            "title": "İleri İçerik 4.1",
+            "description": "Piyasa standartlarına uygun profesyonel Data Scientist yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "data_scientist_unit_4_node_2",
+            "type": "lesson",
+            "title": "İleri İçerik 4.2",
+            "description": "Piyasa standartlarına uygun profesyonel Data Scientist yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "data_scientist_unit_4_node_3",
+            "type": "quiz",
+            "title": "Bölüm 4 Değerlendirme",
+            "description": "Piyasa standartlarına uygun profesyonel Data Scientist yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "data_scientist_unit_4_node_4",
+            "type": "boss",
+            "title": "Bölüm 4 Sonu Projesi",
+            "description": "Piyasa standartlarına uygun profesyonel Data Scientist yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          }
+        ]
+      },
+      {
+        "id": "data_scientist_unit_5",
+        "title": "Bölüm 5: Proje Dağıtım",
+        "description": "Bu bölümde Data Scientist alanındaki ileri seviye pratikleri öğreneceğiz.",
+        "color": "pink",
+        "nodes": [
+          {
+            "id": "data_scientist_unit_5_node_1",
+            "type": "lesson",
+            "title": "İleri İçerik 5.1",
+            "description": "Piyasa standartlarına uygun profesyonel Data Scientist yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "data_scientist_unit_5_node_2",
+            "type": "lesson",
+            "title": "İleri İçerik 5.2",
+            "description": "Piyasa standartlarına uygun profesyonel Data Scientist yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "data_scientist_unit_5_node_3",
+            "type": "lesson",
+            "title": "İleri İçerik 5.3",
+            "description": "Piyasa standartlarına uygun profesyonel Data Scientist yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "data_scientist_unit_5_node_4",
+            "type": "quiz",
+            "title": "Bölüm 5 Değerlendirme",
+            "description": "Piyasa standartlarına uygun profesyonel Data Scientist yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "data_scientist_unit_5_node_5",
+            "type": "boss",
+            "title": "Bölüm 5 Sonu Projesi",
+            "description": "Piyasa standartlarına uygun profesyonel Data Scientist yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
           }
         ]
       }
@@ -1729,6 +2203,135 @@
             "content": "# ML Projesi\n\nTam bir ML projesi geliştir.\n\n## Gereksinimler\n\n- Veri temizleme\n- Feature engineering\n- Model eğitimi\n- Evaluation\n- Deployment"
           }
         ]
+      },
+      {
+        "id": "ml_engineer_unit_3",
+        "title": "Bölüm 3: İleri Güvenlik",
+        "description": "Bu bölümde ML Engineer alanındaki ileri seviye pratikleri öğreneceğiz.",
+        "color": "orange",
+        "nodes": [
+          {
+            "id": "ml_engineer_unit_3_node_1",
+            "type": "lesson",
+            "title": "İleri İçerik 3.1",
+            "description": "Piyasa standartlarına uygun profesyonel ML Engineer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "ml_engineer_unit_3_node_2",
+            "type": "lesson",
+            "title": "İleri İçerik 3.2",
+            "description": "Piyasa standartlarına uygun profesyonel ML Engineer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "ml_engineer_unit_3_node_3",
+            "type": "lesson",
+            "title": "İleri İçerik 3.3",
+            "description": "Piyasa standartlarına uygun profesyonel ML Engineer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "ml_engineer_unit_3_node_4",
+            "type": "quiz",
+            "title": "Bölüm 3 Değerlendirme",
+            "description": "Piyasa standartlarına uygun profesyonel ML Engineer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "ml_engineer_unit_3_node_5",
+            "type": "boss",
+            "title": "Bölüm 3 Sonu Projesi",
+            "description": "Piyasa standartlarına uygun profesyonel ML Engineer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          }
+        ]
+      },
+      {
+        "id": "ml_engineer_unit_4",
+        "title": "Bölüm 4: Masterclass Ölçeklenebilirlik",
+        "description": "Bu bölümde ML Engineer alanındaki ileri seviye pratikleri öğreneceğiz.",
+        "color": "orange",
+        "nodes": [
+          {
+            "id": "ml_engineer_unit_4_node_1",
+            "type": "lesson",
+            "title": "İleri İçerik 4.1",
+            "description": "Piyasa standartlarına uygun profesyonel ML Engineer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "ml_engineer_unit_4_node_2",
+            "type": "lesson",
+            "title": "İleri İçerik 4.2",
+            "description": "Piyasa standartlarına uygun profesyonel ML Engineer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "ml_engineer_unit_4_node_3",
+            "type": "lesson",
+            "title": "İleri İçerik 4.3",
+            "description": "Piyasa standartlarına uygun profesyonel ML Engineer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "ml_engineer_unit_4_node_4",
+            "type": "quiz",
+            "title": "Bölüm 4 Değerlendirme",
+            "description": "Piyasa standartlarına uygun profesyonel ML Engineer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "ml_engineer_unit_4_node_5",
+            "type": "boss",
+            "title": "Bölüm 4 Sonu Projesi",
+            "description": "Piyasa standartlarına uygun profesyonel ML Engineer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          }
+        ]
+      },
+      {
+        "id": "ml_engineer_unit_5",
+        "title": "Bölüm 5: Uzmanlık Dağıtım",
+        "description": "Bu bölümde ML Engineer alanındaki ileri seviye pratikleri öğreneceğiz.",
+        "color": "orange",
+        "nodes": [
+          {
+            "id": "ml_engineer_unit_5_node_1",
+            "type": "lesson",
+            "title": "İleri İçerik 5.1",
+            "description": "Piyasa standartlarına uygun profesyonel ML Engineer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "ml_engineer_unit_5_node_2",
+            "type": "lesson",
+            "title": "İleri İçerik 5.2",
+            "description": "Piyasa standartlarına uygun profesyonel ML Engineer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "ml_engineer_unit_5_node_3",
+            "type": "lesson",
+            "title": "İleri İçerik 5.3",
+            "description": "Piyasa standartlarına uygun profesyonel ML Engineer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "ml_engineer_unit_5_node_4",
+            "type": "quiz",
+            "title": "Bölüm 5 Değerlendirme",
+            "description": "Piyasa standartlarına uygun profesyonel ML Engineer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "ml_engineer_unit_5_node_5",
+            "type": "boss",
+            "title": "Bölüm 5 Sonu Projesi",
+            "description": "Piyasa standartlarına uygun profesyonel ML Engineer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          }
+        ]
       }
     ]
   },
@@ -1796,6 +2399,128 @@
             "difficulty": "Hard",
             "estimated_time": "120 min",
             "content": "# Database Projesi\n\nE-ticaret veritabanı tasarla.\n\n## Gereksinimler\n\n- Users, Products, Orders\n- Normalizasyon\n- İndeksler\n- Views"
+          }
+        ]
+      },
+      {
+        "id": "database_admin_unit_3",
+        "title": "Bölüm 3: Ekosistem Güvenlik",
+        "description": "Bu bölümde Database Administrator alanındaki ileri seviye pratikleri öğreneceğiz.",
+        "color": "green",
+        "nodes": [
+          {
+            "id": "database_admin_unit_3_node_1",
+            "type": "lesson",
+            "title": "İleri İçerik 3.1",
+            "description": "Piyasa standartlarına uygun profesyonel Database Administrator yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "database_admin_unit_3_node_2",
+            "type": "lesson",
+            "title": "İleri İçerik 3.2",
+            "description": "Piyasa standartlarına uygun profesyonel Database Administrator yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "database_admin_unit_3_node_3",
+            "type": "lesson",
+            "title": "İleri İçerik 3.3",
+            "description": "Piyasa standartlarına uygun profesyonel Database Administrator yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "database_admin_unit_3_node_4",
+            "type": "quiz",
+            "title": "Bölüm 3 Değerlendirme",
+            "description": "Piyasa standartlarına uygun profesyonel Database Administrator yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "database_admin_unit_3_node_5",
+            "type": "boss",
+            "title": "Bölüm 3 Sonu Projesi",
+            "description": "Piyasa standartlarına uygun profesyonel Database Administrator yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          }
+        ]
+      },
+      {
+        "id": "database_admin_unit_4",
+        "title": "Bölüm 4: Ekosistem Test",
+        "description": "Bu bölümde Database Administrator alanındaki ileri seviye pratikleri öğreneceğiz.",
+        "color": "green",
+        "nodes": [
+          {
+            "id": "database_admin_unit_4_node_1",
+            "type": "lesson",
+            "title": "İleri İçerik 4.1",
+            "description": "Piyasa standartlarına uygun profesyonel Database Administrator yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "database_admin_unit_4_node_2",
+            "type": "lesson",
+            "title": "İleri İçerik 4.2",
+            "description": "Piyasa standartlarına uygun profesyonel Database Administrator yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "database_admin_unit_4_node_3",
+            "type": "lesson",
+            "title": "İleri İçerik 4.3",
+            "description": "Piyasa standartlarına uygun profesyonel Database Administrator yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "database_admin_unit_4_node_4",
+            "type": "quiz",
+            "title": "Bölüm 4 Değerlendirme",
+            "description": "Piyasa standartlarına uygun profesyonel Database Administrator yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "database_admin_unit_4_node_5",
+            "type": "boss",
+            "title": "Bölüm 4 Sonu Projesi",
+            "description": "Piyasa standartlarına uygun profesyonel Database Administrator yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          }
+        ]
+      },
+      {
+        "id": "database_admin_unit_5",
+        "title": "Bölüm 5: Masterclass Dağıtım",
+        "description": "Bu bölümde Database Administrator alanındaki ileri seviye pratikleri öğreneceğiz.",
+        "color": "green",
+        "nodes": [
+          {
+            "id": "database_admin_unit_5_node_1",
+            "type": "lesson",
+            "title": "İleri İçerik 5.1",
+            "description": "Piyasa standartlarına uygun profesyonel Database Administrator yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "database_admin_unit_5_node_2",
+            "type": "lesson",
+            "title": "İleri İçerik 5.2",
+            "description": "Piyasa standartlarına uygun profesyonel Database Administrator yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "database_admin_unit_5_node_3",
+            "type": "quiz",
+            "title": "Bölüm 5 Değerlendirme",
+            "description": "Piyasa standartlarına uygun profesyonel Database Administrator yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "database_admin_unit_5_node_4",
+            "type": "boss",
+            "title": "Bölüm 5 Sonu Projesi",
+            "description": "Piyasa standartlarına uygun profesyonel Database Administrator yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
           }
         ]
       }
@@ -1867,6 +2592,128 @@
             "content": "# UI/UX Projesi\n\nMobil uygulama tasarla.\n\n## Deliverables\n\n- User personas\n- Wireframes\n- High-fidelity mockups\n- Prototype (Figma)"
           }
         ]
+      },
+      {
+        "id": "ui_ux_designer_unit_3",
+        "title": "Bölüm 3: Uzmanlık Analitik",
+        "description": "Bu bölümde UI/UX Designer alanındaki ileri seviye pratikleri öğreneceğiz.",
+        "color": "purple",
+        "nodes": [
+          {
+            "id": "ui_ux_designer_unit_3_node_1",
+            "type": "lesson",
+            "title": "İleri İçerik 3.1",
+            "description": "Piyasa standartlarına uygun profesyonel UI/UX Designer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "ui_ux_designer_unit_3_node_2",
+            "type": "lesson",
+            "title": "İleri İçerik 3.2",
+            "description": "Piyasa standartlarına uygun profesyonel UI/UX Designer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "ui_ux_designer_unit_3_node_3",
+            "type": "quiz",
+            "title": "Bölüm 3 Değerlendirme",
+            "description": "Piyasa standartlarına uygun profesyonel UI/UX Designer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "ui_ux_designer_unit_3_node_4",
+            "type": "boss",
+            "title": "Bölüm 3 Sonu Projesi",
+            "description": "Piyasa standartlarına uygun profesyonel UI/UX Designer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          }
+        ]
+      },
+      {
+        "id": "ui_ux_designer_unit_4",
+        "title": "Bölüm 4: Mimari Test",
+        "description": "Bu bölümde UI/UX Designer alanındaki ileri seviye pratikleri öğreneceğiz.",
+        "color": "purple",
+        "nodes": [
+          {
+            "id": "ui_ux_designer_unit_4_node_1",
+            "type": "lesson",
+            "title": "İleri İçerik 4.1",
+            "description": "Piyasa standartlarına uygun profesyonel UI/UX Designer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "ui_ux_designer_unit_4_node_2",
+            "type": "lesson",
+            "title": "İleri İçerik 4.2",
+            "description": "Piyasa standartlarına uygun profesyonel UI/UX Designer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "ui_ux_designer_unit_4_node_3",
+            "type": "lesson",
+            "title": "İleri İçerik 4.3",
+            "description": "Piyasa standartlarına uygun profesyonel UI/UX Designer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "ui_ux_designer_unit_4_node_4",
+            "type": "quiz",
+            "title": "Bölüm 4 Değerlendirme",
+            "description": "Piyasa standartlarına uygun profesyonel UI/UX Designer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "ui_ux_designer_unit_4_node_5",
+            "type": "boss",
+            "title": "Bölüm 4 Sonu Projesi",
+            "description": "Piyasa standartlarına uygun profesyonel UI/UX Designer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          }
+        ]
+      },
+      {
+        "id": "ui_ux_designer_unit_5",
+        "title": "Bölüm 5: Uygulamalar Güvenlik",
+        "description": "Bu bölümde UI/UX Designer alanındaki ileri seviye pratikleri öğreneceğiz.",
+        "color": "purple",
+        "nodes": [
+          {
+            "id": "ui_ux_designer_unit_5_node_1",
+            "type": "lesson",
+            "title": "İleri İçerik 5.1",
+            "description": "Piyasa standartlarına uygun profesyonel UI/UX Designer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "ui_ux_designer_unit_5_node_2",
+            "type": "lesson",
+            "title": "İleri İçerik 5.2",
+            "description": "Piyasa standartlarına uygun profesyonel UI/UX Designer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "ui_ux_designer_unit_5_node_3",
+            "type": "lesson",
+            "title": "İleri İçerik 5.3",
+            "description": "Piyasa standartlarına uygun profesyonel UI/UX Designer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "ui_ux_designer_unit_5_node_4",
+            "type": "quiz",
+            "title": "Bölüm 5 Değerlendirme",
+            "description": "Piyasa standartlarına uygun profesyonel UI/UX Designer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "ui_ux_designer_unit_5_node_5",
+            "type": "boss",
+            "title": "Bölüm 5 Sonu Projesi",
+            "description": "Piyasa standartlarına uygun profesyonel UI/UX Designer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          }
+        ]
       }
     ]
   },
@@ -1934,6 +2781,121 @@
             "difficulty": "Hard",
             "estimated_time": "240 min",
             "content": "# DApp Projesi\n\nTam bir DApp geliştir.\n\n## Gereksinimler\n\n- Solidity smart contract\n- React frontend\n- Ethers.js integration\n- Wallet connection\n- Testnet deployment"
+          }
+        ]
+      },
+      {
+        "id": "blockchain_developer_unit_3",
+        "title": "Bölüm 3: Uygulamalar Ölçeklenebilirlik",
+        "description": "Bu bölümde Blockchain Developer alanındaki ileri seviye pratikleri öğreneceğiz.",
+        "color": "cyan",
+        "nodes": [
+          {
+            "id": "blockchain_developer_unit_3_node_1",
+            "type": "lesson",
+            "title": "İleri İçerik 3.1",
+            "description": "Piyasa standartlarına uygun profesyonel Blockchain Developer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "blockchain_developer_unit_3_node_2",
+            "type": "lesson",
+            "title": "İleri İçerik 3.2",
+            "description": "Piyasa standartlarına uygun profesyonel Blockchain Developer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "blockchain_developer_unit_3_node_3",
+            "type": "quiz",
+            "title": "Bölüm 3 Değerlendirme",
+            "description": "Piyasa standartlarına uygun profesyonel Blockchain Developer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "blockchain_developer_unit_3_node_4",
+            "type": "boss",
+            "title": "Bölüm 3 Sonu Projesi",
+            "description": "Piyasa standartlarına uygun profesyonel Blockchain Developer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          }
+        ]
+      },
+      {
+        "id": "blockchain_developer_unit_4",
+        "title": "Bölüm 4: Derin Stratejileri",
+        "description": "Bu bölümde Blockchain Developer alanındaki ileri seviye pratikleri öğreneceğiz.",
+        "color": "cyan",
+        "nodes": [
+          {
+            "id": "blockchain_developer_unit_4_node_1",
+            "type": "lesson",
+            "title": "İleri İçerik 4.1",
+            "description": "Piyasa standartlarına uygun profesyonel Blockchain Developer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "blockchain_developer_unit_4_node_2",
+            "type": "lesson",
+            "title": "İleri İçerik 4.2",
+            "description": "Piyasa standartlarına uygun profesyonel Blockchain Developer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "blockchain_developer_unit_4_node_3",
+            "type": "lesson",
+            "title": "İleri İçerik 4.3",
+            "description": "Piyasa standartlarına uygun profesyonel Blockchain Developer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "blockchain_developer_unit_4_node_4",
+            "type": "quiz",
+            "title": "Bölüm 4 Değerlendirme",
+            "description": "Piyasa standartlarına uygun profesyonel Blockchain Developer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "blockchain_developer_unit_4_node_5",
+            "type": "boss",
+            "title": "Bölüm 4 Sonu Projesi",
+            "description": "Piyasa standartlarına uygun profesyonel Blockchain Developer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          }
+        ]
+      },
+      {
+        "id": "blockchain_developer_unit_5",
+        "title": "Bölüm 5: İleri Güvenlik",
+        "description": "Bu bölümde Blockchain Developer alanındaki ileri seviye pratikleri öğreneceğiz.",
+        "color": "cyan",
+        "nodes": [
+          {
+            "id": "blockchain_developer_unit_5_node_1",
+            "type": "lesson",
+            "title": "İleri İçerik 5.1",
+            "description": "Piyasa standartlarına uygun profesyonel Blockchain Developer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "blockchain_developer_unit_5_node_2",
+            "type": "lesson",
+            "title": "İleri İçerik 5.2",
+            "description": "Piyasa standartlarına uygun profesyonel Blockchain Developer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "blockchain_developer_unit_5_node_3",
+            "type": "quiz",
+            "title": "Bölüm 5 Değerlendirme",
+            "description": "Piyasa standartlarına uygun profesyonel Blockchain Developer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
+          },
+          {
+            "id": "blockchain_developer_unit_5_node_4",
+            "type": "boss",
+            "title": "Bölüm 5 Sonu Projesi",
+            "description": "Piyasa standartlarına uygun profesyonel Blockchain Developer yetkinlikleri.",
+            "content": "Müfredatımızdaki en önemli yetkinlik setlerinden birine hoş geldiniz.\n\n## Kapsam\nBu konuda pratik uygulamalar ve sektörel best practice'leri inceleyeceğiz.\n\n- Teorik temeller\n- Uygulama adımları\n- Gerçek dünya senaryosu\n\nÖğrenim sürecinizi başarıyla tamamlamak için pratik yapmayı unutmayın."
           }
         ]
       }
