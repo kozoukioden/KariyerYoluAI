@@ -522,18 +522,30 @@ export default function HomePage() {
             </div>
 
             {/* Completed Nodes List */}
-            <div className="bg-slate-800 rounded-2xl p-6">
-              <h3 className="font-bold mb-4">Tamamladıklarım</h3>
+            <div className="bg-slate-800 rounded-2xl p-6 max-h-[500px] overflow-y-auto">
+              <h3 className="font-bold mb-4 sticky top-0 bg-slate-800 py-2 z-10">Tamamladıklarım</h3>
               {userData.progress.completedNodes.length > 0 ? (
                 <div className="space-y-3">
-                  {userData.progress.completedNodes.slice(-10).reverse().map((nodeId, idx) => (
-                    <div key={nodeId} className="flex items-center gap-3 p-3 bg-slate-700/50 rounded-xl">
-                      <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                  {userData.progress.completedNodes.slice().reverse().map((nodeId, idx) => {
+                    let nodeTitle = nodeId.replace(/_/g, ' ');
+                    Object.values(tracksData as any).forEach(t => {
+                      (t as any).units?.forEach((u: any) => {
+                        u.nodes?.forEach((n: any) => {
+                          if (n.id === nodeId) {
+                            nodeTitle = n.title;
+                          }
+                        });
+                      });
+                    });
+                    
+                    return (
+                    <div key={`${nodeId}-${idx}`} className="flex items-center gap-3 p-3 bg-slate-700/50 rounded-xl">
+                      <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
                         <CheckCircle2 size={16} className="text-white" />
                       </div>
-                      <span className="text-sm text-slate-300">{nodeId.replace(/_/g, ' ')}</span>
+                      <span className="text-sm text-slate-300">{nodeTitle}</span>
                     </div>
-                  ))}
+                  )})}
                 </div>
               ) : (
                 <p className="text-slate-500 text-sm">Henüz hiçbir ders tamamlanmadı. Hadi başla!</p>
