@@ -32,10 +32,9 @@ export default function LoginPage() {
   useEffect(() => {
     if (showWelcome) {
       const timer = setTimeout(() => {
+        setShowWelcome(false);
         if (isLoggedIn) {
           router.push('/home');
-        } else {
-          setShowWelcome(false);
         }
       }, 2500);
       return () => clearTimeout(timer);
@@ -105,7 +104,12 @@ export default function LoginPage() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.5 }}
-              onClick={() => setShowWelcome(false)}
+              onClick={() => {
+                setShowWelcome(false);
+                if (isLoggedIn) {
+                  router.push('/home');
+                }
+              }}
               className="px-8 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-full text-white font-medium transition-all backdrop-blur-md flex items-center gap-2 mx-auto"
             >
               Başlamak İçin Tıkla <ArrowRight className="w-4 h-4" />
