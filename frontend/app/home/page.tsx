@@ -99,7 +99,7 @@ export default function HomePage() {
 
     return currentTrack.units.map((unit: any, unitIdx: number) => ({
       ...unit,
-      nodes: unit.nodes.map((node: any) => {
+      nodes: unit.nodes.map((node: any, idx: number) => {
         const isCompleted = completedNodes.includes(node.id);
         let status: 'locked' | 'unlocked' | 'completed' | 'in_progress' = 'locked';
 
@@ -110,7 +110,10 @@ export default function HomePage() {
           // If it has no dependencies, it's unlocked by default (e.g. root node).
           // But to prevent unlocking nodes in future units prematurely, we require 
           // the previous unit to be completed before any node in this unit can unlock without explicit dependencies.
-          const deps = node.dependsOn;
+          const deps = (node.dependsOn && node.dependsOn.length > 0) 
+            ? node.dependsOn 
+            : (idx > 0 ? [unit.nodes[idx - 1].id] : []);
+            
           if (deps && deps.length > 0) {
             const allDepsMet = deps.every((depId: string) => completedNodes.includes(depId));
             status = allDepsMet ? 'unlocked' : 'locked';

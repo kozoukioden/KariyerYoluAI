@@ -205,12 +205,17 @@ export function RoadmapView({ units, onNodeClick, userProgress }: RoadmapViewPro
 
         // Calculate levels for DAG
         const nodeLevels: Record<string, number> = {};
-        unit.nodes.forEach(node => {
-          if (!node.dependsOn || node.dependsOn.length === 0) {
+        unit.nodes.forEach((node, idx) => {
+          // Fallback: If no dependencies are explicitly defined, fall back to sequential linear
+          const activeDeps = (node.dependsOn && node.dependsOn.length > 0) 
+            ? node.dependsOn 
+            : (idx > 0 ? [unit.nodes[idx - 1].id] : []);
+            
+          if (activeDeps.length === 0) {
             nodeLevels[node.id] = 0;
           } else {
             let maxDepLevel = -1;
-            node.dependsOn.forEach(depId => {
+            activeDeps.forEach(depId => {
               if (nodeLevels[depId] !== undefined) {
                 maxDepLevel = Math.max(maxDepLevel, nodeLevels[depId]);
               }
@@ -289,17 +294,27 @@ export function RoadmapView({ units, onNodeClick, userProgress }: RoadmapViewPro
               <svg
                 className="absolute top-0 left-0 w-full h-full pointer-events-none"
                 style={{ zIndex: 0 }}
+                viewBox="0 0 100 100"
+                preserveAspectRatio="none"
               >
-                {unit.nodes.map((node) => {
-                  const deps = node.dependsOn || [];
-                  return deps.map(depId => {
+                {unit.nodes.map((node, idx) => {
+                  const activeDeps = (node.dependsOn && node.dependsOn.length > 0) 
+                    ? node.dependsOn 
+                    : (idx > 0 ? [unit.nodes[idx - 1].id] : []);
+
+                  return activeDeps.map(depId => {
                     const start = nodePositions[depId];
                     const end = nodePositions[node.id];
                     if (!start || !end) return null;
 
+                    // Convert pixel Y coordinates into 0-100 percentages based on the container height
+                    const containerHeight = totalLevels * LEVEL_HEIGHT;
+                    const startYPct = (start.y / containerHeight) * 100;
+                    const endYPct = (end.y / containerHeight) * 100;
+
                     const isCompleted = node.status === 'completed' || node.status === 'unlocked' || node.status === 'in_progress';
-                    // We draw a nice curved bezier path
-                    const d = `M ${start.x} ${start.y} C ${start.x} ${(start.y + end.y) / 2}, ${end.x} ${(start.y + end.y) / 2}, ${end.x} ${end.y}`;
+                    // Draw curved bezier path using percentage coordinates
+                    const d = `M ${start.x} ${startYPct} C ${start.x} ${(startYPct + endYPct) / 2}, ${end.x} ${(startYPct + endYPct) / 2}, ${end.x} ${endYPct}`;
 
                     return (
                       <path
@@ -310,6 +325,7 @@ export function RoadmapView({ units, onNodeClick, userProgress }: RoadmapViewPro
                         strokeWidth={isCompleted ? "3" : "2"}
                         strokeLinecap="round"
                         strokeDasharray={isCompleted ? "0" : "4 4"}
+                        vectorEffect="non-scaling-stroke"
                         className={isCompleted ? "animate-pulse" : ""}
                       />
                     );

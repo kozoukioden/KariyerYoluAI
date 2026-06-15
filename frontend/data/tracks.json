@@ -88,7 +88,7 @@
             ],
             "difficultyLevel": "beginner",
             "dependsOn": [
-              "fe_u1_n3"
+              "fe_u1_n2"
             ]
           },
           {
@@ -108,7 +108,7 @@
             ],
             "difficultyLevel": "beginner",
             "dependsOn": [
-              "fe_u1_n2",
+              "fe_u1_n3",
               "fe_u1_n4"
             ]
           }
@@ -135,7 +135,8 @@
             "applications": [
               "İnteraktif web bileşenleri"
             ],
-            "difficultyLevel": "intermediate"
+            "difficultyLevel": "intermediate",
+            "dependsOn": []
           },
           {
             "id": "fe_u2_n2",
@@ -152,7 +153,10 @@
             "applications": [
               "Temel projeler geliştirebilme"
             ],
-            "difficultyLevel": "intermediate"
+            "difficultyLevel": "intermediate",
+            "dependsOn": [
+              "fe_u2_n1"
+            ]
           },
           {
             "id": "fe_u2_n3",
@@ -169,7 +173,10 @@
             "applications": [
               "Temel projeler geliştirebilme"
             ],
-            "difficultyLevel": "intermediate"
+            "difficultyLevel": "intermediate",
+            "dependsOn": [
+              "fe_u2_n1"
+            ]
           },
           {
             "id": "fe_u2_n4",
@@ -186,7 +193,10 @@
             "applications": [
               "Temel projeler geliştirebilme"
             ],
-            "difficultyLevel": "intermediate"
+            "difficultyLevel": "intermediate",
+            "dependsOn": [
+              "fe_u2_n2"
+            ]
           },
           {
             "id": "fe_u2_n5",
@@ -203,7 +213,10 @@
             "applications": [
               "İnteraktif web bileşenleri"
             ],
-            "difficultyLevel": "intermediate"
+            "difficultyLevel": "intermediate",
+            "dependsOn": [
+              "fe_u2_n3"
+            ]
           },
           {
             "id": "fe_u2_n6",
@@ -220,7 +233,11 @@
             "applications": [
               "İnteraktif web bileşenleri"
             ],
-            "difficultyLevel": "intermediate"
+            "difficultyLevel": "intermediate",
+            "dependsOn": [
+              "fe_u2_n4",
+              "fe_u2_n5"
+            ]
           }
         ]
       },
@@ -245,7 +262,8 @@
             "applications": [
               "Modern SPA uygulamaları"
             ],
-            "difficultyLevel": "advanced"
+            "difficultyLevel": "advanced",
+            "dependsOn": []
           },
           {
             "id": "fe_u3_n2",
@@ -262,7 +280,10 @@
             "applications": [
               "Modern SPA uygulamaları"
             ],
-            "difficultyLevel": "advanced"
+            "difficultyLevel": "advanced",
+            "dependsOn": [
+              "fe_u3_n1"
+            ]
           },
           {
             "id": "fe_u3_n3",
@@ -279,7 +300,10 @@
             "applications": [
               "Temel projeler geliştirebilme"
             ],
-            "difficultyLevel": "advanced"
+            "difficultyLevel": "advanced",
+            "dependsOn": [
+              "fe_u3_n1"
+            ]
           },
           {
             "id": "fe_u3_n4",
@@ -296,7 +320,10 @@
             "applications": [
               "Temel projeler geliştirebilme"
             ],
-            "difficultyLevel": "advanced"
+            "difficultyLevel": "advanced",
+            "dependsOn": [
+              "fe_u3_n2"
+            ]
           },
           {
             "id": "fe_u3_n5",
@@ -313,7 +340,11 @@
             "applications": [
               "Modern SPA uygulamaları"
             ],
-            "difficultyLevel": "advanced"
+            "difficultyLevel": "advanced",
+            "dependsOn": [
+              "fe_u3_n3",
+              "fe_u3_n4"
+            ]
           }
         ]
       },
@@ -338,7 +369,8 @@
             "applications": [
               "Temel projeler geliştirebilme"
             ],
-            "difficultyLevel": "advanced"
+            "difficultyLevel": "advanced",
+            "dependsOn": []
           },
           {
             "id": "fe_u4_n2",
@@ -355,7 +387,10 @@
             "applications": [
               "Temel projeler geliştirebilme"
             ],
-            "difficultyLevel": "advanced"
+            "difficultyLevel": "advanced",
+            "dependsOn": [
+              "fe_u4_n1"
+            ]
           },
           {
             "id": "fe_u4_n3",
@@ -372,7 +407,10 @@
             "applications": [
               "Temel projeler geliştirebilme"
             ],
-            "difficultyLevel": "advanced"
+            "difficultyLevel": "advanced",
+            "dependsOn": [
+              "fe_u4_n1"
+            ]
           },
           {
             "id": "fe_u4_n4",
@@ -389,7 +427,11 @@
             "applications": [
               "Eksikleri tespit edip giderme"
             ],
-            "difficultyLevel": "advanced"
+            "difficultyLevel": "advanced",
+            "dependsOn": [
+              "fe_u4_n2",
+              "fe_u4_n3"
+            ]
           }
         ]
       },
@@ -414,7 +456,8 @@
             "applications": [
               "Temel projeler geliştirebilme"
             ],
-            "difficultyLevel": "advanced"
+            "difficultyLevel": "advanced",
+            "dependsOn": []
           },
           {
             "id": "fe_u5_n2",
@@ -431,7 +474,10 @@
             "applications": [
               "Temel projeler geliştirebilme"
             ],
-            "difficultyLevel": "advanced"
+            "difficultyLevel": "advanced",
+            "dependsOn": [
+              "fe_u5_n1"
+            ]
           },
           {
             "id": "fe_u5_n3",
@@ -448,7 +494,10 @@
             "applications": [
               "Eksikleri tespit edip giderme"
             ],
-            "difficultyLevel": "advanced"
+            "difficultyLevel": "advanced",
+            "dependsOn": [
+              "fe_u5_n2"
+            ]
           }
         ]
       }
