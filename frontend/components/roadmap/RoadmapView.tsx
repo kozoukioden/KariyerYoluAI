@@ -13,6 +13,7 @@ interface RoadmapNode {
   difficulty?: string;
   estimated_time?: string;
   status: 'locked' | 'unlocked' | 'completed' | 'in_progress';
+  dependsOn?: string[];
 }
 
 interface Unit {
@@ -188,12 +189,6 @@ function NodeButton({
 }
 
 export function RoadmapView({ units, onNodeClick, userProgress }: RoadmapViewProps) {
-  // Calculate path positions for winding effect (wider spread for skill tree look)
-  const getNodePosition = (index: number): number => {
-    const pattern = [0, -100, 40, -40, 100, 0]; // Skill tree style branching
-    return pattern[index % pattern.length];
-  };
-
   return (
     <div className="w-full max-w-2xl mx-auto pb-32 px-4 relative">
       {/* Dynamic Background Elements */}
@@ -207,6 +202,44 @@ export function RoadmapView({ units, onNodeClick, userProgress }: RoadmapViewPro
         const completedInUnit = unit.nodes.filter(n => n.status === 'completed').length;
         const totalInUnit = unit.nodes.length;
         const progress = (completedInUnit / totalInUnit) * 100;
+
+        // Calculate levels for DAG
+        const nodeLevels: Record<string, number> = {};
+        unit.nodes.forEach(node => {
+          if (!node.dependsOn || node.dependsOn.length === 0) {
+            nodeLevels[node.id] = 0;
+          } else {
+            let maxDepLevel = -1;
+            node.dependsOn.forEach(depId => {
+              if (nodeLevels[depId] !== undefined) {
+                maxDepLevel = Math.max(maxDepLevel, nodeLevels[depId]);
+              }
+            });
+            nodeLevels[node.id] = maxDepLevel === -1 ? 0 : maxDepLevel + 1;
+          }
+        });
+
+        // Group by level
+        const levels: RoadmapNode[][] = [];
+        unit.nodes.forEach(node => {
+          const l = nodeLevels[node.id] || 0;
+          if (!levels[l]) levels[l] = [];
+          levels[l].push(node);
+        });
+
+        // Calculate explicit X and Y positions
+        const LEVEL_HEIGHT = 140;
+        const totalLevels = levels.length;
+        const nodePositions: Record<string, { x: number, y: number }> = {};
+        
+        levels.forEach((levelNodes, levelIdx) => {
+          const count = levelNodes.length;
+          levelNodes.forEach((node, nodeIdx) => {
+            const xPos = ((nodeIdx + 1) / (count + 1)) * 100; // Percentage
+            const yPos = (levelIdx * LEVEL_HEIGHT) + (LEVEL_HEIGHT / 2); // Pixels
+            nodePositions[node.id] = { x: xPos, y: yPos };
+          });
+        });
 
         return (
           <motion.div
@@ -250,56 +283,63 @@ export function RoadmapView({ units, onNodeClick, userProgress }: RoadmapViewPro
               </div>
             </div>
 
-            {/* Nodes Path */}
-            <div className="relative flex flex-col items-center">
+            {/* Nodes Path - True DAG Tree */}
+            <div className="relative w-full" style={{ height: `${totalLevels * LEVEL_HEIGHT}px`, marginTop: '2rem' }}>
               {/* SVG Path Connector */}
               <svg
                 className="absolute top-0 left-0 w-full h-full pointer-events-none"
                 style={{ zIndex: 0 }}
-                viewBox="0 0 100 1000"
-                preserveAspectRatio="none"
               >
-                {unit.nodes.slice(0, -1).map((node, idx) => {
-                  const currentX = 50 + (getNodePosition(idx) / 70) * 20;
-                  const nextX = 50 + (getNodePosition(idx + 1) / 70) * 20;
-                  const nodeHeight = 1000 / Math.max(unit.nodes.length, 1);
-                  const currentY = idx * nodeHeight + nodeHeight / 3;
-                  const nextY = (idx + 1) * nodeHeight + nodeHeight / 3;
-                  const isCompleted = node.status === 'completed';
+                {unit.nodes.map((node) => {
+                  const deps = node.dependsOn || [];
+                  return deps.map(depId => {
+                    const start = nodePositions[depId];
+                    const end = nodePositions[node.id];
+                    if (!start || !end) return null;
 
-                  return (
-                    <path
-                      key={`path-${idx}`}
-                      d={`M ${currentX} ${currentY} Q ${(currentX + nextX) / 2} ${(currentY + nextY) / 2} ${nextX} ${nextY}`}
-                      fill="none"
-                      stroke={isCompleted ? '#10b981' : '#334155'}
-                      strokeWidth={isCompleted ? "2" : "1"}
-                      strokeLinecap="round"
-                      strokeDasharray={isCompleted ? "0" : "4 4"}
-                      className={isCompleted ? "animate-pulse" : ""}
-                    />
-                  );
+                    const isCompleted = node.status === 'completed' || node.status === 'unlocked' || node.status === 'in_progress';
+                    // We draw a nice curved bezier path
+                    const d = `M ${start.x} ${start.y} C ${start.x} ${(start.y + end.y) / 2}, ${end.x} ${(start.y + end.y) / 2}, ${end.x} ${end.y}`;
+
+                    return (
+                      <path
+                        key={`path-${depId}-${node.id}`}
+                        d={d}
+                        fill="none"
+                        stroke={isCompleted ? '#10b981' : '#334155'}
+                        strokeWidth={isCompleted ? "3" : "2"}
+                        strokeLinecap="round"
+                        strokeDasharray={isCompleted ? "0" : "4 4"}
+                        className={isCompleted ? "animate-pulse" : ""}
+                      />
+                    );
+                  });
                 })}
               </svg>
 
               {/* Nodes */}
-              {unit.nodes.map((node, idx) => (
-                <motion.div
-                  key={node.id}
-                  className="relative z-10 mb-16"
-                  style={{ transform: `translateX(${getNodePosition(idx)}px)` }}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: idx * 0.1 + 0.2 }}
-                >
-                  <NodeButton
-                    node={node}
-                    color={unit.color}
-                    onClick={() => onNodeClick(node.id)}
-                    index={idx}
-                  />
-                </motion.div>
-              ))}
+              {unit.nodes.map((node) => {
+                const pos = nodePositions[node.id];
+                if (!pos) return null;
+                
+                return (
+                  <motion.div
+                    key={node.id}
+                    className="absolute z-10"
+                    style={{ left: `${pos.x}%`, top: `${pos.y}px`, transform: 'translate(-50%, -50%)' }}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.2 }}
+                  >
+                    <NodeButton
+                      node={node}
+                      color={unit.color}
+                      onClick={() => onNodeClick(node.id)}
+                      index={0}
+                    />
+                  </motion.div>
+                );
+              })}
             </div>
             
             {/* Level Transition Milestone */}

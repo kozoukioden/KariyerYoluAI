@@ -97,24 +97,33 @@ export default function HomePage() {
     const completedNodes = userData.progress.completedNodes;
     let lastCompletedInUnit = true;
 
-    return currentTrack.units.map((unit: any) => ({
+    return currentTrack.units.map((unit: any, unitIdx: number) => ({
       ...unit,
-      nodes: unit.nodes.map((node: any, idx: number) => {
+      nodes: unit.nodes.map((node: any) => {
         const isCompleted = completedNodes.includes(node.id);
         let status: 'locked' | 'unlocked' | 'completed' | 'in_progress' = 'locked';
 
         if (isCompleted) {
           status = 'completed';
-        } else if (lastCompletedInUnit || idx === 0) {
-          status = 'unlocked';
-          lastCompletedInUnit = false;
-        }
-
-        // Check if previous node in this unit was completed
-        if (idx > 0) {
-          const prevNode = unit.nodes[idx - 1];
-          if (!completedNodes.includes(prevNode.id)) {
-            status = 'locked';
+        } else {
+          // A node is unlocked if ALL its dependencies are completed.
+          // If it has no dependencies, it's unlocked by default (e.g. root node).
+          // But to prevent unlocking nodes in future units prematurely, we require 
+          // the previous unit to be completed before any node in this unit can unlock without explicit dependencies.
+          const deps = node.dependsOn;
+          if (deps && deps.length > 0) {
+            const allDepsMet = deps.every((depId: string) => completedNodes.includes(depId));
+            status = allDepsMet ? 'unlocked' : 'locked';
+          } else {
+            // No dependencies specified.
+            // Only unlock if it's the first unit, or all nodes in the previous unit are completed.
+            if (unitIdx === 0) {
+              status = 'unlocked';
+            } else {
+              const prevUnit = currentTrack.units[unitIdx - 1];
+              const prevUnitCompleted = prevUnit.nodes.every((n: any) => completedNodes.includes(n.id));
+              status = prevUnitCompleted ? 'unlocked' : 'locked';
+            }
           }
         }
 
