@@ -21,25 +21,22 @@ export default function LoginPage() {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  // Check if already logged in
+  // Check if already logged in (we still check it but we DO NOT auto-redirect to bypass login screen)
   useEffect(() => {
     if (authStorage.getCurrentUser()) {
       setIsLoggedIn(true);
     }
   }, []);
 
-  // Auto transition from welcome screen to login or dashboard
+  // Auto transition from welcome screen to login
   useEffect(() => {
     if (showWelcome) {
       const timer = setTimeout(() => {
         setShowWelcome(false);
-        if (isLoggedIn) {
-          router.push('/home');
-        }
       }, 2500);
       return () => clearTimeout(timer);
     }
-  }, [showWelcome, isLoggedIn, router]);
+  }, [showWelcome]);
 
   const handleAuth = (e: React.FormEvent) => {
     e.preventDefault();
@@ -104,26 +101,11 @@ export default function LoginPage() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.5 }}
-              onClick={() => {
-                setShowWelcome(false);
-                if (isLoggedIn) {
-                  router.push('/home');
-                }
-              }}
+              onClick={() => setShowWelcome(false)}
               className="px-8 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-full text-white font-medium transition-all backdrop-blur-md flex items-center gap-2 mx-auto"
             >
               Başlamak İçin Tıkla <ArrowRight className="w-4 h-4" />
             </motion.button>
-          </motion.div>
-        ) : isLoggedIn ? (
-          <motion.div 
-            key="redirecting"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="z-10 text-blue-200 text-lg flex items-center gap-3 animate-pulse"
-          >
-            <Sparkles className="w-5 h-5 text-amber-400" />
-            Eğitim paneline yönlendiriliyorsunuz...
           </motion.div>
         ) : (
           <motion.div
