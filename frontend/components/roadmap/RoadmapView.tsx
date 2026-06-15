@@ -191,14 +191,24 @@ function NodeButton({
 
 export function RoadmapView({ units, onNodeClick, onMilestoneClick, userProgress }: RoadmapViewProps) {
   return (
-    <div className="w-full max-w-2xl mx-auto pb-32 px-4 relative">
-      {/* Dynamic Patterned Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:24px_24px] opacity-30" />
-      <div className="absolute inset-0 overflow-hidden pointer-events-none -z-20">
-        <div className="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-blue-900/20 to-transparent" />
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-[120px]" />
-        <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-[120px]" />
-        <div className="absolute bottom-1/4 left-1/2 w-96 h-96 bg-cyan-500/20 rounded-full blur-[120px]" />
+    <div className="w-full max-w-2xl mx-auto pt-16 pb-32 px-4 relative mt-8 mb-16">
+      {/* Distinct Map Board Container */}
+      <div className="absolute inset-0 -z-30 bg-slate-900 rounded-[2.5rem] border border-blue-900/50 shadow-2xl overflow-hidden" />
+      
+      {/* High-Tech Hexagon Pattern */}
+      <div 
+        className="absolute inset-0 -z-20 opacity-[0.15] rounded-[2.5rem] pointer-events-none"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='69.28' viewBox='0 0 40 69.28' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2360a5fa' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M40 17.3205081L20 28.8675135 0 17.3205081V0h40v17.3205081zm0 34.6410162L20 40.4226063 0 51.9615243V69.2820323h40V51.9615243zM20 63.5085422L0 51.9615243 0 17.3205081 20 5.7735027 40 17.3205081 40 51.9615243 20 63.5085422zM20 51.9615243L10 46.1880216 10 23.0940108 20 17.3205081 30 23.0940108 30 46.1880216 20 51.9615243zM20 40.4226063L10 34.6410162 10 34.6410162 20 28.8675135 30 34.6410162 30 34.6410162 20 40.4226063z'/%3E%3C/g%3E%3C/svg%3E")`
+        }}
+      />
+      
+      {/* Dynamic Glowing Orbs to highlight path */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10 rounded-[2.5rem]">
+        <div className="absolute top-0 left-0 w-full h-[300px] bg-gradient-to-b from-blue-950/80 to-transparent" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-[100px]" />
+        <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-[100px]" />
+        <div className="absolute bottom-1/4 left-1/2 w-96 h-96 bg-cyan-500/20 rounded-full blur-[100px]" />
       </div>
       {units.map((unit, unitIdx) => {
         const colors = colorVariants[unit.color] || colorVariants.blue;
