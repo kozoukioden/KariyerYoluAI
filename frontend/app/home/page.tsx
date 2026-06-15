@@ -48,7 +48,7 @@ export default function HomePage() {
   const [userData, setUserData] = useState<UserData | null>(null);
   const [currentTrack, setCurrentTrack] = useState<any>(null);
   const [activeLesson, setActiveLesson] = useState<LessonData | null>(null);
-  const [activeQuiz, setActiveQuiz] = useState<{ id: string; questions: any[] } | null>(null);
+  const [activeQuiz, setActiveQuiz] = useState<{ id: string; questions: any[]; timeLimit?: number } | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [showXPGain, setShowXPGain] = useState<number | null>(null);
   const [showAchievement, setShowAchievement] = useState<AchievementId | null>(null);
@@ -132,7 +132,8 @@ export default function HomePage() {
             // Load quiz
             const questions = (quizzesData as any)[nodeId];
             if (questions && questions.length > 0) {
-              setActiveQuiz({ id: nodeId, questions });
+              const timeLimit = node.difficultyLevel === 'advanced' ? 15 : node.difficultyLevel === 'intermediate' ? 20 : 30;
+              setActiveQuiz({ id: nodeId, questions, timeLimit });
               setView('quiz');
             } else {
               alert('Quiz soruları henüz hazır değil.');
@@ -245,6 +246,7 @@ export default function HomePage() {
     return (
       <QuizRunner
         questions={activeQuiz.questions}
+        timeLimit={activeQuiz.timeLimit}
         onComplete={handleQuizComplete}
         onExit={() => {
           setActiveQuiz(null);
@@ -527,23 +529,53 @@ export default function HomePage() {
               {userData.progress.completedNodes.length > 0 ? (
                 <div className="space-y-3">
                   {userData.progress.completedNodes.slice().reverse().map((nodeId, idx) => {
-                    let nodeTitle = nodeId.replace(/_/g, ' ');
+                    let nodeObj: any = { title: nodeId.replace(/_/g, ' ') };
                     Object.values(tracksData as any).forEach(t => {
                       (t as any).units?.forEach((u: any) => {
                         u.nodes?.forEach((n: any) => {
                           if (n.id === nodeId) {
-                            nodeTitle = n.title;
+                            nodeObj = n;
                           }
                         });
                       });
                     });
                     
                     return (
-                    <div key={`${nodeId}-${idx}`} className="flex items-center gap-3 p-3 bg-slate-700/50 rounded-xl">
-                      <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
-                        <CheckCircle2 size={16} className="text-white" />
+                    <div key={`${nodeId}-${idx}`} className="flex flex-col gap-2 p-4 bg-slate-700/50 hover:bg-slate-700/70 transition-colors rounded-xl border border-slate-600/50">
+                      <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 bg-green-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+                          <CheckCircle2 size={16} className="text-green-400" />
+                        </div>
+                        <span className="font-bold text-white text-base">{nodeObj.title}</span>
                       </div>
-                      <span className="text-sm text-slate-300">{nodeTitle}</span>
+                      
+                      {(nodeObj.learnedSkills?.length > 0 || nodeObj.applications?.length > 0) && (
+                        <div className="ml-11 mt-2 space-y-3">
+                          {nodeObj.learnedSkills?.length > 0 && (
+                            <div>
+                              <div className="text-xs text-slate-400 mb-1 uppercase tracking-wider font-semibold">Kazanılan Yetkinlikler</div>
+                              <div className="flex flex-wrap gap-2">
+                                {nodeObj.learnedSkills.map((skill: string, sIdx: number) => (
+                                  <span key={sIdx} className="bg-blue-500/10 text-blue-300 text-xs px-2 py-1 rounded-md border border-blue-500/20">
+                                    {skill}
+                                  </span>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+                          
+                          {nodeObj.applications?.length > 0 && (
+                            <div>
+                              <div className="text-xs text-slate-400 mb-1 uppercase tracking-wider font-semibold">Neler Yapabilirim?</div>
+                              <ul className="list-disc pl-4 space-y-1">
+                                {nodeObj.applications.map((app: string, aIdx: number) => (
+                                  <li key={aIdx} className="text-sm text-slate-300">{app}</li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
+                        </div>
+                      )}
                     </div>
                   )})}
                 </div>

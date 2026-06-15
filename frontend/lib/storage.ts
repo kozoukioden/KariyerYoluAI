@@ -335,4 +335,40 @@ export const storage = {
   },
 };
 
+export const authStorage = {
+  login(username: string, password: string) {
+    if (typeof window === 'undefined') return { success: false, error: 'Sunucu hatası' };
+    const users = JSON.parse(localStorage.getItem('kariyeryolu_mock_users') || '[]');
+    const user = users.find((u: any) => u.username === username && u.password === password);
+    if (user) {
+      localStorage.setItem('kariyeryolu_auth_user', JSON.stringify(user));
+      return { success: true, user };
+    }
+    return { success: false, error: 'Kullanıcı adı veya şifre hatalı' };
+  },
+  register(username: string, email: string, password: string) {
+    if (typeof window === 'undefined') return { success: false, error: 'Sunucu hatası' };
+    const users = JSON.parse(localStorage.getItem('kariyeryolu_mock_users') || '[]');
+    if (users.find((u: any) => u.username === username)) {
+      return { success: false, error: 'Bu kullanıcı adı zaten alınmış' };
+    }
+    if (email && users.find((u: any) => u.email === email)) {
+      return { success: false, error: 'Bu e-posta adresi zaten kayıtlı' };
+    }
+    const newUser = { id: Date.now().toString(), username, email, password };
+    users.push(newUser);
+    localStorage.setItem('kariyeryolu_mock_users', JSON.stringify(users));
+    localStorage.setItem('kariyeryolu_auth_user', JSON.stringify(newUser));
+    return { success: true, user: newUser };
+  },
+  logout() {
+    if (typeof window === 'undefined') return;
+    localStorage.removeItem('kariyeryolu_auth_user');
+  },
+  getCurrentUser() {
+    if (typeof window === 'undefined') return null;
+    return JSON.parse(localStorage.getItem('kariyeryolu_auth_user') || 'null');
+  }
+};
+
 export default storage;

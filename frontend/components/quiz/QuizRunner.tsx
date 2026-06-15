@@ -35,6 +35,7 @@ interface QuizResult {
 interface QuizRunnerProps {
   questions: Question[];
   quizTitle?: string;
+  timeLimit?: number;
   onComplete: (result: QuizResult) => void;
   onExit: () => void;
 }
@@ -59,7 +60,7 @@ const wrongMessages = [
   'Bir dahakine'
 ];
 
-export function QuizRunner({ questions, quizTitle, onComplete, onExit }: QuizRunnerProps) {
+export function QuizRunner({ questions, quizTitle, timeLimit = 30, onComplete, onExit }: QuizRunnerProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [isAnswered, setIsAnswered] = useState(false);
@@ -70,6 +71,33 @@ export function QuizRunner({ questions, quizTitle, onComplete, onExit }: QuizRun
   const [showResult, setShowResult] = useState(false);
   const [streak, setStreak] = useState(0);
   const [feedbackMessage, setFeedbackMessage] = useState('');
+  const [timeLeft, setTimeLeft] = useState(timeLimit);
+
+  // Timer logic
+  useEffect(() => {
+    if (isAnswered || showResult) return;
+
+    if (timeLeft <= 0) {
+      // Süre bittiğinde yanlış cevap kabul et
+      handleTimeUp();
+      return;
+    }
+
+    const timer = setInterval(() => {
+      setTimeLeft(prev => prev - 1);
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [timeLeft, isAnswered, showResult]);
+
+  const handleTimeUp = () => {
+    setIsAnswered(true);
+    setIsCorrect(false);
+    setWrongCount(prev => prev + 1);
+    setStreak(0);
+    setHearts(prev => prev - 1);
+    setFeedbackMessage('Süre doldu!');
+  };
 
   const currentQ = questions[currentIndex];
   const progress = ((currentIndex) / questions.length) * 100;
@@ -138,6 +166,7 @@ export function QuizRunner({ questions, quizTitle, onComplete, onExit }: QuizRun
       setSelectedOption(null);
       setIsAnswered(false);
       setIsCorrect(false);
+      setTimeLeft(timeLimit);
     }
   };
 
@@ -293,14 +322,26 @@ export function QuizRunner({ questions, quizTitle, onComplete, onExit }: QuizRun
           <X size={24} />
         </button>
 
-        {/* Progress Bar */}
-        <div className="flex-1 mx-4 h-3 bg-slate-800 rounded-full overflow-hidden">
-          <motion.div
-            className="h-full bg-gradient-to-r from-green-500 to-green-400 rounded-full"
-            initial={{ width: 0 }}
-            animate={{ width: `${progress}%` }}
-            transition={{ type: 'spring', stiffness: 50 }}
-          />
+        {/* Progress Bar & Timer */}
+        <div className="flex-1 mx-4 flex flex-col justify-center">
+          <div className="h-2 bg-slate-800 rounded-full overflow-hidden w-full mb-1">
+            <motion.div
+              className="h-full bg-gradient-to-r from-green-500 to-green-400 rounded-full"
+              initial={{ width: 0 }}
+              animate={{ width: `${progress}%` }}
+              transition={{ type: 'spring', stiffness: 50 }}
+            />
+          </div>
+          <div className="flex justify-between items-center text-[10px] uppercase font-bold px-1">
+            <span className="text-slate-500">İlerleme</span>
+            <span className={cn(
+              "flex items-center gap-1 transition-colors",
+              timeLeft <= 5 ? "text-red-400" : timeLeft <= 10 ? "text-amber-400" : "text-blue-400"
+            )}>
+              <span className="w-2 h-2 rounded-full animate-pulse bg-current" />
+              00:{timeLeft.toString().padStart(2, '0')}
+            </span>
+          </div>
         </div>
 
         {/* Hearts */}

@@ -223,7 +223,12 @@ export function RoadmapView({ units, onNodeClick, userProgress }: RoadmapViewPro
 
               <div className="relative z-10">
                 <div className="flex items-center justify-between mb-2">
-                  <h3 className="font-bold text-xl">{unit.title}</h3>
+                  <div className="flex items-center gap-3">
+                    <h3 className="font-bold text-xl">{unit.title}</h3>
+                    <span className="text-xs bg-black/20 px-2 py-1 rounded border border-white/10 uppercase tracking-wider">
+                      {unitIdx === 0 ? 'Acemi' : unitIdx === 1 ? 'Orta' : 'İleri'} Seviye
+                    </span>
+                  </div>
                   <span className="text-sm bg-white/20 px-3 py-1 rounded-full">
                     {completedInUnit}/{totalInUnit}
                   </span>
