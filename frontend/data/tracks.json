@@ -88,7 +88,7 @@
             ],
             "difficultyLevel": "beginner",
             "dependsOn": [
-              "fe_u1_n2"
+              "fe_u1_n1"
             ]
           },
           {
@@ -108,6 +108,7 @@
             ],
             "difficultyLevel": "beginner",
             "dependsOn": [
+              "fe_u1_n2",
               "fe_u1_n3",
               "fe_u1_n4"
             ]
@@ -195,7 +196,7 @@
             ],
             "difficultyLevel": "intermediate",
             "dependsOn": [
-              "fe_u2_n2"
+              "fe_u2_n1"
             ]
           },
           {
@@ -215,7 +216,9 @@
             ],
             "difficultyLevel": "intermediate",
             "dependsOn": [
-              "fe_u2_n3"
+              "fe_u2_n2",
+              "fe_u2_n3",
+              "fe_u2_n4"
             ]
           },
           {
@@ -235,7 +238,6 @@
             ],
             "difficultyLevel": "intermediate",
             "dependsOn": [
-              "fe_u2_n4",
               "fe_u2_n5"
             ]
           }
@@ -322,7 +324,7 @@
             ],
             "difficultyLevel": "advanced",
             "dependsOn": [
-              "fe_u3_n2"
+              "fe_u3_n1"
             ]
           },
           {
@@ -342,6 +344,7 @@
             ],
             "difficultyLevel": "advanced",
             "dependsOn": [
+              "fe_u3_n2",
               "fe_u3_n3",
               "fe_u3_n4"
             ]

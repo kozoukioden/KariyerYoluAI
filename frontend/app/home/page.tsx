@@ -737,6 +737,7 @@ export default function HomePage() {
             <RoadmapView
               units={getProcessedUnits()}
               onNodeClick={handleNodeClick}
+              onMilestoneClick={(idx) => setCompletedUnitPrompt(true)}
               userProgress={{
                 currentNodeId: undefined,
                 completedNodes: userData?.progress.completedNodes || [],

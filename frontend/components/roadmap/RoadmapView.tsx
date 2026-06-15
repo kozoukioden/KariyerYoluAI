@@ -27,6 +27,7 @@ interface Unit {
 interface RoadmapViewProps {
   units: Unit[];
   onNodeClick: (nodeId: string) => void;
+  onMilestoneClick?: (unitIdx: number) => void;
   userProgress?: {
     currentNodeId?: string;
     completedNodes: string[];
@@ -188,14 +189,16 @@ function NodeButton({
   );
 }
 
-export function RoadmapView({ units, onNodeClick, userProgress }: RoadmapViewProps) {
+export function RoadmapView({ units, onNodeClick, onMilestoneClick, userProgress }: RoadmapViewProps) {
   return (
     <div className="w-full max-w-2xl mx-auto pb-32 px-4 relative">
-      {/* Dynamic Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-[100px]" />
-        <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-[100px]" />
-        <div className="absolute bottom-1/4 left-1/2 w-96 h-96 bg-green-500/20 rounded-full blur-[100px]" />
+      {/* Dynamic Patterned Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:24px_24px] opacity-30" />
+      <div className="absolute inset-0 overflow-hidden pointer-events-none -z-20">
+        <div className="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-blue-900/20 to-transparent" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-[120px]" />
+        <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-[120px]" />
+        <div className="absolute bottom-1/4 left-1/2 w-96 h-96 bg-cyan-500/20 rounded-full blur-[120px]" />
       </div>
       {units.map((unit, unitIdx) => {
         const colors = colorVariants[unit.color] || colorVariants.blue;
@@ -366,8 +369,9 @@ export function RoadmapView({ units, onNodeClick, userProgress }: RoadmapViewPro
                   initial={{ scale: 0.9, opacity: 0 }}
                   whileInView={{ scale: 1, opacity: 1 }}
                   viewport={{ once: true }}
+                  onClick={() => progress === 100 && onMilestoneClick && onMilestoneClick(unitIdx)}
                   className={cn(
-                    "px-8 py-4 rounded-2xl border-2 flex flex-col items-center text-center shadow-[0_0_30px_rgba(0,0,0,0.5)] backdrop-blur-md",
+                    "px-8 py-4 rounded-2xl border-2 flex flex-col items-center text-center shadow-[0_0_30px_rgba(0,0,0,0.5)] backdrop-blur-md cursor-pointer hover:scale-105 transition-transform",
                     progress === 100 
                       ? "border-green-500 bg-green-500/10 text-green-400" 
                       : "border-slate-700 bg-slate-800/80 text-slate-500"

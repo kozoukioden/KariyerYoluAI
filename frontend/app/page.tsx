@@ -19,22 +19,28 @@ export default function LoginPage() {
   
   const router = useRouter();
 
-  // Auto transition from welcome screen to login after 3 seconds
-  useEffect(() => {
-    if (showWelcome) {
-      const timer = setTimeout(() => {
-        setShowWelcome(false);
-      }, 3500);
-      return () => clearTimeout(timer);
-    }
-  }, [showWelcome]);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   // Check if already logged in
   useEffect(() => {
     if (authStorage.getCurrentUser()) {
-      router.push('/home');
+      setIsLoggedIn(true);
     }
-  }, [router]);
+  }, []);
+
+  // Auto transition from welcome screen to login or dashboard
+  useEffect(() => {
+    if (showWelcome) {
+      const timer = setTimeout(() => {
+        if (isLoggedIn) {
+          router.push('/home');
+        } else {
+          setShowWelcome(false);
+        }
+      }, 2500);
+      return () => clearTimeout(timer);
+    }
+  }, [showWelcome, isLoggedIn, router]);
 
   const handleAuth = (e: React.FormEvent) => {
     e.preventDefault();
@@ -104,6 +110,16 @@ export default function LoginPage() {
             >
               Başlamak İçin Tıkla <ArrowRight className="w-4 h-4" />
             </motion.button>
+          </motion.div>
+        ) : isLoggedIn ? (
+          <motion.div 
+            key="redirecting"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="z-10 text-blue-200 text-lg flex items-center gap-3 animate-pulse"
+          >
+            <Sparkles className="w-5 h-5 text-amber-400" />
+            Eğitim paneline yönlendiriliyorsunuz...
           </motion.div>
         ) : (
           <motion.div
