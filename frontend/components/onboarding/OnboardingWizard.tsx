@@ -83,12 +83,16 @@ export function OnboardingWizard({ onComplete }: { onComplete: (result: TrackRec
 
       try {
         // Recommend track based on answers
-        let recommendedTrackId = 'frontend_basics';
+        let recommendedTrackId = 'frontend_developer';
         
         if (newAnswers.tech_interest === 'ai_ml') {
-          recommendedTrackId = 'python_ai';
-        } else if (newAnswers.tech_interest === 'backend' || newAnswers.platform === 'backend') {
-          recommendedTrackId = 'backend_node';
+          recommendedTrackId = 'ml_engineer';
+        } else if (newAnswers.tech_interest === 'backend') {
+          recommendedTrackId = 'backend_developer';
+        } else if (newAnswers.platform === 'mobile') {
+          recommendedTrackId = 'mobile_cross_developer';
+        } else if (newAnswers.platform === 'game') {
+          recommendedTrackId = 'game_developer';
         }
 
         const recommendation = {
