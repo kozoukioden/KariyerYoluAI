@@ -188,14 +188,20 @@ function NodeButton({
 }
 
 export function RoadmapView({ units, onNodeClick, userProgress }: RoadmapViewProps) {
-  // Calculate path positions for winding effect
+  // Calculate path positions for winding effect (wider spread for skill tree look)
   const getNodePosition = (index: number): number => {
-    const pattern = [0, -70, 0, 70]; // center, left, center, right
-    return pattern[index % 4];
+    const pattern = [0, -100, 40, -40, 100, 0]; // Skill tree style branching
+    return pattern[index % pattern.length];
   };
 
   return (
-    <div className="w-full max-w-lg mx-auto pb-32 px-4">
+    <div className="w-full max-w-2xl mx-auto pb-32 px-4 relative">
+      {/* Dynamic Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-[100px]" />
+        <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-[100px]" />
+        <div className="absolute bottom-1/4 left-1/2 w-96 h-96 bg-green-500/20 rounded-full blur-[100px]" />
+      </div>
       {units.map((unit, unitIdx) => {
         const colors = colorVariants[unit.color] || colorVariants.blue;
         const completedInUnit = unit.nodes.filter(n => n.status === 'completed').length;
@@ -225,15 +231,12 @@ export function RoadmapView({ units, onNodeClick, userProgress }: RoadmapViewPro
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-3">
                     <h3 className="font-bold text-xl">{unit.title}</h3>
-                    <span className="text-xs bg-black/20 px-2 py-1 rounded border border-white/10 uppercase tracking-wider">
-                      {unitIdx === 0 ? 'Acemi' : unitIdx === 1 ? 'Orta' : 'İleri'} Seviye
-                    </span>
                   </div>
-                  <span className="text-sm bg-white/20 px-3 py-1 rounded-full">
+                  <span className="text-sm bg-white/20 px-3 py-1 rounded-full font-bold">
                     {completedInUnit}/{totalInUnit}
                   </span>
                 </div>
-                <p className="opacity-90 text-sm mb-3">{unit.description}</p>
+                <p className="opacity-90 text-sm mb-4">{unit.description}</p>
 
                 {/* Progress Bar */}
                 <div className="h-2 bg-white/20 rounded-full overflow-hidden">
@@ -269,10 +272,11 @@ export function RoadmapView({ units, onNodeClick, userProgress }: RoadmapViewPro
                       key={`path-${idx}`}
                       d={`M ${currentX} ${currentY} Q ${(currentX + nextX) / 2} ${(currentY + nextY) / 2} ${nextX} ${nextY}`}
                       fill="none"
-                      stroke={isCompleted ? '#fbbf24' : '#334155'}
-                      strokeWidth="0.5"
+                      stroke={isCompleted ? '#10b981' : '#334155'}
+                      strokeWidth={isCompleted ? "2" : "1"}
                       strokeLinecap="round"
-                      strokeDasharray={isCompleted ? "0" : "2 2"}
+                      strokeDasharray={isCompleted ? "0" : "4 4"}
+                      className={isCompleted ? "animate-pulse" : ""}
                     />
                   );
                 })}
@@ -297,6 +301,32 @@ export function RoadmapView({ units, onNodeClick, userProgress }: RoadmapViewPro
                 </motion.div>
               ))}
             </div>
+            
+            {/* Level Transition Milestone */}
+            {unitIdx < units.length - 1 && (
+              <div className="flex flex-col items-center justify-center my-12 relative z-10">
+                <div className="w-1 bg-slate-700 h-12 mb-4" />
+                <motion.div 
+                  initial={{ scale: 0.9, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
+                  viewport={{ once: true }}
+                  className={cn(
+                    "px-8 py-4 rounded-2xl border-2 flex flex-col items-center text-center shadow-[0_0_30px_rgba(0,0,0,0.5)] backdrop-blur-md",
+                    progress === 100 
+                      ? "border-green-500 bg-green-500/10 text-green-400" 
+                      : "border-slate-700 bg-slate-800/80 text-slate-500"
+                  )}
+                >
+                  <Lock size={24} className={cn("mb-2", progress === 100 ? "hidden" : "block")} />
+                  <CheckCircle2 size={24} className={cn("mb-2", progress === 100 ? "block" : "hidden")} />
+                  <span className="text-xs uppercase tracking-[0.2em] mb-1 font-bold">KİLİT AÇILDI</span>
+                  <span className="text-xl font-black text-white">
+                    {unitIdx === 0 ? 'Orta Seviyeye' : 'İleri Seviyeye'} Geçiş
+                  </span>
+                </motion.div>
+                <div className="w-1 bg-slate-700 h-12 mt-4" />
+              </div>
+            )}
           </motion.div>
         );
       })}

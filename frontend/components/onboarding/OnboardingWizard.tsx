@@ -27,43 +27,64 @@ export function OnboardingWizard({ onComplete }: { onComplete: (result: TrackRec
         { value: 'intermediate', label: 'Orta seviye', icon: '💪', description: 'Temel kavramları biliyorum' },
         { value: 'advanced', label: 'İleri seviye', icon: '🚀', description: 'Kendi projelerimi yapabiliyorum' }
       ],
-      next: (val: string) => val === 'beginner' ? 'motivation' : 'tech_interest'
+      next: (val: string) => val === 'beginner' ? 'motivation' : 'current_tech'
     },
+    // ---- BEGINNER PATH ----
     motivation: {
       text: 'Yazılım öğrenme hedefin nedir?',
       options: [
-        { value: 'career_startup', label: 'Kariyer & Girişimcilik', icon: '💼', description: 'İş bulmak veya kendi işimi kurmak' },
-        { value: 'hobby', label: 'Hobi / Merak', icon: '🎨', description: 'Eğlence ve kişisel gelişim' },
-        { value: 'upgrade', label: 'Mevcut İşim İçin', icon: '📈', description: 'Şu anki işimde otomasyon/yazılım kullanmak' }
+        { value: 'career', label: 'Kariyer & İş Bulmak', icon: '💼', description: 'Profesyonel bir yazılımcı olmak' },
+        { value: 'startup', label: 'Kendi İşimi Kurmak', icon: '🚀', description: 'Kendi fikirlerimi hayata geçirmek' },
+        { value: 'hobby', label: 'Hobi / Merak', icon: '🎨', description: 'Eğlence ve kişisel gelişim' }
       ],
       next: () => 'platform'
     },
-    tech_interest: {
-      text: 'Hangi alanda uzmanlaşmak istersin?',
-      options: [
-        { value: 'web', label: 'Web Geliştirme Temelleri', icon: '🌐', description: 'HTML, CSS, JS tabanlı sistemler' },
-        { value: 'ai_ml', label: 'Yapay Zeka / Veri', icon: '🤖', description: 'Python, Makine Öğrenmesi' },
-        { value: 'backend', label: 'Arka Plan (Backend)', icon: '⚙️', description: 'Sunucular, API, Veritabanı' }
-      ],
-      next: () => 'time_commitment'
-    },
     platform: {
-      text: 'Ne geliştirmek istersin?',
+      text: 'Hangi alanda ürün geliştirmek istersin?',
       options: [
-        { value: 'web', label: 'Web Siteleri', icon: '🌐', description: 'Kullanıcı arayüzleri' },
-        { value: 'mobile', label: 'Mobil Uygulamalar', icon: '📱', description: 'iOS ve Android uygulamaları' },
+        { value: 'web', label: 'Web Siteleri (Önerilen)', icon: '🌐', description: 'Tarayıcıda çalışan kullanıcı arayüzleri' },
+        { value: 'mobile', label: 'Mobil Uygulamalar', icon: '📱', description: 'Telefonda çalışan uygulamalar' },
         { value: 'game', label: 'Oyunlar', icon: '🎮', description: 'Eğlenceli oyun projeleri' }
       ],
-      next: () => 'time_commitment'
+      next: () => 'learning_style'
     },
-    time_commitment: {
-      text: 'Günde ne kadar zaman ayırabilirsin?',
+    learning_style: {
+      text: 'Nasıl bir çalışma temposu sana uygun?',
       options: [
-        { value: 'minimal', label: '30 Dakika', icon: '⏰', description: 'Düzenli ama kısa adımlar' },
-        { value: 'moderate', label: '1-2 Saat', icon: '🕐', description: 'Dengeli bir tempo' },
-        { value: 'dedicated', label: '3+ Saat', icon: '🔥', description: 'Hızlı gelişim' }
+        { value: 'chill', label: 'Rahat (Günde 30dk)', icon: '☕', description: 'Yavaş ama istikrarlı adımlar' },
+        { value: 'normal', label: 'Normal (Günde 1-2 Saat)', icon: '📚', description: 'Dengeli bir tempo' },
+        { value: 'hardcore', label: 'Yoğun (Günde 3+ Saat)', icon: '🔥', description: 'Hızlı gelişim ve sonuç' }
       ],
-      next: () => null // End of wizard
+      next: () => null // End of beginner wizard
+    },
+
+    // ---- ADVANCED/INTERMEDIATE PATH ----
+    current_tech: {
+      text: 'Şu an hangi alana daha yakınsın?',
+      options: [
+        { value: 'frontend', label: 'Görsel Arayüz (Frontend)', icon: '🎨', description: 'React, Vue, UI Geliştirme' },
+        { value: 'backend', label: 'Arka Plan (Backend)', icon: '⚙️', description: 'Sunucular, API, Veritabanı' },
+        { value: 'data', label: 'Veri & Yapay Zeka', icon: '🤖', description: 'Python, Makine Öğrenmesi, Veri Analizi' }
+      ],
+      next: () => 'career_goal'
+    },
+    career_goal: {
+      text: 'Mevcut yetkinliklerini nereye taşımak istersin?',
+      options: [
+        { value: 'enterprise', label: 'Kurumsal Kariyer', icon: '🏢', description: 'Büyük şirketlerde uzmanlaşmak' },
+        { value: 'freelance', label: 'Freelance & Uzaktan', icon: '🌍', description: 'Özgür çalışıp global projeler almak' },
+        { value: 'fullstack', label: 'Full-Stack Olmak', icon: '🦄', description: 'Baştan uca tüm sisteme hakim olmak' }
+      ],
+      next: () => 'deep_dive'
+    },
+    deep_dive: {
+      text: 'Seni en çok hangi konu heyecanlandırıyor?',
+      options: [
+        { value: 'architecture', label: 'Sistem Mimarisi & Ölçeklenebilirlik', icon: '🏗️', description: 'Büyük sistemler tasarlamak' },
+        { value: 'performance', label: 'Performans & Optimizasyon', icon: '⚡', description: 'Hızlı ve pürüzsüz uygulamalar' },
+        { value: 'devops', label: 'DevOps & Otomasyon', icon: '🔄', description: 'Süreçleri otomatize etmek ve bulut' }
+      ],
+      next: () => null // End of advanced wizard
     }
   };
 
@@ -85,14 +106,15 @@ export function OnboardingWizard({ onComplete }: { onComplete: (result: TrackRec
         // Recommend track based on answers
         let recommendedTrackId = 'frontend_developer';
         
-        if (newAnswers.tech_interest === 'ai_ml') {
-          recommendedTrackId = 'ml_engineer';
-        } else if (newAnswers.tech_interest === 'backend') {
-          recommendedTrackId = 'backend_developer';
-        } else if (newAnswers.platform === 'mobile') {
-          recommendedTrackId = 'mobile_cross_developer';
-        } else if (newAnswers.platform === 'game') {
-          recommendedTrackId = 'game_developer';
+        if (newAnswers.experience === 'beginner') {
+          if (newAnswers.platform === 'mobile') recommendedTrackId = 'mobile_cross_developer';
+          else if (newAnswers.platform === 'game') recommendedTrackId = 'game_developer';
+          else recommendedTrackId = 'frontend_developer';
+        } else {
+          if (newAnswers.current_tech === 'data') recommendedTrackId = 'ml_engineer';
+          else if (newAnswers.current_tech === 'backend') recommendedTrackId = 'backend_developer';
+          else if (newAnswers.career_goal === 'fullstack') recommendedTrackId = 'fullstack_developer';
+          else recommendedTrackId = 'frontend_developer';
         }
 
         const recommendation = {

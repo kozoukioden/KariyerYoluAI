@@ -29,7 +29,9 @@ import {
   Award,
   Flame,
   Star,
-  CheckCircle2
+  CheckCircle2,
+  ArrowRight,
+  Sparkles
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import confetti from 'canvas-confetti';
@@ -52,6 +54,7 @@ export default function HomePage() {
   const [isLoading, setIsLoading] = useState(true);
   const [showXPGain, setShowXPGain] = useState<number | null>(null);
   const [showAchievement, setShowAchievement] = useState<AchievementId | null>(null);
+  const [completedUnitPrompt, setCompletedUnitPrompt] = useState(false);
 
   // Load user data on mount
   useEffect(() => {
@@ -120,6 +123,16 @@ export default function HomePage() {
     }));
   }, [currentTrack, userData]);
 
+  const checkIfUnitCompleted = (nodeId: string) => {
+    if (!currentTrack) return false;
+    for (const unit of currentTrack.units) {
+      if (unit.nodes.length > 0 && unit.nodes[unit.nodes.length - 1].id === nodeId) {
+        return true;
+      }
+    }
+    return false;
+  };
+
   // Handle node click
   const handleNodeClick = (nodeId: string) => {
     if (!currentTrack) return;
@@ -171,9 +184,16 @@ export default function HomePage() {
       }, 500);
     }
 
+    const isUnitComplete = checkIfUnitCompleted(activeLesson.id);
     refreshUserData();
     setActiveLesson(null);
-    setView('dashboard');
+    
+    if (isUnitComplete) {
+      setCompletedUnitPrompt(true);
+      setView('dashboard');
+    } else {
+      setView('dashboard');
+    }
   };
 
   // Handle quiz complete
@@ -204,13 +224,23 @@ export default function HomePage() {
           setShowAchievement(newAchievements[0].id as AchievementId);
         }, 500);
       }
+      
+      const isUnitComplete = checkIfUnitCompleted(activeQuiz.id);
+      refreshUserData();
+      setActiveQuiz(null);
+      
+      if (isUnitComplete) {
+        setCompletedUnitPrompt(true);
+        setView('dashboard');
+      } else {
+        setView('dashboard');
+      }
     } else {
       storage.addQuizAttempt(activeQuiz.id, score, false);
+      refreshUserData();
+      setActiveQuiz(null);
+      setView('dashboard');
     }
-
-    refreshUserData();
-    setActiveQuiz(null);
-    setView('dashboard');
   };
 
   // Handle logout/reset
@@ -634,7 +664,53 @@ export default function HomePage() {
 
         {/* Dashboard View */}
         {view === 'dashboard' && currentTrack && (
-          <div className="p-4 md:p-8">
+          <div className="p-4 md:p-8 relative">
+            
+            {/* Unit Completion Modal */}
+            <AnimatePresence>
+              {completedUnitPrompt && (
+                <motion.div 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/80 backdrop-blur-sm"
+                >
+                  <motion.div 
+                    initial={{ scale: 0.9, y: 20 }}
+                    animate={{ scale: 1, y: 0 }}
+                    className="bg-slate-800 border border-slate-700 rounded-2xl p-6 md:p-8 max-w-md w-full shadow-2xl text-center"
+                  >
+                    <div className="w-16 h-16 bg-green-500/20 text-green-400 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Trophy size={32} />
+                    </div>
+                    <h2 className="text-2xl font-bold text-white mb-2">Tebrikler! Seti Tamamladın 🎉</h2>
+                    <p className="text-slate-400 mb-8">
+                      Harika bir iş çıkardın. Mevcut kariyer yolunda bir sonraki seviyeye geçebilir veya yepyeni bir alana yelken açabilirsin.
+                    </p>
+                    <div className="space-y-3">
+                      <button 
+                        onClick={() => setCompletedUnitPrompt(false)}
+                        className="w-full py-3 px-4 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 text-white rounded-xl font-bold transition-all flex items-center justify-center gap-2"
+                      >
+                        <ArrowRight size={20} />
+                        Mevcut Yola Devam Et
+                      </button>
+                      <button 
+                        onClick={() => {
+                          setCompletedUnitPrompt(false);
+                          setView('onboarding');
+                        }}
+                        className="w-full py-3 px-4 bg-slate-700 hover:bg-slate-600 text-white rounded-xl font-bold transition-all flex items-center justify-center gap-2"
+                      >
+                        <Sparkles size={20} />
+                        Yeni Bir Şey Öğren
+                      </button>
+                    </div>
+                  </motion.div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+
             {/* Track Header */}
             <motion.div
               initial={{ opacity: 0, y: -20 }}
